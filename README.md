@@ -8,3 +8,9 @@
    
 二.项目列表
    1.前端开发职位展示(有前景的公司，以及标杆！)  
+   
+   
+   
+三.经典课程
+   1.http://www.imooc.com/learn/172jQuery源码解析（架构与依赖模块) 64课时
+   2.http://www.imooc.com/learn/222jQuery源码解析（DOM与核心模块）64课时

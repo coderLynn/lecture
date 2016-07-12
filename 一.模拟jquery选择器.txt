@@ -1,0 +1,303 @@
+我师父（http://www.cnblogs.com/aaronjs/）说应当阅读框架（jquery），所以老夫就准备开始看了
+
+然后公司的师兄原来写了个dom选择器，感觉不错啊！！！原来自己从来没有想过能写这些，所以我们今天一起来试试吧
+
+我写的这个很简单，就是最简单的那种了，但是公司师兄写的很好。。。。。。
+
+简单dom选择器
+
+先上个完整的代码吧，因为我已经写起了：
+
+ View Code
+复制代码
+ 1 <div id="parent">
+ 2     <div class="child1" id="c">
+ 3         <div>
+ 4         </div>
+ 5         <input type="button" value="测试"  class="child1.1" />
+ 6     </div>
+ 7     <div class="child1">
+ 8     </div>
+ 9     <div class="child2">
+10     </div>
+11     <div class="child2 child1">
+12         <div class="child1.1">
+13             <input class="l" value="三层测试" />
+14         </div>
+15     </div>
+16     <input type="button" value="测试2" />
+17 </div>
+复制代码
+
+
+简单的结果，然后我们来简单看看我丑陋的代码：
+
+复制代码
+  1 (function () {
+  2     var queryFunc = {
+  3         '#': function (id) {
+  4             var arr = [];
+  5             arr.push(document.getElementById(id))
+  6             return arr;
+  7         },
+  8         '.': function (className) {
+  9             var els = document.getElementsByTagName('*');
+ 10             var reg = new RegExp('(^|\\s)' + className + '(\\s|$)');
+ 11             var arr = [];
+ 12             for (var i = 0, len = els.length; i < len; i++) {
+ 13                 if (reg.test(els[i].className)) {
+ 14                     arr.push(els[i]);
+ 15                 }
+ 16             }
+ 17             return arr;
+ 18         },
+ 19         'tag': function (tag) {
+ 20             return document.getElementsByTagName(tag);
+ 21         }
+ 22     };
+ 23 
+ 24     var filterFunc = {
+ 25         '#': function (el, id) {
+ 26             return this.commomFunc(el, function (p) {
+ 27                 if (p.id == id) {
+ 28                     return true;
+ 29                 }
+ 30             });
+ 31         },
+ 32         '.': function (el, className) {
+ 33             var reg = new RegExp('(^|\\s)' + className + '(\\s|$)');
+ 34             return this.commomFunc(el, function (p) {
+ 35                 if (reg.test(p.className)) {
+ 36                     return true;
+ 37                 }
+ 38             });
+ 39         },
+ 40         'tag': function (el, tag) {
+ 41             return this.commomFunc(el, function (p) {
+ 42                 if (p.tagName.toLowerCase() == tag) {
+ 43                     return true;
+ 44                 }
+ 45             });
+ 46         },
+ 47         commomFunc: function (el, callback) {
+ 48             var p = el;
+ 49             var end = false;
+ 50             while (!end) {
+ 51                 p = p.parentNode || p.parentElement || null;
+ 52                 if (!p) return false;
+ 53                 var b = callback && callback(p);
+ 54                 if (b) return b;
+ 55                 if (p.tagName == 'BODY') {
+ 56                     end = true;
+ 57                 }
+ 58             }
+ 59             return false;
+ 60         }
+ 61     };
+ 62 
+ 63     var getKV = function (str) {
+ 64         if (!str || typeof str != 'string') return null;
+ 65         var k = str.substring(0, 1);
+ 66         var v = str;
+ 67         if (k == '.' || k == '#') {
+ 68             v = str.substring(1, str.length);
+ 69         } else {
+ 70             k = 'tag';
+ 71         }
+ 72         return {
+ 73             k: k,
+ 74             v: v
+ 75         };
+ 76     }
+ 77 
+ 78     var query = function (str) {
+ 79         var kv = getKV(str)
+ 80         return (queryFunc[kv.k] && queryFunc[kv.k](kv.v));
+ 81     };
+ 82     var filter = function (el, str) {
+ 83         var kv = getKV(str);
+ 84         return (filterFunc[kv.k] && filterFunc[kv.k](el, kv.v));
+ 85     };
+ 86     var explodeSelector = function (str) {
+ 87         if (!str) return [];
+ 88         //第一步去掉多余的空格
+ 89         str = str.replace(/\s+/g, ' ');
+ 90         var arr = str.split(' ');
+ 91         return arr;
+ 92     };
+ 93     //筛选元素是否具有该属性
+ 94 
+ 95     var queryAll = function (str) {
+ 96         var arrSelector = explodeSelector(str);
+ 97         var len = arrSelector.length;
+ 98 
+ 99         //当前索引
+100         var index = len - 2;
+101         var curDom = null;
+102         var curSelector = null;
+103 
+104         //第一轮筛选出来的元素
+105         var els = query(arrSelector[len - 1]);
+106         //只有一个选择器便直接返回了
+107         if (len == 1) return els;
+108 
+109         while (index != -1) {
+110             //获取当前的筛选选择器
+111             curSelector = arrSelector[index];
+112             var tmpArr = [];
+113             for (var i = 0, len = els.length; i < len; i++) {
+114                 var tmpEl = els[i];
+115                 if (filter(tmpEl, curSelector))
+116                     tmpArr.push(tmpEl);
+117             }
+118             els = tmpArr;
+119             index--;
+120         }
+121         return els;
+122     };
+123     window.queryAll = queryAll;
+124 })();
+复制代码
+基本思路
+
+① 获取选择器字符串，并将之分解为一个数组
+
+复制代码
+var explodeSelector = function (str) {
+    if (!str) return [];
+    //第一步去掉多余的空格
+    str = str.replace(/\s+/g, ' ');
+    var arr = str.split(' ');
+    return arr;
+};
+复制代码
+② 与CSS选择器一致，根据各种条件选取相关元素
+
+复制代码
+ 1 var queryFunc = {
+ 2     '#': function (id) {
+ 3         var arr = [];
+ 4         arr.push(document.getElementById(id))
+ 5         return arr;
+ 6     },
+ 7     '.': function (className) {
+ 8         var els = document.getElementsByTagName('*');
+ 9         var reg = new RegExp('(^|\\s)' + className + '(\\s|$)');
+10         var arr = [];
+11         for (var i = 0, len = els.length; i < len; i++) {
+12             if (reg.test(els[i].className)) {
+13                 arr.push(els[i]);
+14             }
+15         }
+16         return arr;
+17     },
+18     'tag': function (tag) {
+19         return document.getElementsByTagName(tag);
+20     }
+21 };
+复制代码
+③ 根据选择器与获得的dom数组，判断其父元素是否具有相关属性（id，className，tag），有便留下来，没有就不管他
+
+过滤下来的就是我们要的元素：
+
+复制代码
+ 1 var filterFunc = {
+ 2     '#': function (el, id) {
+ 3         return this.commomFunc(el, function (p) {
+ 4             if (p.id == id) {
+ 5                 return true;
+ 6             }
+ 7         });
+ 8     },
+ 9     '.': function (el, className) {
+10         var reg = new RegExp('(^|\\s)' + className + '(\\s|$)');
+11         return this.commomFunc(el, function (p) {
+12             if (reg.test(p.className)) {
+13                 return true;
+14             }
+15         });
+16     },
+17     'tag': function (el, tag) {
+18         return this.commomFunc(el, function (p) {
+19             if (p.tagName.toLowerCase() == tag) {
+20                 return true;
+21             }
+22         });
+23     },
+24     commomFunc: function (el, callback) {
+25         var p = el;
+26         var end = false;
+27         while (!end) {
+28             p = p.parentNode || p.parentElement || null;
+29             if (!p) return false;
+30             var b = callback && callback(p);
+31             if (b) return b;
+32             if (p.tagName == 'BODY') {
+33                 end = true;
+34             }
+35         }
+36         return false;
+37     }
+38 };
+复制代码
+复制代码
+ 1 var queryAll = function (str) {
+ 2     var arrSelector = explodeSelector(str);
+ 3     var len = arrSelector.length;
+ 4 
+ 5     //当前索引
+ 6     var index = len - 2;
+ 7     var curDom = null;
+ 8     var curSelector = null;
+ 9 
+10     //第一轮筛选出来的元素
+11     var els = query(arrSelector[len - 1]);
+12     //只有一个选择器便直接返回了
+13     if (len == 1) return els;
+14 
+15     while (index != -1) {
+16         //获取当前的筛选选择器
+17         curSelector = arrSelector[index];
+18         var tmpArr = [];
+19         for (var i = 0, len = els.length; i < len; i++) {
+20             var tmpEl = els[i];
+21             if (filter(tmpEl, curSelector))
+22                 tmpArr.push(tmpEl);
+23         }
+24         els = tmpArr;
+25         index--;
+26     }
+27     return els;
+28 };
+复制代码
+④，然后，就没有然后了。。。。
+
+不足与提高
+
+这个代码明显就是玩具，三无产品：
+
+① 无测试
+
+② 无子选择器/兄弟选择器
+
+③ 无性能
+
+但是，以上东西暂时和我无关啦，因为学习嘛。。。。
+
+最后附上师兄选择器代码：
+
+ View Code
+然后，就没有然后了。。。
+
+小插曲-浮点数计算
+
+今天项目重遇到一个问题，我和我的小伙伴都惊呆了：
+
+
+
+你没有看错，33.1 * 3 就是那么多！！！
+
+尼玛已证明这是一个js的bug，我可以这么说么？？？
+
+解决方案，求回复（我会说我想骗点回复么？？？）
+解决方案，求回复（我会说我想骗点回复么？？？）
