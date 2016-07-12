@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Product List</title>
+<style type="text/css">
+
+table{
+	border: 1px #333 solid;
+	font: 12px arial;
+	width: 500px
+}
+
+table caption {
+	font-size: 24px;
+	line-height:36px;
+	color:white;
+	background-color:#777;
+}
+
+tbody tr{
+	background-color: #CCC;
+	}
+
+td,th{
+	padding: 5px;
+	border: 2px solid #EEE;
+	border-bottom-color: #666;
+	border-right-color:  #666;
+}
+
+thead tr,tfoot tr{
+	background:white;
+}
+
+tbody tr.even{
+	background-color: #AAA;
+}
+
+/**********************************/
+
+th+td,
+th+td+td,
+th+td+td+td+td
+{
+text-align:center;
+} 
+
+
+th+td+td+td,
+th+td+td+td+td+td
+{
+text-align:right;
+} 
+
+</style>
+</head>
+
+<body>
+
+
+		<table cellspacing="0">
+			<caption>Product List</caption>
+			<col/><col class="center"/><col class="center"/><col class="right"/><col class="center"/><col class="right"/>
+			<thead>
+				<tr>
+					<th >product</th>
+					<th >ID</th>
+					<th >Country</th>
+					<th >Price</th>
+					<th >Color</th>
+					<th >weight</th>
+				</tr>
+			</thead>	
+			<tbody>
+				<tr >
+					<th >Computer</th>
+					<td>C184645</td>
+					<td>China</td>
+					<td>$3200.00</td>
+					<td>Black</td>
+					<td>5.20kg</td>
+				</tr>
+				<tr class="even">
+					<th >TV</th>
+					<td>T965874</td>
+					<td>Germany</td>
+					<td>$299.95</td>
+					<td>White</td>
+					<td>15.20kg</td>
+				</tr>
+				<tr >
+					<th >Phone</th>
+					<td>P494783</td>
+					<td>France</td>
+					<td>$34.80</td>
+					<td>Green</td>
+					<td>0.90kg</td>
+				</tr>
+				<tr class="even">
+					<th >Recorder</th>
+					<td>R349546</td>
+					<td>China</td>
+					<td>$111.99</td>
+					<td>Silver</td>
+					<td>0.30kg</td>
+				</tr>
+				<tr >
+					<th >Washer</th>
+					<td>W454783</td>
+					<td>Japan</td>
+					<td>$240.80</td>
+					<td>White</td>
+					<td>30.90kg</td>
+				</tr>
+				<tr class="even">
+					<th>Freezer</th>
+					<td>F783990</td>
+					<td>China</td>
+					<td>$191.68</td>
+					<td>blue</td>
+					<td>32.80kg</td>
+				</tr>
+				</tbody>
+			<tfoot>
+				<tr>
+					<th >Total</th>
+					<th colspan="5">6 products</th>
+				</tr>
+			</tfoot>
+</table>
+</body>
+
+</html>

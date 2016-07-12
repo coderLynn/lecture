@@ -1,0 +1,81 @@
+﻿div.pic a{
+	position:absolute;
+}
+
+#p0 a{top:0;left:0;}
+#p1 a{top:0;left:160px;}
+#p2 a{top:160px;left:0px;}
+#p3 a{top:160px;left:160px;}
+#p4 a{top:320px;left:0px;}
+#p5 a{top:320px;left:160px;}
+#p6 a{top:480px;left:0px;}
+#p7 a{top:480px;left:160px;}
+
+div.pic img{
+	border:none;
+}
+
+div.ls a{
+	background:url(framels.jpg) no-repeat center;	/* 水平图片的背景 */
+}
+div.pt a{
+	background:url(framept.jpg) no-repeat center;	/* 竖直图片的背景 */
+}
+
+div.pic ul{
+	border-top:1px #AAA solid;
+	border-bottom:1px #FFF solid;
+	padding:5px 20px 5px;
+	margin:0 0 0 330px;
+	font-size:12px;
+	list-style:none;
+}
+
+div.pic li.info{
+	text-indent:2em;
+}
+
+div.pic li.title{
+	 font-weight:bold;
+}
+
+div.ls a{
+	background:url(framels.jpg) no-repeat center;	/* 水平图片的背景 */
+}
+div.pt a{
+	background:url(framept.jpg) no-repeat center;	/* 竖直图片的背景 */
+}
+
+div.ls img{										/* 水平相片 */
+	margin:0px;
+	height:90px; width:135px;
+}
+div.pt img{										/* 竖直相片 */
+	margin:0px;
+	height:135px; width:90px;
+}
+div.ls a{
+	display:block;
+	padding:34px 14px 36px 11px;	/* 将超链接区域扩大到整个背景块 */
+}
+div.pt a{
+	display:block;
+	padding:11px 36px 14px 34px;	/* 将超链接区域扩大到整个背景块 */
+}
+
+div.ls:hover a,
+div.lshover a{
+	background:url(framels_hover.jpg) no-repeat center;
+}
+
+div.pt:hover a,
+div.pthover a{
+	background:url(framept_hover.jpg) no-repeat center;
+}
+
+div.pic:hover ul,
+div.pichover ul{
+	background:#CCC;
+	border-top:1px red solid;
+	border-bottom:1px red solid;
+}

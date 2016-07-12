@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>“数独”游戏</title>
+<style type="text/css">
+h1{
+	text-align:center;
+}
+
+p{
+	font:12px/18px 宋体;
+	text-indent:2em;
+
+}
+table{
+	border-collapse:collapse;
+	border:2px #666 solid;
+	margin:0 auto;
+}
+td{
+	padding:0px;
+	width:30px;
+	height:30px;
+	border:1px #999 solid;
+	text-align:center;
+	vertical-align:middle;
+	font-family:"Times New Roman", Times, serif;
+	font-size:21px;
+}
+td.vline{
+	border-left:2px #666 solid;
+}
+td.hline{
+	border-top:2px #666 solid;
+}
+input{
+	margin:1px 0 0 0;
+	padding:0;
+	width:24px;
+	height:27px;
+	text-align:center;
+	vertical-align:middle;
+	font-family:"lucida handwriting","comic sans ms",cursive;
+	font-size:19px;
+	color:blue;
+	border:0px black solid;
+
+}
+</style>
+</head>
+
+<body>
+
+<h1>“数独”游戏</h1>
+<p>
+在9×9格的大九宫格中有9个3×3的小九宫格，已经有一些数字在里面了，根据这些数字，运用逻辑和推理的方法，在其他的空格上填入1到9的数字，但是要保证满足每个数字在每个小九宫格内不能重复，同时在每行、每列中也不能出现重复的数字。
+</p>
+
+		<form method="post">
+
+<table >
+	<tr>
+		<td>
+			
+		5</td>
+		<td>3</td>
+		<td><input class="entey" name="Text1" type="text" maxlength="1" /></td>
+		<td class="vline"><input class="entey" name="Text1" type="text" maxlength="1" /></td>
+		<td>7</td>
+		<td>
+		<input class="entey" name="Text2" type="text" maxlength="1" /></td>
+		<td class="vline">
+		<input class="entey" name="Text3" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text4" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text5" type="text" maxlength="1" /></td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>
+		<input class="entey" name="Text6" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text7" type="text" maxlength="1" /></td>
+		<td class="vline">1</td>
+		<td>9</td>
+		<td>5</td>
+		<td class="vline">
+		<input class="entey" name="Text8" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text9" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text10" type="text" maxlength="1" /></td>	</tr>
+	<tr>
+		<td>
+		<input class="entey" name="Text11" type="text" maxlength="1" /></td>
+		<td>9</td>
+		<td>8</td>
+		<td class="vline">
+		<input class="entey" name="Text12" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text13" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text14" type="text" maxlength="1" /></td>
+		<td class="vline">
+		<input class="entey" name="Text15" type="text" maxlength="1" /></td>
+		<td>6</td>
+		<td>
+		<input class="entey" name="Text16" type="text" maxlength="1" /></td>
+	</tr>
+	<tr>
+		<td class="hline">8</td>
+		<td class="hline">
+		<input class="entey" name="Text17" type="text" maxlength="1" /></td>
+		<td class="hline">
+		<input class="entey" name="Text18" type="text" maxlength="1" /></td>
+		<td class="hline vline">
+		<input class="entey" name="Text19" type="text" maxlength="1" /></td>
+		<td class="hline">6</td>
+		<td class="hline">
+		<input class="entey" name="Text20" type="text" maxlength="1" /></td>
+		<td class="hline vline">
+		<input class="entey" name="Text21" type="text" maxlength="1" /></td>
+		<td class="hline">
+		<input class="entey" name="Text22" type="text" maxlength="1" /></td>
+		<td class="hline">3</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>
+		<input class="entey" name="Text27" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text26" type="text" maxlength="1" /></td>
+		<td class="vline">8</td>
+		<td>
+		<input class="entey" name="Text25" type="text" maxlength="1" /></td>
+		<td>3</td>
+		<td class="vline">
+		<input class="entey" name="Text24" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text23" type="text" maxlength="1" /></td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>7</td>
+		<td>
+		<input class="entey" name="Text28" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text29" type="text" maxlength="1" /></td>
+		<td class="vline">
+		<input class="entey" name="Text30" type="text" maxlength="1" /></td>
+		<td>2</td>
+		<td>
+		<input class="entey" name="Text31" type="text" maxlength="1" /></td>
+		<td class="vline">
+		<input class="entey" name="Text32" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text33" type="text" maxlength="1" /></td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td class="hline">
+		<input class="entey" name="Text34" type="text" maxlength="1" /></td>
+		<td class="hline">6</td>
+		<td class="hline">
+		<input class="entey" name="Text35" type="text" maxlength="1" /></td>
+		<td class="hline vline">
+		<input class="entey" name="Text36" type="text" maxlength="1" /></td>
+		<td class="hline">
+		<input class="entey" name="Text37" type="text" maxlength="1" /></td>
+		<td class="hline">
+		<input class="entey" name="Text38" type="text" maxlength="1" /></td>
+		<td class="hline vline">2</td>
+		<td class="hline">8</td>
+		<td class="hline">
+		<input class="entey" name="Text39" type="text" maxlength="1" /></td>
+	</tr>
+	<tr>
+		<td>
+		<input class="entey" name="Text40" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text41" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text42" type="text" maxlength="1" /></td>
+		<td class="vline">4</td>
+		<td>1</td>
+		<td>9</td>
+		<td class="vline">
+		<input class="entey" name="Text43" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text44" type="text" maxlength="1" /></td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>
+		<input class="entey" name="Text45" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text46" type="text" maxlength="1" /></td>
+		<td>
+		<input class="entey" name="Text47" type="text" maxlength="1" /></td>
+		<td class="vline">
+		<input class="entey" name="Text48" type="text" maxlength="1" /></td>
+		<td>8</td>
+		<td>
+		<input class="entey" name="Text49" type="text" maxlength="1" /></td>
+		<td class="vline">
+		<input class="entey" name="Text50" type="text" maxlength="1" /></td>
+		<td>7</td>
+		<td>9</td>
+	</tr>
+</table>
+</form>
+</body>
+
+</html>

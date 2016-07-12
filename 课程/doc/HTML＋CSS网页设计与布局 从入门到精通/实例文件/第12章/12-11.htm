@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>滑动门演示</title>
+<style type="text/css">
+h3{
+	font-size:13px;
+	line-height:21px;
+	text-align:center;
+	background-image:url(bg-slide.gif);
+	background-repeat:no-repeat;
+	padding-left:40px;
+	color:white;
+}
+
+span{
+	display:block;
+	padding-right:40px;
+	background-image:url(bg-slide.gif);
+	background-repeat:no-repeat;
+	background-position:right;
+}
+
+.wide{
+	width:300px;  /*修改这个数值，即可改变宽度，可以保持两端的花纹*/
+}
+	
+.narrow{
+	width:200px;  /*修改这个数值，即可改变宽度，可以保持两端的花纹*/
+}
+
+</style>
+</head>
+
+<body>
+
+
+<h3 class="wide"><span>h3标题文字（宽）</span></h3>
+
+<h3 class="narrow"><span>h3标题文字（窄）</span></h3>
+
+<p>说明：只需要修改h3标记CSS中的width属性即可，只要宽度不超过背景图像的总宽度即可。</p>
+
+</body>
+
+</html>
