@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css" />
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>-->
+    <!--<script type="text/javascript" src="js/js.js"></script>-->
+    <script type="text/javascript" src="js/js2.js"></script>
+</head>
+
+<body>
+    <div class="top_nav">
+        <div class="logo">
+            <a href="#"><img src="img/logo.png" width="100%" />
+            </a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li class="stmenu"><a href="#">网站首页</a>
+                </li>
+                <li class="stmenu">
+                    <a href="#">网站首页</a>
+                    <div class="child">
+                        <ul>
+                            <li><a href="#">网站栏目</a>
+                            </li>
+                            <li><a href="#">网站栏目</a>
+                            </li>
+                            <li><a href="#">网站栏目</a>
+                            </li>
+                            <li><a href="#">网站栏目</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="stmenu">
+                    <a href="#">网站首页</a>
+                    <div class="child">
+                        <ul>
+                            <li><a href="#">网站栏目</a>
+                            </li>
+                            <li><a href="#">网站栏目</a>
+                            </li>
+                            <li><a href="#">网站栏目</a>
+                            </li>
+                            <li><a href="#">网站栏目</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="stmenu"><a href="#">网站首页</a>
+                </li>
+                <li class="stmenu"><a href="#">网站首页</a>
+                </li>
+            </ul>
+        </div>
+        <div class="search">
+            <form>
+                <input id="txt" type="text" />
+                <input id="btn" type="button" value="搜索" />
+            </form>
+        </div>
+    </div>
+    <div class="banner2" id="box">
+        <div id="l_btn" class="l_btn"></div>
+        <div id="r_btn" class="r_btn"></div>
+        <div class="box">
+            <ul>
+                <li>
+                    <a href="#"><img src="img/banner01.jpg" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/banner02.jpg" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/banner01.jpg" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/banner02.jpg" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <ol></ol>
+    </div>
+    <div style="height:20px;"></div>
+    <div class="banner2" id="box2">
+        <div id="l_btn2" class="l_btn"></div>
+        <div id="r_btn2" class="r_btn"></div>
+        <div class="box">
+            <ul>
+                <li>
+                    <a href="#"><img src="img/banner01.jpg" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/banner02.jpg" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/banner01.jpg" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/banner02.jpg" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <ol></ol>
+    </div>
+</body>
+
+</html>

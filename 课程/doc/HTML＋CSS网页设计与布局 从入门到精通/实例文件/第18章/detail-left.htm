@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>电子相册</title>
+<link rel="stylesheet"  href="detail-left.css"/>
+
+   </head>
+<body>
+	<div class="pic ls" id="p0">
+		<a href="photo/m01.jpg" class="tn"><img src="photo/thumb/s01.jpg"/></a>
+		<ul>
+			<li class="title">北小河·菊</li>
+			<li class="info">这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字。</li>
+		</ul>
+	</div>
+	<div class="pic ls" id="p1">
+		<a href="photo/m02.jpg" class="tn"><img src="photo/thumb/s02.jpg"/></a>
+		<ul>
+			<li class="title">北小河·桥</li>
+			<li class="info">这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字。</li>
+		</ul>
+	</div>
+	<div class="pic pt" id="p2">
+		<a href="photo/m03.jpg" class="tn"><img src="photo/thumb/s03.jpg"/></a>
+		<ul>
+			<li class="title">北小河·树</li>
+			<li class="info">这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字。</li>
+		</ul>
+	</div>
+	<div class="pic pt" id="p3">
+		<a href="photo/m04.jpg" class="tn"><img src="photo/thumb/s04.jpg"/></a>
+		<ul>
+			<li class="title">北小河·影</li>
+			<li class="info">这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字。</li>
+		</ul>
+	</div>
+	<div class="pic ls"  id="p4">
+		<a href="photo/m05.jpg" class="tn"><img src="photo/thumb/s05.jpg"/></a>
+		<ul>
+			<li class="title">北小河·路</li>
+			<li class="info">这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字。</li>
+		</ul>
+	</div>
+	<div class="pic pt"  id="p5">
+		<a href="photo/m06.jpg" class="tn"><img src="photo/thumb/s06.jpg"/></a>
+		<ul>
+			<li class="title">北小河·花</li>
+			<li class="info">这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字。</li>
+		</ul>
+	</div>
+	<div class="pic ls"  id="p6">
+		<a href="photo/m07.jpg" class="tn"><img src="photo/thumb/s07.jpg"/></a>
+		<ul>
+			<li class="title">北小河·天</li>
+			<li class="info">这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字。</li>
+		</ul>
+	</div>
+	<div class="pic ls"  id="p7">
+		<a href="photo/m08.jpg" class="tn"><img src="photo/thumb/s08.jpg"/></a>
+		<ul>
+			<li class="title">北小河·井</li>
+			<li class="info">这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字，这里配合说明文字。</li>
+		</ul>
+	</div>
+	
+<script type="text/javascript">
+	var divs = document.getElementsByTagName('div');
+	for (var i=0;i<divs.length;i++){
+		divs[i].onmouseover = function(){		//鼠标在div上面的时候
+			if(this.className.indexOf('ls')!=-1)
+			  this.className+=' lshover';
+			else this.className+=' pthover';
+			this.className+=' pichover';
+			}
+		divs[i].onmouseout = function(){		//鼠标离开时
+			this.className=this.className.replace(/lshover/,''); 
+			this.className=this.className.replace(/pthover/,''); 
+			this.className=this.className.replace(/pichover/,''); 
+			}
+	}
+</script>
+
+</body>
+</html>

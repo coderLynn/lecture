@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+       <div class="content">
+           <h1>一.起步</h1>
+        <pre>
+            <div id="app">
+                {{message}}
+            </div>
+        </pre>
+           <h1>二.双向绑定</h1>
+        <pre>
+          <div id="chanche">
+              <p>{{msg}}</p>
+              <input  type="text" v-model="msg">
+          </div>
+        </pre>
+           <h1>三.渲染列表</h1>
+        <pre>
+            <div id="list">
+                <ul v-for="item in dolist">
+                    <li>{{item.name}}</li>
+                </ul>
+            </div>
+        </pre>
+       </div>
+
+       <h1>四.class和style绑定</h1>
+       <pre>
+           <div id="_class">
+               <p v-bind:class="classObj">这是绑定class</p>
+           </div>
+           <div  id="_style">
+               <p v-bind:style="ostyle">这是绑定style</p>
+           </div>
+       </pre>
+        <h1>五.方法与事件处理</h1>
+       <pre>
+           <div id="_fun">
+               <button v-on:click="greet">点击我哦</button>
+           </div>
+       </pre>
+
+<script src="../public/js/demojs.js"></script>
+</body>
+</html>
