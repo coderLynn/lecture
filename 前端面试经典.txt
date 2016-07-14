@@ -1,8 +1,3 @@
-作者：通通
-链接：https://zhuanlan.zhihu.com/p/21408753
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
 HTML&CSS
 
 1. 常用那几种浏览器测试？有哪些内核(Layout Engine)?
@@ -208,6 +203,8 @@ document.Browser.Agent.value=navigator.userAgent;
 
 } 
 
+
+qq群：424734136
 其他
 
 1. HTTP状态码知道哪些？
