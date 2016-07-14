@@ -5,6 +5,43 @@
     <title></title>
 </head>
 <body>
+        <script>
+            (function(window,docuemnt){
+                var w=window,
+                        doc=docuemnt;
+                var future=function(selector){
+                        return new future.prototype.init(selector);
+                }
 
+               future.prototype={
+                    constructor:future,
+                    length:0,
+                    splice:[].splice,
+                    selector:"",
+                    init:function(selector){
+                    }
+                }
+                future.prototype.init.prototype=future.prototype;
+                /*ajax方法*/
+                future.ajax=function(){
+                    console.log(this.prototype);
+                }
+                /* get 方法*/
+                future.get=function(){
+                    console.log(this.prototype);
+                }
+                /*    暴露接口给t   t.xxx();*/
+                window.t=future;
+            })(window,document);
+        </script>
+
+
+<p></p>
+
+
+
+<script>
+    t.get();
+</script>
 </body>
 </html>
