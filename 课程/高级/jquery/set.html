@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*set 的用法*/
+    /*var set=new Set();
+    console.log(set);
+    set.add(1);
+    set.add(0.1);
+    set.add(0.11000);
+    set.add(NaN)
+    set.add([1,1,3,3,4,5]);
+    set.add(function(){
+        alert(this.caller);
+    })
+    set.add("hello world");
+    console.log(set,set.size);
+    console.log(set.__proto__);*/
+
+
+/*深度拷贝*/
+    var arr=[1,2,3,4,5];
+    arr1=arr.slice(0);
+//    不会改变arr数组
+    arr[0]=0;
+    console.log(arr1);
+
+
+
+    /*concat*/
+
+
+    var arr3=[1,2,3],arr4;
+    arr4=arr3.concat();
+    arr3[6]=0;
+    console.log(arr4);
+    console.log(arr3);
+
+
+
+
+//   会改变值
+
+    var arr5=[[1,2,3],4,5,6],arr6;
+    arr5[0]=9;
+    arr6=arr5.slice(0);
+
+    console.log(arr5);
+
+/*concat 改变值*/
+    var   arr8=[[1,2,3,4,5],6,8,9,10,11],arr9;
+   arr8[3]=100;
+    arr9=arr8.concat();
+    alert(arr9);
+
+
+
+
+
+</script>
+</body>
+</html>
