@@ -55,10 +55,112 @@
     var   arr8=[[1,2,3,4,5],6,8,9,10,11],arr9;
    arr8[3]=100;
     arr9=arr8.concat();
-    alert(arr9);
+    console.log(arr9);
+
+
+    /*创建全局变量*/
+
+    name="jhon";
+    console.log(name);//jhon
+    console.log(window.name);//jhon
+    console.log(window["name"]);//jhon
+    console.log(this.name);//jhon
+
+
+/*访问全局函数*/
+    var modle=(function(){
+        return this;
+    })();
+
+/*无论在哪里申明都可以*/
+     globle="tj";
+    function foo(){
+        console.log(globle);
+        var globle="tsk";
+        console.log(globle);
+    }
+    foo();
 
 
 
+
+    /*eval   和 new  function*/
+
+/*eval 会改变作用域链*/
+
+    (function(){
+        var local=19;
+        eval("local=3,console.log(local)");//3
+        console.log(local);//3
+    })();
+    (function(){
+        var local=10;
+        Function("console.log(typeof local)")()
+    })();
+
+
+
+    /*parseInt*/
+   var year="08";
+   console.log( parseInt(year));
+
+    var _year=Number(year);//8
+    var _years=+year;
+    console.log(_years+"+");
+    console.log(_year+"numeber");
+
+
+    var world="08 hello world";
+   var _world=parseInt(world);
+    console.log(_world);
+
+
+
+    /*对象构造函数捕捉*/
+
+
+    var tj=new Object();
+    console.log(tj.constructor===Object);
+
+    var tj1=new Object(1);
+    console.log(tj1.constructor===Number);
+    var _string=new Object("this is string");
+    console.log(_string.constructor===String);
+/*Boolean*/
+    var buoole=new Object(true)
+    console.log(buoole.constructor===Boolean);
+
+
+    /*解析json
+    * parse 从字符串中解析json对象
+    * */
+    var json1='{"name":"json1","yuwen":98,"english":100,"math":70}';
+//   var string=eval('('+json1+')');  不推荐用eval
+    var string1=JSON.parse(json1);//jquery yong $.parsJSON();解析字符串格式成为json格式
+    console.log(string1.name);
+
+
+
+
+
+    /*JSON.stringify  从一个对象中解析字符串 可以解析任意字符串数组或者基本数据类型*/
+
+var ostring={
+    name:"tj",
+    worlk:"web",
+    model:[1,2,3]
+
+}
+
+ var  _ostring=JSON.stringify(ostring);
+    console.log(_ostring);
+    console.log(_ostring.name);//没有定义
+
+
+    /*正则表达式*/
+
+
+    var reg=new
 
 
 </script>
