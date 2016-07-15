@@ -157,10 +157,73 @@ var ostring={
     console.log(_ostring.name);//没有定义
 
 
-    /*正则表达式*/
+    /*正则表达式
+    * RegExp   正则表达式的构造函数
+    * RegExp 的方法
+    * 1.split  将字符串分割成字符串数组
+    * 2.replace 替换与正则表达式相匹配的字符串
+    * 3.match  找到一个或多个正则匹配
+    * 4.search 检索与正则相匹配的值
+    * 修饰符
+    * 1.g  全局匹配
+    * 2.i 执行对大小写不敏感的匹配
+    * 3.m匹配多行
+    *
+    * */
 
 
-    var reg=new
+    var reg=new RegExp();
+
+
+
+   var  ostring="abcsd12333XYZ";
+   var  no_leter=ostring.replace(/[0-9a-z]/g,'');
+//   var  no_leter=ostring.replace(/[a-z]/gi,'');
+    console.log(no_leter);
+
+
+
+
+
+    /*自定义错误类型*/
+
+
+
+    try{
+            throw{
+                name:"myDefault",//定义错误名字
+                message:"this is error",//定义错误信息
+                extra:"this is message",
+                remedy:gendl
+            }
+    }catch(e) {
+       console.log(e.message);
+
+    }
+
+
+/*定义一个  执行回调函数*/
+
+
+
+var  founds=function(){
+    var  i=10000,
+            nodes=[],
+      found;
+       while(i){
+           i-=1;
+           nodes.push(found)
+       }
+
+    return nodes;
+}
+
+var hide=function(nodes){
+        for(var i= 0;i<nodes.length;i++){
+            nodes[i].style.display="none";
+        }
+}
+    hide(founds());
 
 
 </script>
