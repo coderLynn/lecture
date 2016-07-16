@@ -2,19 +2,113 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, width=device-width, user-scalable=no">
     <title></title>
     <style>
         html, body, h1, h2, h3, h4, h5, h6, p, div, header, nav, footer, table, tr, td, ul, ol, li, article {
             margin: 0px;
             padding: 0px;
         }
+        html{
+            font-size:100px;
+        }
+        a{
+            text-decoration: none;
+        }
+        /*头部*/
+        header{
+            color:#fff;
+            display: -webkit-box;
+            background: #06c1ae;
+            border-bottom:1px solid #21897d;
+            height: 1rem;
+        }
+        .nav-left{
+            height: 1rem;
+            line-height: 1rem;
+        }
+        .nav-left a{
+            color:inherit;
+        }
+        .nav-city{
+            line-height: 1;
+            text-align: center;
+            vertical-align:middle;
+            font-size: 0.32rem;
+            margin:0 0.25rem;
+            display: inline-block;
+        }
+        .nav-search{
+            height: 0.64rem;
+            line-height: 0.64rem;
+            -webkit-box-flex:1;
+        }
+        .nav-search a{
+            display: block;
+        }
+        .nav-search span{
+            font-size:0.26rem;
+        }
+        .nav-right{
+            height: 100%;
+        }
+        .nav-right a{
+            vertical-align: top;
+            width:0.94rem;
+            display: inline-block;
+            text-align:center;
+            height: 100%;
+            line-height: 1rem;
+        }
+        .nav-right a span{
+            vertical-align:middle;
+            line-height:1;
+            display: inline-block;
+            font-size:0.2rem;
+        }
+        /*列表样式*/
+        .ui-list dl{
+            margin-left:1.6rem;
+        }
+        /*footer*/
+        footer{
+           padding:0 0.2rem 0.4rem;
+            margin-top:0.3rem;
+        }
+        .local-list{
+            float: right;
+        }
+        .btn{
+            display: inline-block;
+            background-color: #06c1ae;
+            padding:0 0.3rem;
+            height: 0.6rem;
+            text-align:center;
+            line-height: 0.6rem;
+            color: #fff;
+            
+        }
     </style>
+    <script src="future/jquery-1.9.1.min.js"></script>
+    <script>
+        (function() {
+            // 等价于html.style.fontSize = windowWidth / 640 * 100 + 'px';
+            document.addEventListener('DOMContentLoaded', function() {
+                var html = document.documentElement;
+                var windowWidth = html.clientWidth;
+                // if (windowWidth >= 540) {
+                //     windowWidth = 540;
+                // }
+                html.style.fontSize = windowWidth / 6.4 + 'px';
+            }, false);
+        })();
+    </script>
 </head>
 <body>
 <!--头部-->
 <header>
     <div class="nav-left">
-        <a href="#">广州</a>
+        <a href="#"><span class="nav-city">广州</span></a>
     </div>
     <div class="nav-search">
         <a href="#">
@@ -24,13 +118,43 @@
     </div>
     <div class="nav-right">
         <a href="#">
-            <span></span>
-            <i>我的</i>
+            <span>
+                 <i></i>
+                我的
+            </span>
+
         </a>
     </div>
 </header>
 
 <!--content-->
+<div class="content">
+    <div class="ui-item">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon-circle"></span>
+                    <div class="icon-desc"></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="ui-list">
+        <dl>
+            <dd>
+                <a href="#">
+                    <div class="list-devc">
+                        <div class="list-img"></div>
+                        <div class="list-right"></div>
+                    </div>
+                </a>
+            </dd>
+        </dl>
+    </div>
+</div>
+
 
 
 <!--footer-->
@@ -41,6 +165,15 @@
         <div class="local-list">城市:<a href="#">广州</a></div>
         <a href="#">登录</a>
         <a href="#">注册</a>
+    </div>
+    <div class="footer-nav">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">订单</a></li>
+            <li><a href="#">客户端</a></li>
+            <li><a href="#">电脑版</a></li>
+            <li><a href="#">帮助</a></li>
+        </ul>
     </div>
 </footer>
 
