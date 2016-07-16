@@ -2,18 +2,32 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, width=device-width, user-scalable=no">
+    <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, width=device-width, user-scalable=no,target-densitydpi=device-dpi">
     <title></title>
     <style>
-        html, body, h1, h2, h3, h4, h5, h6, p, div, header, nav, footer, table, tr, td, ul, ol, li, article {
+        html, body, h1, h2, h3, h4, h5, h6, p, div, header, nav, footer, table, tr, td, ul, ol, li,dl,dd,dt, article {
             margin: 0px;
             padding: 0px;
         }
-        html{
-            font-size:100px;
+        body{
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: .28em;
+            line-height: 1;
+            color: #333;
+            background-color: #f0efed;
         }
+       html{
+           font-size: 50px;
+           -webkit-tap-highlight-color: transparent;
+           height: 100%;
+           min-width: 320px;
+           overflow-x: hidden;
+       }
         a{
             text-decoration: none;
+        }
+        ul{
+            list-style: none;
         }
         /*头部*/
         header{
@@ -39,8 +53,10 @@
             display: inline-block;
         }
         .nav-search{
+            margin-top:.2rem;
             height: 0.64rem;
             line-height: 0.64rem;
+            background: rgba(0,0,0,.15);
             -webkit-box-flex:1;
         }
         .nav-search a{
@@ -48,6 +64,10 @@
         }
         .nav-search span{
             font-size:0.26rem;
+            padding-left: .6rem;
+            color: #68dbce;
+            display: block;
+            width: 100%;
         }
         .nav-right{
             height: 100%;
@@ -66,9 +86,105 @@
             display: inline-block;
             font-size:0.2rem;
         }
+
+        /*shop*/
+        .ui-item{
+            height: 3.6rem;
+            position: relative;
+            overflow: hidden;
+            font-weight: 400;
+            font-size:inherit;
+        }
+        .ui-item ul{
+            position: absolute;
+            /*-moz-box-orient:horizontal;*/
+            /*-webkit-box-orient:horizontal;*/
+            /*box-orient:horizontal;//水平排列*/
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display:box;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            overflow: hidden;
+            -webkit-box-align: center;
+            -webkit-box-pack: center;
+            -ms-box-align: center;
+            -ms-flex-pack: justify;
+        }
+        .ui-item ul li{
+            /*-webkit-box-flex:1;*/
+            box-flex:1;
+            width: 19%;
+            /*float: left;*/
+            display: inline-block;
+            box-sizing: border-box;
+            -webkit-box-sizing:border-box;
+            text-align: center;
+        }
+        .ui-item ul li a{
+            padding:.2rem 0;
+            display: block;
+        }
+        .icon-circle{
+            display: block;
+            margin: auto;
+            margin-bottom: .14rem;
+            font-family: cate_icon;
+            width: .8rem;
+            height: .8rem;
+            border-radius: 10rem;
+            text-align: center;
+            line-height: .8rem;
+            font-size: .4rem;
+            color: #fff;
+        }
+        .ball1{
+            background: #FF8822;
+        }
+        .icon-desc{
+            font-size:.24rem;
+            color: #666;
+            text-align: center;
+        }
+
+
         /*列表样式*/
         .ui-list dl{
-            margin-left:1.6rem;
+            margin-left:.2rem;
+        }
+        .list-devc{
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+        }
+        .list-img{
+            position: absolute;
+            width: 1.8rem;
+            height: 1.64rem;
+            text-align: center;
+            overflow: hidden;
+        }
+        .list-img img{
+            height: 100%;
+            background-size:cover;
+        }
+        .ui-list dl dd{
+            border-bottom:1px solid  #DDD8CE;
+            overflow: hidden;
+        }
+        .list-right{
+            position: relative;
+            height: 1.64rem;
+            margin-left:2rem;
+        }
+        .ui-list dl dd a{
+            display: block;
+            height: 100%;
+            overflow: hidden;
+            padding:.28rem .2rem;
+            color:#666;
         }
         /*footer*/
         footer{
@@ -78,6 +194,21 @@
         .local-list{
             float: right;
         }
+        .list-right h6{
+            padding-top:.1rem;
+            margin-bottom:.12rem;
+            color:#333;
+            font-weight: normal;
+            font-size:.3rem;
+        }
+
+        .list-right p{
+            font-size:.24rem;
+        }
+        .footer-bar{
+            margin-bottom:.5rem;
+            font-size:.28rem;
+        }
         .btn{
             display: inline-block;
             background-color: #06c1ae;
@@ -86,22 +217,42 @@
             text-align:center;
             line-height: 0.6rem;
             color: #fff;
+            font-size:.28rem;
+            -webkit-user-select:none;
+            box-sizing: border-box;
 
+        }
+        .fr{
+            float: right;
+        }
+        .footer-nav ul{
+            display: -webkit-box;
+
+        }
+        .footer-nav ul li{
+            -webkit-box-flex:1;
+            text-align:center;
+        }
+        .footer-nav{
+            font-size:.28rem;
         }
     </style>
     <script src="future/jquery-1.9.1.min.js"></script>
     <script>
-        (function() {
-            // 等价于html.style.fontSize = windowWidth / 640 * 100 + 'px';
-            document.addEventListener('DOMContentLoaded', function() {
-                var html = document.documentElement;
-                var windowWidth = html.clientWidth;
-                // if (windowWidth >= 540) {
-                //     windowWidth = 540;
-                // }
-                html.style.fontSize = windowWidth / 6.4 + 'px';
-            }, false);
-        })();
+        !function(win,doc,undefined) {//根据屏幕大小及dpi调整缩放和大小
+            var scale = 1.0,ratio = 1,dc=doc,viewporttexts='';
+            if (win.devicePixelRatio && devicePixelRatio >= 1.5) {
+                ratio = devicePixelRatio;
+                scale = scale/(devicePixelRatio);
+            }
+            //var texts = '<meta  name="viewport" content="initial-scale=' + scale + ', maximum-scale=' + scale +', minimum-scale=' + scale + ', width=device-width, user-scalable=no" />';
+            // dc.write(texts);
+            viewporttexts = ' width=device-width, initial-scale=' + scale + ', maximum-scale=' + scale +', minimum-scale=' + scale + ',user-scalable=no';
+            doc.querySelector('meta[name="viewport"]').setAttribute("content",viewporttexts);
+
+            console.log('111');
+            dc.documentElement.style.fontSize =doc.getElementsByTagName("html")[0].style.fontSize=Math.ceil(50*ratio) + "px";
+        }(window,document);
     </script>
 </head>
 <body>
@@ -133,8 +284,62 @@
         <ul>
             <li>
                 <a href="#">
-                    <span class="icon-circle"></span>
-                    <div class="icon-desc"></div>
+                    <span class="icon-circle ball1">食</span>
+                    <div class="icon-desc">美食</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-circle ball1">食</span>
+                    <div class="icon-desc">美食</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-circle ball1">食</span>
+                    <div class="icon-desc">美食</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-circle ball1">食</span>
+                    <div class="icon-desc">美食</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-circle ball1">食</span>
+                    <div class="icon-desc">美食</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-circle ball1">食</span>
+                    <div class="icon-desc">美食</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-circle ball1">食</span>
+                    <div class="icon-desc">美食</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-circle ball1">食</span>
+                    <div class="icon-desc">美食</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-circle ball1">食</span>
+                    <div class="icon-desc">美食</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-circle ball1">食</span>
+                    <div class="icon-desc">美食</div>
                 </a>
             </li>
         </ul>
@@ -146,8 +351,70 @@
             <dd>
                 <a href="#">
                     <div class="list-devc">
-                        <div class="list-img"></div>
-                        <div class="list-right"></div>
+                        <div class="list-img">
+                            <img src="0802_0731161210.jpg"  alt=""/>
+                        </div>
+                        <div class="list-right">
+                            <h6>皇冠 • 玛莉奥</h6>
+                            <p>[97店通用]20元的面包代金劵，节假日通用</p>
+                            <p><span>15.8</span><i>元</i>门市价:<span>20元</span><span class="span-right">已售1999</span></p>
+                        </div>
+                    </div>
+                </a>
+            </dd>
+            <dd>
+                <a href="#">
+                    <div class="list-devc">
+                        <div class="list-img">
+                            <img src="0802_0731161210.jpg"  alt=""/>
+                        </div>
+                        <div class="list-right">
+                            <h6>皇冠 • 玛莉奥</h6>
+                            <p>[97店通用]20元的面包代金劵，节假日通用</p>
+                            <p><span>15.8</span><i>元</i>门市价:<span>20元</span><span class="span-right">已售1999</span></p>
+                        </div>
+                    </div>
+                </a>
+            </dd>
+            <dd>
+                <a href="#">
+                    <div class="list-devc">
+                        <div class="list-img">
+                            <img src="0802_0731161210.jpg"  alt=""/>
+                        </div>
+                        <div class="list-right">
+                            <h6>皇冠 • 玛莉奥</h6>
+                            <p>[97店通用]20元的面包代金劵，节假日通用</p>
+                            <p><span>15.8</span><i>元</i>门市价:<span>20元</span><span class="span-right">已售1999</span></p>
+                        </div>
+                    </div>
+                </a>
+            </dd>
+            <dd>
+                <a href="#">
+                    <div class="list-devc">
+                        <div class="list-img">
+                            <img src="0802_0731161210.jpg"  alt=""/>
+                        </div>
+                        <div class="list-right">
+                            <h6>皇冠 • 玛莉奥</h6>
+                            <p>[97店通用]20元的面包代金劵，节假日通用</p>
+                            <p><span>15.8</span><i>元</i>门市价:<span>20元</span><span class="span-right">已售1999</span></p>
+                        </div>
+                    </div>
+                </a>
+            </dd>
+            <dd>
+                <a href="#">
+                    <div class="list-devc">
+                        <div class="list-img">
+                            <img src="0802_0731161210.jpg"  alt=""/>
+                        </div>
+                        <div class="list-right">
+                            <h6>皇冠 • 玛莉奥</h6>
+                            <p>[97店通用]20元的面包代金劵，节假日通用</p>
+                            <p><span>15.8</span><i>元</i>门市价:<span>20元</span><span class="span-right">已售1999</span></p>
+                        </div>
                     </div>
                 </a>
             </dd>
@@ -162,9 +429,9 @@
 
 <footer>
     <div class="footer-bar">
-        <div class="local-list">城市:<a href="#">广州</a></div>
-        <a href="#">登录</a>
-        <a href="#">注册</a>
+        <div class="local-list">城市:<a href="#" class="btn">广州</a></div>
+        <a class="btn" href="#">登录</a>
+        <a class="btn" href="#">注册</a>
     </div>
     <div class="footer-nav">
         <ul>
