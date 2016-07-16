@@ -3,7 +3,8 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-<script src="jquery-01.js"></script>
+    <script src="../../html_css/future/jquery-1.9.1.min.js/"></script>
+    <script src="jquery-01.js"></script>
 </head>
 <body>
 <ul>
@@ -18,7 +19,16 @@
     <li>1</li>
 </ul>
     <script>
-        f("li").css("background","red");
+        $.ajax({
+            type: 'post',
+            url: 'http://api.echao.com/master/api.php?apicode=Get_GoodsStyle&page=2&callback=?',
+            dataType: 'jsonp',
+            jsonp: "callback",
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            success: function (data) {
+                console.log(data.TotalRows);
+            }
+        })
     </script>
 </body>
 </html>
