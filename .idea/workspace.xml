@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/课程/html_css/7-27.html" line="164" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d68018c-6855-43b1-a180-61b0833b1252" name="默认的" comment="前端面试讲解&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/课程/html_css/future/js/fengs.1.0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/课程/html_css/7-27.html" afterPath="$PROJECT_DIR$/课程/html_css/7-27.html" />
-    </list>
+    <list default="true" id="5d68018c-6855-43b1-a180-61b0833b1252" name="默认的" comment="前端面试讲解&#10;" />
     <ignored path="lecture.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -72,7 +69,7 @@
       <file leaf-file-name="fengs.1.0.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/课程/html_css/future/js/fengs.1.0.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49483353" vertical-offset="3229" max-vertical-offset="4100">
+            <state vertical-scroll-proportion="1.5970149" vertical-offset="2269" max-vertical-offset="4100">
               <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
               <folding />
             </state>
@@ -741,7 +738,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/课程/html_css/future/js/fengs.1.0.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49483353" vertical-offset="3229" max-vertical-offset="4100">
+        <state vertical-scroll-proportion="1.5970149" vertical-offset="2269" max-vertical-offset="4100">
           <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
           <folding />
         </state>

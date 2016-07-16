@@ -1,0 +1,70 @@
+{
+"configs" : [{
+"server" : "jp01-52.ssv7.net",
+"server_port" : 22192,
+"local_port" : 1080,
+"password" : "LEFX2F7DcAvd",
+"method" : "aes-256-cfb",
+"remarks" : ""}
+,{
+"server" : "jp06-52.ssv7.net",
+"server_port" : 22192,
+"local_port" : 1080,
+"password" : "LEFX2F7DcAvd",
+"method" : "aes-256-cfb",
+"remarks" : ""}
+,{
+"server" : "sg01-52.ssv7.net",
+"server_port" : 22192,
+"local_port" : 1080,
+"password" : "LEFX2F7DcAvd",
+"method" : "aes-256-cfb",
+"remarks" : ""}
+,{
+"server" : "sg02-52.ssv7.net",
+"server_port" : 22192,
+"local_port" : 1080,
+"password" : "LEFX2F7DcAvd",
+"method" : "aes-256-cfb",
+"remarks" : ""}
+,{
+"server" : "sg03-52.ssv7.net",
+"server_port" : 22192,
+"local_port" : 1080,
+"password" : "LEFX2F7DcAvd",
+"method" : "aes-256-cfb",
+"remarks" : ""}
+,{
+"server" : "us01-52.ssv7.net",
+"server_port" : 22192,
+"local_port" : 1080,
+"password" : "LEFX2F7DcAvd",
+"method" : "aes-256-cfb",
+"remarks" : ""}
+,{
+"server" : "us02-52.ssv7.net",
+"server_port" : 22192,
+"local_port" : 1080,
+"password" : "LEFX2F7DcAvd",
+"method" : "aes-256-cfb",
+"remarks" : ""}
+,{
+"server" : "us03-52.ssv7.net",
+"server_port" : 22192,
+"local_port" : 1080,
+"password" : "LEFX2F7DcAvd",
+"method" : "aes-256-cfb",
+"remarks" : ""}
+,{
+"server" : "hk02-52.ssv7.net",
+"server_port" : 22192,
+"local_port" : 1080,
+"password" : "LEFX2F7DcAvd",
+"method" : "aes-256-cfb",
+"remarks" : ""}
+],
+"index" : 8,
+"global" : true,
+"enabled" : true,
+"shareOverLan" : false,
+"isDefault" : false}
