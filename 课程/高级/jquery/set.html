@@ -206,8 +206,8 @@ var ostring={
 
 
 
-var  founds=function(){
-    var  i=10000,
+    /*var  founds=function(){
+     var  i=10000,
             nodes=[],
       found;
        while(i){
@@ -223,7 +223,28 @@ var hide=function(nodes){
             nodes[i].style.display="none";
         }
 }
-    hide(founds());
+     hide(founds());*/
+
+
+
+
+    /*即时函数*/
+
+
+    ;
+    (function () {
+        console.log("这是一个运行立即执行的函数");
+    })()
+
+        /*简单例子*/
+
+
+    ;
+    (function () {
+        var dates = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'];
+        var nDates = new Date();
+        console.log(dates[nDates.getDay()] + ',' + nDates.getDate());
+    }())
 
 
 </script>
