@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d68018c-6855-43b1-a180-61b0833b1252" name="默认的" comment="课程上传">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/课程/高级/jquery/set.html" afterPath="$PROJECT_DIR$/课程/高级/jquery/set.html" />
+    <list default="true" id="5d68018c-6855-43b1-a180-61b0833b1252" name="默认的" comment="js高级课程">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="lecture.iws" />
@@ -15,7 +14,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="D:\lecture\lecture" />
   </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
@@ -79,8 +78,8 @@
       <file leaf-file-name="set.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/课程/高级/jquery/set.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4181" max-vertical-offset="5120">
-              <caret line="238" column="8" selection-start-line="238" selection-start-column="8" selection-end-line="238" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4181" max-vertical-offset="5140">
+              <caret line="238" column="16" selection-start-line="238" selection-start-column="16" selection-end-line="238" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -366,7 +365,11 @@
       <created>1468635805631</created>
       <updated>1468635805631</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="js高级课程">
+      <created>1468635835151</created>
+      <updated>1468635835151</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -415,7 +418,8 @@
     </option>
     <MESSAGE value="课程上传" />
     <MESSAGE value="ajax接口测试&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajax接口测试&#10;" />
+    <MESSAGE value="js高级课程" />
+    <option name="LAST_COMMIT_MESSAGE" value="js高级课程" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -544,8 +548,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/课程/高级/jquery/set.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4181" max-vertical-offset="5120">
-          <caret line="238" column="8" selection-start-line="238" selection-start-column="8" selection-end-line="238" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="4181" max-vertical-offset="5140">
+          <caret line="238" column="16" selection-start-line="238" selection-start-column="16" selection-end-line="238" selection-end-column="16" />
           <folding />
         </state>
       </provider>
