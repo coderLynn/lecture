@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        (function(window,document){
+            var w=window,
+                    doc=document;
+            var lts=function(selector){
+                return new lts.prototype.init(selector);
+            }
+            lts.prototype={
+                 constructor:lts,
+                length:0,
+                splice:[].splice,
+                selector:'',
+                init:function(selector){//dom选择
+                       if(!selector){return this;}
+                    var selector=selector.trim(),
+                            elm;
+//                    charAt() 方法可返回指定位置的字符。
+                    if(selector.charAt(0)=="#" && !selector.match('\\s')){
+//substring(start,stop) 方法用于提取字符串中介于两个指定下标之间的字符。  start 必需，stop可选择的
+                         selector=selector.substring(1);
+                        this.selector=selector;
+                        elm=doc.getElementById(selector);
+                        this[0]=elm;
+                        this.length=1;
+                        return this;
+                    }else{
+                        elm=doc.querySelectorAll(selector);
+                        for(var i=0;i<elm.length;i++){
+                            this[i]=elm[i];
+                        }
+                        this.selector=selector;
+                        this.length=elm.length;
+                        return this;
+                    }
+                },
+                css:function(attr,val){
+                    for(var i=0;i<this.length;i++){
+                        if(arguments.length==1){
+                              return getComputedStyle(this[i],null)[attr];
+                        }
+                        this[i].style[attr]=val;
+                    }
+                    return this;
+                },
+                hasClass:function(cls){
+                    var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                    for(var i= 0;i<this.length;i++){
+                        if(this[i].className.match(reg)) return true
+                        return false;
+                    }
+                    return this;
+                },
+                addClass:function(cls){
+                    var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                    for(var i=0;i<this.length;i++){
+                        if(!this[i].className.match(reg)){
+                            return this[i].className=''+cls;
+                        }
+                    }
+                    return this;
+                },
+                removeClass:function(cls){
+                    var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                    for(var i=0;i<this.length;i++){
+                        if(this[i].className.match(reg)){
+                            return this[i].className=this[i].className.replace(''+cls,'');
+                        }
+                    }
+                    return this;
+                },
+                next:function(){
+                    return sibling(this[0],'nextSibling');
+                }
+            }
+            lts.prototype.init.prototype=lts.prototype;
+            lts.get=function(){
+                console.log(this);
+            }
+            function sibling(cur,dir){
+                if((cur=cur[dir])&&cur.nodeType!==1){}
+                return cur;
+            }
+        })(window,document)
+    </script>
+</body>
+</html>
