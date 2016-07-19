@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    (function(window,document){
+        var w=window,
+                doc=document;
+        var lts=function(selector){
+            return new lts.prototype.init(selector);
+        }
+        lts.prototype={
+            constructor:lts,
+            length:0,
+            splice:[].splice,
+            selector:'',
+            init:function(selector){
+                if(!selector) { return this; }
+
+                var selector = selector.trim(),
+                        elm;
+
+                if (selector.charAt(0) == '#' && !selector.match('\\s')) {
+                    selector = selector.substring(1);
+                    this.selector = selector;
+                    elm = document.getElementById(selector);
+
+                    this[0] = elm;
+                    this.length = 1;
+                    return this;
+                } else {
+                    elm = document.querySelectorAll(selector);
+                    for (var i = 0; i < elm.length; i++) {
+                        this[i] = elm[i];
+                    }
+
+                    this.selector = selector;
+                    this.length = elm.length;
+                    return this;
+                }
+            },
+            css:function(attr,val){
+
+            },
+            hasClass:function(cls){
+                var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                for(var i=0;i<this.length;i++){
+                    if(this[i].className.match(reg)) return true;
+                    return false;
+                }
+                return this;
+            },
+            addClass:function(cls){
+                var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                for(var i=0;i<this.length;i++){
+                    if(!this[i].className.match(reg))
+                    this[i].className+=''+cls;
+                }
+                return this;
+            },
+            removeClass:function(cls){
+                var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                for(var i=0;i<this.length;i++){
+                    if(this[i].className.match(reg))
+                    this[i].className=this[i].className.replace(cls,'')
+                }
+                return this;
+            }
+
+
+        }
+        lts.prototype.init.prototype=lts.prototype;
+
+        lts.ajax=function(){
+            console.log(this);
+        }
+        window.S=lts;
+
+    })(window,document)
+</script>
+
+
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+//    S.ajax();
+    S("li").addClass("tj");
+</script>
+</body>
+</html>
