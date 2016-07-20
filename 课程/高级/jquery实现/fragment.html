@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+/*
+*  DocumentFragment 节点不属于文档树，继承的 parentNode 属性总是
+*  null不过它有一种特殊的行为，该行为使得它非常有用，即当请求把一个
+*  DocumentFragment 节点插入文档树时，插入的不是
+*  DocumentFragment 自身，而是它的所有子孙节点。
+*  这使得 DocumentFragment 成了有用的占位符，暂时存放那些一
+*  次插入文档的节点。它还有利于实现文档的剪切、复制和粘贴操作
+ */
+    var fragment=document.createDocumentFragment();
+    for(var i=0;i<10;i++){
+        var spanNode=document.createElement("span");
+        spanNode.innerHTML="number:"+i;
+        fragment.appendChild(spanNode);
+    }
+
+document.body.appendChild(spanNode);
+    console.log(fragment);
+</script>
+</body>
+</html>

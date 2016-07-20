@@ -16,9 +16,22 @@
                  constructor:lts,
                 length:0,
                 splice:[].splice,
-                selector:'',
+                selector:'1',
                 init:function(selector){//dom选择
                        if(!selector){return this;}
+
+                    if(typeof (selector)=='object'){
+                        var selector=[selector];
+                        for(var i=0;i<selector.length;i++){
+                            this[i]=selector[i];
+                        }
+                        this.length=selector.length;
+                        return this;
+                    }else if(typeof (selector)=='function'){
+                        lts.ready(selector);
+                        return;
+                    }
+
                     var selector=selector.trim(),
                             elm;
 //                    charAt() 方法可返回指定位置的字符。
@@ -75,19 +88,77 @@
                     }
                     return this;
                 },
-                next:function(){
-                    return sibling(this[0],'nextSibling');
+                next : function() {
+                    return sibling(this[0], "nextSibling");
+                },
+                /*Element=1
+                *Attribute=2
+                *Text=3
+                *	CDATA Section=4
+                *	Entity Reference=5
+                *Entity=6
+                * Processing Instrucion=7
+                * Comment=8
+                * Document=9
+                * Document Type=10
+                * Document Fragment=11
+                * Notation=12
+                  *  */
+                prev:function(){
+                    return sibling(this[0],'previousSibling')
+                },
+                parent:function(){
+                    var parent=this[0].parentNode;
+                    parent&&parent.nodeType!==11?parent:null;
+                    var a=lts();
+                    a[0]=parent;
+                    a.selector=parent.tagName.toLocaleLowerCase();
+                    a.length=1;
+                    return a;
+                },
+                parents:function(){
+                   var a=lts();
+                    i=0;
+                    while((this[0]=this[0]['parentNode'])&&this[0].nodeType!==9){
+                        if(this[0].nodeType===1){
+                            a[i]=this[0];
+                            i++;
+                        }
+                    }
+                    a.length=i;
+                    return a;
                 }
             }
             lts.prototype.init.prototype=lts.prototype;
             lts.get=function(){
                 console.log(this);
-            }
+            };
+            lts.ready=function(fn){
+                doc.addEventListener('DOMContentLoaded',function(){
+                            fn && fn();
+                },false);
+                doc.removeEventListener('DOMContentLoaded',fn,true);
+            };
+            /*Element nodeType返回1*/
             function sibling(cur,dir){
                 if((cur=cur[dir])&&cur.nodeType!==1){}
                 return cur;
             }
+
+            window.S=lts;
         })(window,document)
     </script>
+    <script>
+        S(function(){
+            S("p").parent('div').css('width','100px');
+            console.log(S("p").prev());
+        })
+    </script>
+<div>
+    <p id="op"><i>135</i></p>
+    <p ><i>135</i></p>
+</div>
+
+
 </body>
 </html>
