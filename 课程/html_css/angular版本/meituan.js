@@ -1,0 +1,48 @@
+/**
+ * Created by Administrator on 2016/7/21.
+ */
+angular.module("index",[])
+.controller('shoplist',['$scope',function($scope){
+        $scope.data=[
+            {
+                name:"吃",
+                title:'美食'
+            },
+            {
+                name:"看",
+                title:'电影'
+            },
+            {
+                name:"住",
+                title:'酒店'
+            },
+            {
+                name:"乐",
+                title:'休闲娱乐'
+            },
+            {
+                name:"点",
+                title:'外卖'
+            },
+            {
+                name:"唱",
+                title:'KTV'
+            },
+            {
+                name:"外",
+                title:'周边游'
+            },
+            {
+                name:"美",
+                title:'丽人'
+            },
+            {
+                name:"快",
+                title:'小吃快餐'
+            },
+            {
+                name:"火",
+                title:'火车票'
+            }
+        ]
+    }])

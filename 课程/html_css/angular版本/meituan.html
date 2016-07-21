@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=0.5,maximum-scale=0.5,minimum-scale=0.5,user-scalable=no,target-densitydpi=device-dpi">
+    <style>
+        @font-face{
+            font-family:'cate_icon';
+            src:url(cate4.woff);
+        }
+        @font-face{
+            font-family:'base_icon';
+            src:url(base14.woff);
+        }
+        body{
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: .28em;
+            /* line-height: 1; */
+            color: #333;
+        }
+        a.react{
+            color:inherit;
+        }
+        html,body,h1,h2,h3,h4,h5,h6,p,dl,dd,dt,ul,ol,li,a,span{
+            padding:0px;
+            margin: 0px;
+        }
+        html{
+            font-size: 50px;
+            min-width:320px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .header{
+            height:1.01rem;
+            background: #06c1ae;
+            border-bottom:1px solid #21897d;
+            color: #fff;
+            position: relative;
+            display: -webkit-box;
+            display: box;
+            display: -ms-flexbox;
+        }
+        .header-left{
+            height: 1.01rem;
+            line-height:1.01rem;
+        }
+        .header-left a{
+            display: block;
+            padding:0 0.1rem;
+            font-size:0.32rem;
+        }
+        .header-midle{
+            -webkit-box-flex:1;
+            background: rgba(0,0,0,.15);
+            position: relative;
+            height: 0.64rem;
+            line-height:0.64rem;
+            margin-top:.2rem;
+        }
+        .header-right{
+            height: 100%;
+        }
+        .header-right a{
+            vertical-align: top;
+            width: 0.94rem;
+            display: inline-block;
+            text-align: center;
+            height: 100%;
+            line-height: 1rem;
+        }
+        .header-right a span{
+            vertical-align: middle;
+            line-height: 1;
+            display: inline-block;
+            font-size: 0.2rem;
+        }
+        .text-icon{
+            font-family: base_icon;
+            display: inline-block;
+            vertical-align: middle;
+            font-style: normal;
+            display: block;
+            margin: auto;
+            margin-bottom: .12rem;
+            font-size: .4rem;
+        }
+        .footer{
+            padding-bottom:.5rem;
+            background: #f0efed;
+        }
+        .footer ul{
+            font-size:0.2rem;
+            padding: .18rem 0;
+            list-style:none;
+            display: -webkit-box;
+        }
+        .footer ul li{
+            text-align: center;
+            -webkit-box-flex:1;
+        }
+        .footer ul li a{
+            color:#06c1ae;
+        }
+
+
+        /*产品*/
+        .list{
+            height: 3.6rem;
+            position: relative;
+        }
+        .list ul{
+            -webkit-box-align:center;
+            -webkit-box-pack:center;
+            font-size: 0;
+            list-style: none;
+            display: block;
+           /*display: -webkit-box;*/
+            /*display: box;*/
+        }
+        .list ul li{
+            width:20%;
+            display: inline-block;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .list ul li a{
+            padding:0.2rem 0;
+            display: block;
+        }
+        .list ul li a span.icon-ball{
+            background: #EA6644;
+            display: block;
+            margin: auto;
+            margin-bottom: .14rem;
+            font-family: cate_icon;
+            width: .8rem;
+            height: .8rem;
+            border-radius: 10rem;
+            text-align: center;
+            line-height: .8rem;
+            font-size: .4rem;
+            color: #fff;
+        }
+        .list ul li a span.icon-text{
+            text-align: center;
+            font-size: .24rem;
+            color: #666;
+        }
+
+
+
+        /*产品列表*/
+
+
+        .data-list{
+            position: relative;
+        }
+        .itme dl{
+            padding-left:0.2rem;
+        }
+        .itme dl dd a{
+            display: block;
+            padding: .28rem .2rem;
+            padding-left: 0;
+        }
+        .itme dl dd{
+            border-bottom: 1px solid #DDD8CE;
+            box-sizing: border-box;
+        }
+        .data-list .list-img{
+            position: absolute;
+            width: 1.8rem;
+            height: 1.64rem;
+            text-align: center;
+            overflow: hidden;
+        }
+        .data-list .list-img img{
+            background-size: 100%;
+            width:100%;
+        }
+        .data-list .list-text{
+            margin-left:2rem;
+            position: relative;
+            height: 1.64rem;
+
+        }
+        .list-text h1{
+            font-size:0.3rem;
+            padding-top:0.1rem;
+            margin-bottom:0.12rem;
+            color:#333;
+        }
+        .list-text p{
+            text-overflow:ellipsis;
+            height: 0.35rem;
+            margin-bottom:0.16rem;
+            font-size:0.24rem;
+            color:#666;
+        }
+        .line-right{
+            float:right;
+        }
+        .price{
+            color:#666;
+        }
+        .price .strong{
+            font-size:0.38rem;
+            color:#06c1ae;
+        }
+
+     .footer-copyright{
+         margin-top:.2rem;
+         font-size: .22rem;
+         text-align: center;
+         position: relative;
+     }
+    .footer-copyright .hr{
+        display: block;
+        content: "";
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        border-top: 1px solid #999;
+    }
+    .footer-copyright span{
+        position: relative;
+        padding: 0 .3rem;
+        background-color:#f0efed;
+    }
+    </style>
+    <script>
+        /*
+        window.devicePixelRatio是设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。
+        公式表示就是：window.devicePixelRatio
+        = 物理像素 / dips
+        */
+        !function(win,doc,undefined) {//根据屏幕大小及dpi调整缩放和大小
+            var scale = 1.0,ratio = 1,dc=doc,viewporttexts='';
+            if (win.devicePixelRatio && devicePixelRatio >= 1.5) {
+                ratio = devicePixelRatio;
+                scale = scale/(devicePixelRatio);
+            }
+            //var texts = '<meta  name="viewport" content="initial-scale=' + scale + ', maximum-scale=' + scale +', minimum-scale=' + scale + ', width=device-width, user-scalable=no" />';
+            // dc.write(texts);
+            viewporttexts = ' width=device-width, initial-scale=' + scale + ', maximum-scale=' + scale +', minimum-scale=' + scale + ',user-scalable=no';
+            doc.querySelector('meta[name="viewport"]').setAttribute("content",viewporttexts);
+
+            dc.documentElement.style.fontSize =doc.getElementsByTagName("html")[0].style.fontSize=Math.ceil(50*ratio) + "px";
+        }(window,document);
+    </script>
+<script src="angular.js"></script>
+
+</head>
+<body ng-app="index">
+
+<!--头部-->
+<div class="header">
+   <div class="header-left">
+       <a class="react" href="#">广州</a>
+   </div>
+    <div class="header-midle">
+        <a href="#">
+            <span class="input"></span>
+        </a>
+    </div>
+    <div class="header-right">
+        <a class="react" href="#">
+            <span><i class="text-icon">⍥</i>我的</span>
+        </a>
+    </div>
+</div>
+<!--中间部分-->
+<div class="content">
+    <!--产品-->
+    <div class="list" ng-controller="shoplist">
+        <ul >
+            <li ng-repeat="shop in data">
+                <a href="#">
+                    <span class="icon-ball">{{shop.name}}</span>
+                    <span class="icon-text">{{shop.title}}</span>
+                </a>
+            </li>
+           <!-- <li>
+                <a href="#">
+                    <span class="icon-ball">看</span>
+                    <span class="icon-text">电影</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-ball">住</span>
+                    <span class="icon-text">酒店</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-ball">乐</span>
+                    <span class="icon-text">休闲娱乐</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-ball">点</span>
+                    <span class="icon-text">外卖</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-ball">唱</span>
+                    <span class="icon-text">KTV</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-ball">外</span>
+                    <span class="icon-text">周边游</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-ball">美</span>
+                    <span class="icon-text">丽人</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-ball">快</span>
+                    <span class="icon-text">小吃快餐</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-ball">火</span>
+                    <span class="icon-text">火车票</span>
+                </a>
+            </li>-->
+        </ul>
+    </div>
+    <!--列表-->
+    <div class="itme">
+            <dl>
+                <dt>猜你喜欢</dt>
+                <dd>
+                     <a href="#">
+                         <div class="data-list">
+                             <div class="list-img">
+                                 <img src="1.jpg">
+                             </div>
+                             <div class="list-text">
+                                <h1>皇冠 • 玛莉奥</h1>
+                                 <P>[97店通用]20元的面包代金劵，节假日通用</P>
+                                 <div class="price">
+                                     <span class="strong">15.8</span>
+                                     <span>元</span>
+                                     <del>
+                                         20元
+                                     </del>
+                                     <span class="line-right">已售1000</span>
+                                 </div>
+                             </div>
+                         </div>
+                     </a>
+                </dd>
+                <dd>
+                    <a href="#">
+                        <div class="data-list">
+                            <div class="list-img">
+                                <img src="1.jpg">
+                            </div>
+                            <div class="list-text">
+                                <h1>皇冠 • 玛莉奥</h1>
+                                <P>[97店通用]20元的面包代金劵，节假日通用</P>
+                                <div class="price">
+                                    <span class="strong">15.8</span>
+                                    <span>元</span>
+                                    <del>
+                                        20元
+                                    </del>
+                                    <span class="line-right">已售1000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </dd>
+                <dd>
+                    <a href="#">
+                        <div class="data-list">
+                            <div class="list-img">
+                                <img src="1.jpg">
+                            </div>
+                            <div class="list-text">
+                                <h1>皇冠 • 玛莉奥</h1>
+                                <P>[97店通用]20元的面包代金劵，节假日通用</P>
+                                <div class="price">
+                                    <span class="strong">15.8</span>
+                                    <span>元</span>
+                                    <del>
+                                        20元
+                                    </del>
+                                    <span class="line-right">已售1000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </dd>
+                <dd>
+                    <a href="#">
+                        <div class="data-list">
+                            <div class="list-img">
+                                <img src="1.jpg">
+                            </div>
+                            <div class="list-text">
+                                <h1>皇冠 • 玛莉奥</h1>
+                                <P>[97店通用]20元的面包代金劵，节假日通用</P>
+                                <div class="price">
+                                    <span class="strong">15.8</span>
+                                    <span>元</span>
+                                    <del>
+                                        20元
+                                    </del>
+                                    <span class="line-right">已售1000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </dd>
+            </dl>
+    </div>
+</div>
+
+<div class="footer">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">订单</a></li>
+            <li><a href="#">客户端</a></li>
+            <li><a href="#">电脑版</a></li>
+            <li><a href="#">帮助</a></li>
+        </ul>
+    <div class="footer-copyright">
+        <div class="hr"></div>
+        <span class="footer-copyright-text">©2016 美团网 京ICP证070791号</span>
+    </div>
+</div>
+<script src="meituan.js"></script>
+</body>
+</html>
