@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    (function(window,document){
+        var w=window,
+                doc=document;
+       var  lts=function(selector){
+           return new lts.prototype.init(selector);
+       }
+        lts.prototype={
+            constructor:lts,
+            length:0,
+            splice:[].splice,//splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。
+            selector:'',
+            init:function(selector){//dom选择
+                if(!selector){return this;}
+
+                /*加载处理*/
+                if(typeof (selector)=='object'){
+                    var selector=[selector];
+                    for(var i=0;i<selector.length;i++){
+                        this[i]=selector[i];
+                    }
+                    this.length=selector.length;
+                    return this;
+                }else if(typeof (selector)=='function'){
+                    lts.ready(selector);
+                    return;
+                }
+
+                /*dom高级选择器注：只支持高本版浏览器*/
+//                trim去除空格
+                var selector=selector.trim(),
+                        elem;
+                if(selector.charAt(0)=='#'&& !selector.match('\\s')){
+                    selector=selector.substring(1);
+                    this.selector=selector;
+                    elem=doc.getElementById(selector);
+                    this[0]=elem;
+                    this.length=0;
+                    return this;
+                }else{
+                    elem=doc.querySelectorAll(selector);
+                    for(var i=0;i<elem.length;i++){
+                        this[i]=elem[i];
+                    }
+                    this.selector=selector;
+                    this.length=elem.length;
+                    return this;
+                }
+
+            },
+            css:function(attr,val){
+                for(var i=0;i<this.length;i++){
+                    if(arguments.length==1){
+                        return getComputedStyle(this[i],null)[attr];
+                    }
+                    this[i].style[attr]=val;
+                }
+                return this;
+            },
+            hasClass:function(cls){
+                var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                for(var i= 0;i<this.length;i++){
+                    if(this[i].className.match(reg)) return true
+                    return false;
+                }
+                return this;
+            },
+            addClass:function(cls){
+                var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                for(var i=0;i<this.length;i++){
+                    if(!this[i].className.match(reg)){
+                        return this[i].className=''+cls;
+                    }
+                }
+                return this;
+            },
+            removeClass:function(cls){
+                var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                for(var i=0;i<this.length;i++){
+                    if(this[i].className.match(reg)){
+                        return this[i].className=this[i].className.replace(''+cls,'');
+                    }
+                }
+                return this;
+            },
+            next:function(){
+                return sibling(this[0],'nextSibling');
+            },
+            prev:function(){
+                return sibling(this[0],'previousSibling');
+            },
+            parent:function(){
+                var parent=this[0].parentNode;
+                parent&&parent.nodeType!==11?parent:null;
+                var a=lts();
+                a[0]=parent;
+                a.selector=parent.tagName.toLocaleLowerCase();
+                a.length=1;
+                return a;
+            },
+            parents:function(){
+                var a=lts();
+                i=0;
+                while((this[0]=this[0]['parentNode'])&&this[0].nodeType!==9){
+                    if(this[0].nodeType==1){
+                        a[i]=this[0];
+                        i++;
+                    }
+                }
+                a.length=i;
+                return a;
+            }
+
+        }
+
+        lts.prototype.init.prototype=lts.prototype;
+        lts.ajax=function(){
+            console.log(this)
+        }
+        /*加载 函数*/
+        lts.ready=function(fn){
+                doc.addEventListener('DOMContentLoaded',function(){
+                    fn && fn();
+                },false);
+            doc.removeEventListener('DOMContentLoaded',fn,true);
+        };
+        lts.each=function(obj,callback){
+                var len=obj.length,
+                        constru=obj.constructor,
+                        i=0;
+            if(constru===w.S){
+                for(;i<len;i++){
+                   var val=callback.call(obj[i],i,obj[i]);
+                    if(val===false) break;
+                }
+            }else if(isArray(obj)){
+                for(;i<len;i++){
+                    var val=callback.call(obj[i],i,obj[i]);
+                    if(val===false) break;
+                }
+            }else{
+                for(i in obj){
+                    var val=callback.call(obj[i],i,obj[i]);
+                    if(val===false) break;
+                }
+            }
+        };
+        function sibling(cur,dir){
+            if((cur=cur[dir])&&cur.nodeType!==1){}
+            return cur;
+        };
+        function isArray(obj){
+            return Array.isArray(obj);
+        }
+
+
+        window.S=lts;
+    })(window,document)
+</script>
+<script>
+    S(function(){
+    var op=S('p');
+        var c=['a','b','c'];
+        S.each(op,function(index,item){
+            console.log(index+item);
+        })
+        S('p').addClass('aaa');
+    });
+</script>
+<p class="bb cc">161646546</p>
+<p class="bb cc">161646546</p>
+</body>
+</html>

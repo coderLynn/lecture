@@ -34,7 +34,7 @@
 
                     var selector=selector.trim(),
                             elm;
-//                    charAt() 方法可返回指定位置的字符。
+//                    charAt() 方法可返回指定位置的字符。  match('\\s')匹配任何空白符
                     if(selector.charAt(0)=="#" && !selector.match('\\s')){
 //substring(start,stop) 方法用于提取字符串中介于两个指定下标之间的字符。  start 必需，stop可选择的
                          selector=selector.substring(1);
@@ -152,6 +152,7 @@
         S(function(){
             S("p").parent('div').css('width','100px');
             console.log(S("p").prev());
+            S("p").addClass("bbbbb");
         })
     </script>
 <div>
