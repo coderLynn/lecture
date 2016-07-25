@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 6]><html class="ie ie6"><![endif]-->
+<!--[if IE 7]><html class="ie ie7"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html>
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="D-Width-Response" content="class=g-wrap">
+
+    <title>灵兰医学 Linglan</title>
+    <link rel="shortcut icon" href="http://www.linglanmed.com:80/pic/linglan.png" type="image/x-icon" />
+	<!-- compliance patch for microsoft browsers -->
+	<!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="css/style.css?06130000"><![endif]-->
+	<link rel="stylesheet" type="text/css" href="css/smSearchList.css?2016723">
+</head>
+<body>
+
+
+
+
+<center>
+
+	<div class="fid">
+		<div class="fid-top">
+			<div class="fid-title">
+				<div class="fl">
+					<a href="http://www.linglanmed.com:80/tcmPortal/abort.jsp">关于灵兰</a>
+				</div>
+				<div class="fr">
+					<a class="logo" href="http://www.linglanmed.com:80/tcmPortal/register.jsp">用户注册</a>
+					<a class="register" href="#" onclick="checkCurrentLogin()">登录</a>
+					<a class="sous" href="http://www.linglanmed.com:80/tcmPortal/searchA.jsp">搜索</a>
+				</div>
+			</div>
+		</div>
+		<div class="fid-bottom fid-default fid-bor">
+			<div class="fid-down">
+				<div class="fl">
+					<a href="http://www.linglanmed.com:80//tcmPortal/index.jsp">
+			        	<img src="http://www.linglanmed.com:80/pic/logo-mini.png">
+			        </a>
+				</div>
+				<div class="fr">
+
+        <div class="navbar">
+          <ul>
+            <li >
+            	<a href="index.html">首页</a>
+            </li>
+            <li id="nav-dss" class="active">
+            	<a href="smSearchList.html">中医辅助决策</a>
+            </li>
+            <li id="nav-guide">
+            	<a href="javascript:void(0)">中医临床指南</a>
+            </li>
+            <li id="nav-graph">
+				<a href="javascript:void(0)">中医知识图谱</a>
+				<ul class="nones">
+		            <li>
+		            	<a href="http://www.linglanmed.com:80/tcmPortal/caseDrug.jsp">疾病与中药</a>
+		            </li>
+		            <li>
+		            	<a href="http://www.linglanmed.com:80/tcmPortal/drgraphMain.jsp">医家与疾病</a>
+		            </li>
+  				</ul>
+			</li>
+
+            <li id="nav-relation">
+              <a href="javascript:void(0)">中医资料库</a>
+              <ul class="yc">
+	            <li>
+	            	<a href="http://www.linglanmed.com:80/tcmPortal/searchPrsp.jsp">方剂库</a>
+	            </li>
+	            <li>
+	            	<a href="http://www.linglanmed.com:80/tcmPortal/searchDrug.jsp">中药饮片库</a>
+	            </li>
+	            <li>
+	            	<a href="http://www.linglanmed.com:80/tcmPortal/searchCrudeDrug.jsp">中草药库</a>
+	            </li>
+	            <li>
+	            	<a href="http://www.linglanmed.com:80/tcmPortal/searchPatentPrsp.jsp">中成药库</a>
+	            </li>
+	            <li>
+	            	<a href="http://www.linglanmed.com:80/tcmPortal/searchConsilia.jsp">医案库</a>
+	            </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+<div class="ne-top" style="background: none;"></div>
+
+    <!-- 轮播 -->
+    <div id="banner">
+        <div class='wrap-slide'>
+            <div class="wrap-cont1">
+                <div class="wrap-fl1">
+                    <span>姓名</span>
+                    <input id="pname" name="pvisitInfo.name" value="" type="text" class="form-control" placeholder="">
+                </div>
+
+                <div class="wrap-fl1">
+                    <span>性别</span>
+
+                    <div class="select-box fx-99">
+                        <dl class="more-select select-btn">
+                            <dt>请选择</dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="#">男</a></li>
+                                    <li><a href="#">女</a></li>
+                                    <li><a href="#">不明</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+
+
+
+                </div>
+                <div class="wrap-fl1">
+                    <span>年龄</span>
+                    <input id="pname" name="pvisitInfo.name" value="" type="text" class="form-control" placeholder="">
+                </div>
+                <div class="wrap-fl1">
+                    <span>体重</span>
+                    <input id="pname" name="pvisitInfo.name" value="" type="text" class="form-control" placeholder="">
+                </div>
+                <div class="wrap-fl1">
+                    <span>婚孕</span>
+
+                    <div class="select-box fx-99">
+                        <dl class="more-select select-btn">
+                            <dt>请选择</dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="#">未婚</a></li>
+                                    <li><a href="#">已婚</a></li>
+                                    <li><a href="#">孕期</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+
+
+
+                </div>
+
+                <div class="wrap-fl1">
+                    <span>发病节气</span>
+
+                    <div class="select-box fx-99">
+                        <dl class="more-select select-btn">
+                            <dt>请选择</dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="#">春</a></li>
+                                    <li><a href="#">夏</a></li>
+                                    <li><a href="#">长夏</a></li>
+                                    <li><a href="#">秋</a></li>
+                                    <li><a href="#">冬</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+
+
+
+                </div>
+
+                <div class="wrap-fl1">
+                    <span>常住地点</span>
+
+                    <div class="select-box fx-99">
+                        <dl class="more-select select-btn">
+                            <dt>请选择</dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="#">北京</a></li>
+                                    <li><a href="#">天津</a></li>
+                                    <li><a href="#">河北</a></li>
+                                    <li><a href="#">山西</a></li>
+                                    <li><a href="#">内蒙古</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+            <div class="wrap-cont1">
+                <div class="wrap-fl1">
+                    <span>科室</span>
+
+                    <div class="select-box fx-99">
+                        <dl class="more-select select-btn">
+                            <dt>请选择</dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="#">全部</a></li>
+                                    <li><a href="#">外科</a></li>
+                                    <li><a href="#">内科</a></li>
+                                    <li><a href="#">妇科</a></li>
+                                    <li><a href="#">男科</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+
+
+
+                </div>
+                <div class="wrap-fl1">
+                    <span>中医疾病</span>
+                    <input id="bing" style="width:290px;" name="pvisitInfo.name" value="" type="text" class="form-control" placeholder="">
+                </div>
+                <div class="wrap-fl1">
+                    <span>症状/体症</span>
+                    <input id="zc" name="pvisitInfo.name" style="width:290px;" value="" type="text" class="form-control" placeholder="">
+                    <div class="listza">
+                        <a href="#">T</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="wrap-cont1">
+                <div class="search-sick"></div>
+                <div class="wrap-fl1  search-button">
+                    <input id="button"  value="查询" type="button" class="form-control" style="background: #F76100;color:#fff;">
+                </div>
+            </div>
+
+            <div class="clear" ></div>
+
+
+            <div class="content-wrapper">
+                <div class="aside">
+
+                </div>
+                <div class="list-right">
+                        <div class="list-title">
+                            历史
+                        </div>
+                    <div class="list-name">
+                        <ul>
+                            <li>唐骏</li>
+                            <li>唐骏</li>
+                            <li>唐骏</li>
+                            <li>唐骏</li>
+                        </ul>
+                    </div>
+                    <div class="list-more">
+                       <a href="./drvnHistory.jsp"> 更多...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 00000000000000000 -->
+
+
+
+
+    <div class="alert" id="textModal" tabindex="-1" role="dialog" style="display: none;" aria-labelledby="exampleModalLabel">
+        <div class="alert-bg"></div>
+        <div class="modal-dialog alert-box" role="document">
+            <div class="modal-content">
+                <div class="modal-header alert-header">
+                    <button type="button" class="close btn-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h5 class="modal-title textLeft" id="exampleModalLabel">文本识别</h5>
+                </div>
+                <div class="modal-body textLeft">
+
+                    <textarea class="form-control" id="longTextSmptm" rows="8"></textarea>
+
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-success" id="recongizeInfo">　</li>
+
+                    </ul>
+                </div>
+
+                <div class="modal-footer">
+                   <span class="btn-close-span"> <button type="button" class="btn btn-default btn-close" data-dismiss="modal">Close</button></span>
+                    <button type="button" class="btn btn-success btn-lg" onclick="smptmRecognize()">　识 别 症 状　</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+	<!-- footer -->
+<div class="bs-docs-footer clearfix" role="contentinfo">
+  <div class="container">
+  <p>Copyright © 2012-2020  灵兰医学</p>  
+  <p>本系统所包含的所有数据和信息仅供参考，处方应由具有合法资格的医生开立，用户使用本系统开立的处方应自行负责，本公司不承担任何责任和义务。</p>
+  <p><a href="http://www.linglanmed.com:80/tcmPortal/abort.jsp">服务协议</a>  意见反馈：services@linglanmed.com</p>
+  <p><a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备16013793号</a>
+  </p>
+  </div>
+
+  <div class="bs-pot">
+	<a href="http://www.cnzz.com/stat/website.php?web_id=1257635892" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic1.gif"></a>
+  </div>
+</div>
+
+</center>
+
+
+
+
+	<script type="text/javascript" src='http://www.940.com/script/jquery-1.8.3.min.js'></script>
+    <script type="text/javascript">
+    $(function () {
+
+        //更多条件：下拉菜单
+        $(".more-select").each(function(){
+            var s=$(this);
+            var z=parseInt(s.css("z-index"));
+            var dt=$(this).children("dt");
+            var dd=$(this).children("dd");
+            var _show=function(){dd.slideDown(200);dt.addClass("cur");s.css("z-index",z+1);};   //展开效果
+            var _hide=function(){dd.slideUp(200);dt.removeClass("cur");s.css("z-index",z);};    //关闭效果
+            dt.click(function(){dd.is(":hidden")?_show():_hide();});
+            dd.find("a").click(function(){dt.html($(this).html());_hide();});     //选择效果（如需要传值，可自定义参数，在此处返回对应的“value”值 ）
+        });
+        $(".listza").click(function(){
+                $("#textModal").show();
+        });
+        $(".btn-close").click(function(){
+            $("#textModal").hide();
+        })
+        /*弹窗*/
+
+
+    });
+
+
+
+    </script>
+
+</body>
+</html>
