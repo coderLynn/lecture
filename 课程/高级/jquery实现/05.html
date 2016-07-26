@@ -94,7 +94,7 @@
                 return this;
             },
             next:function(){
-
+                return sibling(this[0],'nextSibling');
             }
 
         }
@@ -105,6 +105,10 @@
                 fn && fn();
             }, false);
             doc.removeEventListener('DOMContentLoaded', fn, true);
+        }
+        function sibling(cur,dir){
+           while (cur=cur[dir]&&cur.nodeType!==1){}
+            return cur;
         }
         window.S = lts;
     })(window, document)

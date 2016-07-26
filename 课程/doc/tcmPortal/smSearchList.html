@@ -19,6 +19,7 @@
 	<!-- compliance patch for microsoft browsers -->
 	<!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="css/style.css?06130000"><![endif]-->
 	<link rel="stylesheet" type="text/css" href="css/smSearchList.css?2016723">
+    <link rel="stylesheet"  href="css/autocomplete.min.css">
 </head>
 <body>
 
@@ -332,9 +333,9 @@
 
 
 
-	<script type="text/javascript" src='http://www.940.com/script/jquery-1.8.3.min.js'></script>
-<script src="script/jquery.autocompleter.js"></script>
-<script src="script/jquery.easyui.min.js"></script>
+<script type="text/javascript" src='http://www.940.com/script/jquery-1.8.3.min.js'></script>
+<script src="script/autocomplete.min.js"></script>
+<!--<script src="script/jquery.autocompleter.js"></script>-->
 <script type="text/javascript">
     $(function () {
 
@@ -647,15 +648,17 @@
     }
 
 
-    $(function () {
-        var zz=[
-                "咳嗽",
-                "咳嗽不爽",
-                "咳嗽较剧"
-        ]
+    $(document).ready(function(){
+        var words = ['boat', 'dog', 'drink', 'elephant', 'fruit', 'London'];
 //        $('#symptomInput').autocompleter({source : '../tcmPortal/symptom.action?action=dropdownSymptom'});
-        $('#symptomInput').autocompleter({source : zz});
-        $('#symptomInput').autocompleter('option', {
+
+        /*$( "#symptomInput" ).autocomplete({
+            source: zz
+        });*/
+        $('#symptomInput').autocomplete({
+            hints: "dog"
+        });
+        /*$('#symptomInput').autocomplete('option', {
             customKey:'pinyin',
             customValue:'name',
             customLabel:'name',
@@ -668,7 +671,7 @@
         });
         $('#symptomInput').focus(function(){
             $("#symptomInput").select();
-        });
+        });*/
 
     });
 
