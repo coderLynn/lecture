@@ -5,6 +5,109 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    (function (window, document) {
+        var w = window,
+                doc = document;
+        var lts = function (selector, context) {
+            return new lts.prototype.init(selector, context);
+        }
+        lts.prototype = {
+            constructor: lts,
+            length: 0,
+            splice: [].splice,
+            selector: '',
+            init: function (selector, context) {
+                if (!selector) {
+                    return this
+                }
+                /*加载处理*/
+                if (typeof (selector) == 'object') {
+                    var selector = [selector];
+                    for (var i = 0; i < selector.length; i++) {
+                        this[i] = selector[i];
+                    }
+                    this.length = selector.length;
+                    return this;
+                } else if (typeof (selector) == 'function') {
+                    lts.ready(selector);
+                    return;
+                }
+                /*高级dom选择器 querySelectorAll ie6-7不支持*/
+                var context = context || doc,
+                        elem;
+                if (selector.charAt(0) == '#' && !selector.match('\\s')) {
+                    this.selector = selector;
+                    selector = selector.substring(1);
+                    elem = doc.getElementById(selector);
+                    this[0] = elem;
+                    this.context = context;
+                    this.length = 1;
+                    return this;
+                } else {
+                    elem=context.querySelectorAll(selector);
+                    for(var i=0;i<elem.length;i++){
+                        this[i]=elem[i];
+                    }
+                    this.selector=selector;
+                    this.length=elem.length;
+                    this.context=context;
+                    return this;
+                }
 
+            },
+            css:function(attr,val){
+                for(var i=0;i<this.length;i++){
+                    if(arguments.length=1){
+                        return getComputedStyle(this[i],null)[attr];
+                    }
+                    this[i].style[attr]=val;
+                }
+                return this;
+            },
+            hasClass:function(cls){
+                /*^开头位置 $结束位置*/
+                var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                for(var i=0;i<this.length;i++){
+                    if(this[i].className.match(reg))return true
+                    return false;
+                }
+                return this;
+            },
+            addClass:function(cls){
+                var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                for(var i=0;i<this.length;i++){
+                    if(!this[i].className.match(reg)){
+                        this[i].className+=''+cls;
+                    }
+                }
+                return this;
+            },
+            removeClass:function(cls){
+                var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                for (var i=0;i<this.length;i++){
+                    if(this[i].className.match(reg)){
+//                        this[i].className.replace('cls',null);
+                        this[i].className=this[i].className.replace(''+cls+'');
+                    }
+                }
+                return this;
+            },
+            next:function(){
+
+            }
+
+        }
+        lts.prototype.init.prototype = lts.prototype;
+        /*加载处理公用函数*/
+        lts.ready = function (fn) {
+            doc.addEventListener('DOMContentLoaded', function () {
+                fn && fn();
+            }, false);
+            doc.removeEventListener('DOMContentLoaded', fn, true);
+        }
+        window.S = lts;
+    })(window, document)
+</script>
 </body>
 </html>
