@@ -26,6 +26,8 @@
    
 三.经典课程
   1.http://pan.baidu.com/s/1o6vCma2 （基础课程）
+  2.51cto 基础课程 http://edu.51cto.com/course/course_id-55.html
+  3.js部分 基础 中级 高级  http://www.zhinengshe.com/video.html#4
    
    
    
