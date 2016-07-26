@@ -233,9 +233,10 @@
                     <span>中医疾病</span>
                     <input id="bing" style="width:290px;" name="pvisitInfo.name" value="" type="text" class="form-control" placeholder="">
                 </div>
-                <div class="wrap-fl1">
+                <div class="wrap-fl1 search-text-warapper">
                     <span>症状/体症</span>
-                    <input id="zc" name="pvisitInfo.name" style="width:290px;" value="" type="text" class="form-control" placeholder="">
+                    <input id="symptomInput" name="pvisitInfo.name" style="width:290px;" value="" type="text" class="form-control" placeholder="">
+
                     <div class="listza">
                         <a href="#">T</a>
                     </div>
@@ -244,6 +245,10 @@
             </div>
             <div class="wrap-cont1">
                 <div class="search-sick"></div>
+                <div class="wrzz">
+                    <div id="selectedSmptmList"></div>
+                    <div id="symptomDiv" class="textLeft" style="float: left;width: 850px;;padding-bottom:0.2em;margin-top:5px;height:25px"></div>
+                </div>
                 <div class="wrap-fl1  search-button">
                     <input id="button"  value="查询" type="button" class="form-control" style="background: #F76100;color:#fff;">
                 </div>
@@ -328,7 +333,9 @@
 
 
 	<script type="text/javascript" src='http://www.940.com/script/jquery-1.8.3.min.js'></script>
-    <script type="text/javascript">
+<script src="script/jquery.autocompleter.js"></script>
+<script src="script/jquery.easyui.min.js"></script>
+<script type="text/javascript">
     $(function () {
 
         //更多条件：下拉菜单
@@ -350,6 +357,566 @@
         })
         /*弹窗*/
 
+
+    });
+    /*实现搜索*/
+    /**
+     *
+     */
+
+
+    function sdrmGuide(id){
+        if(!loginCheck()) return;
+        $("#sdrmId").val(id);
+        $("#sdForm").attr("target", "_blank");
+
+        var str = selectedSymptomArray.toString();
+        $("#keyword").val(str);
+        $("action").val("sdrmGuide");
+        $("#sdForm").submit();
+    }
+
+
+    /**
+     * show long text input
+     */
+    function showTextModel(){
+        $('#textModal').modal('show');
+        $('#exampleModalLabel').focus();
+    }
+
+    function closeTextModel(){
+        $('#textModal').modal('hide');
+
+    }
+
+    /**
+     * 症状识别
+     */
+    function smptmRecognize(){
+        var text = $("#longTextSmptm").val().trim();
+        if(text.length < 1) return;
+
+        var data = {};
+        data["action"] = "smptmRecognize";
+        data["keyword"] = text;
+        $("#recongizeInfo").html("......");
+        $.ajax({
+            url : '../tcmPortal/syndromeDrvn.action',
+            data : data,
+            type : "POST",
+            success : function(data) {
+
+                var html = "";
+                if(!data || data.length < 1){
+                    html = '';
+                }else{
+                    clearSelectedSmptm();
+                    for(var i = 0; i < data.length; i++){
+                        addSymptomName(data[i],false);
+                    }
+                    html = data.toString();
+                    closeTextModel();
+                }
+                $("#recongizeInfo").html("");
+
+
+            }
+        });
+
+    }
+    /*
+     //症状分类
+     $("#typeGrid").datagrid({
+     url:'../tcm/actionSyndromElement.action?action=getElementType',
+     showHeader:false,
+     onClickRow: function(index,row){
+     var id = row.pkid;
+     $.ajax({
+     url : '../tcm/actionSyndromElement.action?action=getSymptom&typeId=' + id,
+     //			data : row.pkid,
+     type : "POST",
+     success : function(data) {
+     $("#stGrid").datagrid("loadData",data);
+     }
+     });
+
+     },
+     onLoadSuccess:function(data){
+
+     if(data && data.length > 0){
+     $('#stType').combobox('onClickRow',0,data[0]);
+     }
+     }
+     });
+
+     //症状grid增加点击事件
+     $('#stGrid').datagrid({
+     rownumbers:true,
+     singleSelect:true,
+     onClickRow:function(index,row){
+
+     addSymptomName(row.name,false);
+     //$('#stSelectGrid').datagrid("appendRow",row);
+     }
+     });
+     */
+    function hightInput(){
+        if($("#hightInput").height() > 0)
+            $("#hightInput").height(0);
+        else
+            $("#hightInput").height(210);
+    }
+
+    /**
+     * 已经选择的症状
+     */
+    var selectedSymptomArray = new Array(0);
+    /**
+     * 上次使用的症状
+     */
+    var ikeyword = undefined;
+
+    function addSymptomName(sname,submit){
+
+
+
+        var pos = $.inArray(sname,selectedSymptomArray);
+        if(pos < 0) pos = $.inArray(sname + "[major]",selectedSymptomArray);
+        if(pos < 0) pos = $.inArray(sname + "[negative]",selectedSymptomArray);
+
+        if(pos < 0){
+            pos = sname.indexOf("[negative]");
+            var snameText = sname;
+            var classStr = "";
+            if( pos >= 0){
+                snameText = sname.substring(0,pos);
+                classStr = "negativeTag";
+            }
+            var html = '';
+            html = "<span class='syndromSelected'><span onClick='marjorTag(this)' class = '"+ classStr
+                    + "' href='javascript:void(0)'>" + snameText
+                    + "</span><a class='quickdelete' onClick='quickDelete(this)' href='javascript:void(0)' ></a></span>";
+
+            /*
+             html = html + '<div class="syndromSelected" style="display:inline;position:relative;">';
+             html = html + '   <div style="position:absolute;margin-top: -10px;left:0px;top:-2px;">';
+             html = html + '     <a class="quickSecond1" onclick="switchMarjo(this)" href="javascript:void(0)"><span class="glyphicon glyphicon-th" style="margin-top:0px;font-size:8px;"></span></a>';
+             html = html + '   </div>';
+
+             html = html + sname;
+             html = html + '   <div style="position:absolute;margin-top: -5px;right:0px;top:-2px;">';
+             html = html + '      <a class="quickdelete" onclick="quickDelete(this)" href="javascript:void(0)"></a>';
+             html = html + '   </div>';
+             html = html + '</div>';
+             */
+
+
+            $("#selectedSmptmList").append(html);
+
+            selectedSymptomArray.push(sname);
+
+            if(submit) reDerivate();
+            smptmAssociate();
+        }
+    }
+    /**
+     * 增加症状到输入框，不提交查询
+     */
+    function addSymptom2(spanSmptm){
+
+        var smptm = spanSmptm.innerText;
+        addSymptomName(smptm,false);
+    }
+
+
+    /**
+     * 症状联想查询
+     */
+    function smptmAssociate(){
+        var val = selectedSymptomArray.toString();
+        if(val === ikeyword && $("#symptomDiv").html().length > 10 ) return;
+        if(val.length > 0){
+            if(!canRequest(val)) return;
+            $("#symptomDiv").html('......');
+            var data = {};
+            data["action"] = "smptmAssociate";
+            data["keyword"] = val;
+            $.ajax({
+                url : '../tcmPortal/syndromeDrvn.action',
+                data : data,
+                type : "POST",
+                success : function(data) {
+                    ikeyword = val; //标记上次提交成功的关键词
+                    var html = "";
+                    if(!data || data.length < 1){
+                        html = '';
+                    }else{
+                        for(var i = 0; i < data.length; i++){
+                            html = html + '<span class="syndromClick tagColor" onclick="addSymptom2(this)">' +data[i]+'</span>';
+                        }
+                    }
+
+                    $("#symptomDiv").html(html);
+
+                }
+            });
+        }
+    }
+
+    function canRequest(str){
+        var keys = str.split(/[,， ]/);
+        var len = keys.length;
+
+        var ret = true;
+        if(escape( keys[len - 1].trim()).indexOf("%u") < 0) //最后一个关键词不包括汉字
+            ret = false;
+
+        //console.log(keys);
+        return ret;
+    }
+
+    /**
+     * 标记症状为主次证
+     */
+    function marjorTag(o){
+        var str = o.innerText;
+        var obj = $(o);
+
+
+        var pos = jQuery.inArray(str,selectedSymptomArray);
+        if(pos < 0) pos = jQuery.inArray(str+ "[major]",selectedSymptomArray);
+        if(pos < 0) pos = jQuery.inArray(str+ "[negative]",selectedSymptomArray);
+        if(pos < 0) return;
+        if(obj.hasClass("majorTag")){
+
+            selectedSymptomArray.splice(pos,1,str + "[negative]");
+            obj.removeClass("majorTag");
+            obj.addClass("negativeTag");
+
+        }else if(obj.hasClass("negativeTag")){
+
+            selectedSymptomArray.splice(pos,1,str );
+            obj.removeClass("negativeTag");
+
+        }else{
+
+            selectedSymptomArray.splice(pos,1,str + "[major]");
+            obj.addClass("majorTag");
+        }
+
+
+        //console.debug(selectedSymptomArray);
+    }
+    /**
+     * 删除一个已经选择的症状
+     */
+    function quickDelete(o){
+
+        var str = o.previousElementSibling.innerText;
+        //删除显示Span
+        o.parentElement.remove();
+        //删除症状
+
+        if(selectedSymptomArray.length > 0){
+            var pos = jQuery.inArray(str,selectedSymptomArray);
+            if(pos < 0) pos = jQuery.inArray(str + "[major]",selectedSymptomArray);
+            if(pos < 0) pos = jQuery.inArray(str + "[negative]",selectedSymptomArray);
+            if(pos >=0)
+                selectedSymptomArray.splice(pos,1);
+
+            console.log(str,selectedSymptomArray.toString());
+            if(selectedSymptomArray.length < 1){
+                clearSelectedSmptm();
+            }else{
+                smptmAssociate();
+            }
+
+        }
+
+    }
+    /**
+     * 清空选择的症状
+     */
+    function clearSelectedSmptm(){
+        $("#selectedSmptmList").empty();
+        $("#symptomDiv").empty();
+
+        selectedSymptomArray = new Array(0);
+        //$("#keyword").val("");
+    }
+
+
+    $(function () {
+        var zz=[
+                "咳嗽",
+                "咳嗽不爽",
+                "咳嗽较剧"
+        ]
+//        $('#symptomInput').autocompleter({source : '../tcmPortal/symptom.action?action=dropdownSymptom'});
+        $('#symptomInput').autocompleter({source : zz});
+        $('#symptomInput').autocompleter('option', {
+            customKey:'pinyin',
+            customValue:'name',
+            customLabel:'name',
+            cache:false,
+            minLength:1,
+            callback:function(value,index){
+                $("#symptomInput").select();
+                addSymptomName(value,false);//add symptom
+            },
+        });
+        $('#symptomInput').focus(function(){
+            $("#symptomInput").select();
+        });
+
+    });
+
+
+    /*---------------------------------------------------------------------------- **/
+
+    /**
+     * 查询相关证候
+     */
+    var loadingDrvt = false;
+    function reDerivate(){
+        //$("#action").val("drvnSdrm");
+        var val = selectedSymptomArray.toString();
+        var deseaseKey = "";
+        if($("#deseaseKeyword") && $("#deseaseKeyword").val()) deseaseKey = $("#deseaseKeyword").val().trim();
+        if((val.length > 0 || deseaseKey.length > 0) && !loadingDrvt){
+            loadingDrvt = true;
+            $("#sdContent").html("<dir style='border:0px solid #F00; width:300px; height:600px'><h4>Loading...</h4></dir>");
+            var data = {};
+            data["action"] = "drvnSdrmJson";
+            data["keyword"] = val;
+            data["deseaseKeyword"] = deseaseKey;
+            data["dept"] = $("#dept").val();
+            data["pvisitInfo.name"] = $("#pname").val();
+            data["pvisitInfo.gender"] = $("#gender").val();
+            data["pvisitInfo.age"] = $("#age").val();
+            data["pvisitInfo.weight"] = $("#weightbd").val();
+            data["pvisitInfo.married"] = $("#married").val();
+            data["pvisitInfo.solarTeam"] = $("#solarTeam").val();
+            data["pvisitInfo.area"] = $("#area").val();
+
+            $.ajax({
+                url : '../tcmPortal/syndromeDrvn.action',
+                data : data,
+                type : "POST",
+                success : function(data) {
+                    var html = "";
+                    if(!data || data.length < 1){
+                        html = '<div class="row bs-callout bs-callout-info textLeft" style="height:300px"><div class="col-md-12">';
+                        html = html + "未找到内容</div></div>";
+
+                    }else{
+                        for(var i = 0; i < data.length; i++){
+                            html = html + syndromeRow(data[i]);
+                        }
+                    }
+                    $("#sdContent").html(html);
+
+                },
+                complete: function(data,status){
+                    loadingDrvt = false;
+                }
+            });
+        }
+
+    }
+    /**
+     * 增加症状到输入框并查询
+     */
+    function addSymptom(spanSmptm){
+        var smptm = spanSmptm.innerHTML;
+        addSymptomName(smptm,true);
+    }
+
+
+    /**
+     * 证候推理结果填充
+     */
+    function syndromeRow(sd){
+        var html = '<div class="row bs-callout bs-callout-info" style=""><div class="col-md-12">';
+        html = html + syndromeRowHeader(sd);
+        html = html + syndromeRowSmptm(sd.smtmees);
+        //html = html + syndromeRowOrgSmptm(sd.description);
+        html = html + syndromeRowMechansm(sd.mechansm);
+        html = html + syndromeRowTherapy(sd.therapyMethod);
+        html = html + syndromeRowPrsp(sd.prescriptiones);
+
+        html = html + '</div></div>';
+
+        return html;
+    }
+
+    function syndromeRowHeader(sd){
+        var html = '<div class="row textRow textHeightRow">' +
+                '<div class="col-md-6 textLeft" style="padding-left:2px" ><label><a href="#" onclick="sdrmGuide(\'' + sd.id + '\'); ">' +
+                sd.deseaseName + '•' + sd.name + '</a></label></div>';
+        //html = html + '<div class="col-md-2"></div>';
+        html = html + '<div class="col-md-6 textRight">';
+        //html = html + '匹配率：' + sd.matching + '%　';
+        html = html + '<a href="#" onclick="sdrmGuide(\'' + sd.id + '\'); ">更多</a> ';
+        //html = html + '<a href="#" onclick="javascript:window.location.href=\'../tcmPortal/smSearchGuideExport.jsp\'; ">导出</a>';
+        html = html + '</div></div>';
+        return html;
+    }
+
+    function syndromeRowSmptm(sms){
+        var html = '<div class="row textHeightRow textLeft"><span style="font-weight:bold;">症状：</span>';
+        var len = sms.length;
+        for(var i = 0 ; i < len; i++){
+            var major = '';
+            if(sms[i].major == '1') major = ' sdMajor';
+            if(sms[i].remark == '1'){//using dsrc to show Synonym name
+                html = html + '<span class="sdSyndromSelected '+ major +'" onclick="addSymptom(this)"  >' + sms[i].dsrc + '</span>';
+            }else{
+                html = html + '<span class="sdSyndrom '+ major +'" onclick="addSymptom(this)" >' + sms[i].dsrc + '</span>';
+            }
+        }
+        html = html + '</div>';
+        return html;
+    }
+    function syndromeRowOrgSmptm(str){
+        var html = '<div class="row textRow textLeft">';
+        html = html + '<span style="font-weight:bold;">症见：</span>';
+        if(str == null){
+            html = html + '</div>';
+        }else{
+            html = html + str + '</div>';
+        }
+        return html;
+    }
+    function syndromeRowMechansm(str){
+        var html = '<div class="row textRow textLeft">';
+        html = html + '<span style="font-weight:bold;">病机：</span>';
+        if(str == null){
+            html = html + '</div>';
+        }else{
+            html = html + str + '</div>';
+        }
+        return html;
+    }
+    function syndromeRowTherapy(str){
+        var html = '<div class="row textRow textLeft">';
+        html = html + '<span style="font-weight:bold;">治法：</span>';
+        if(str == null){
+            html = html + '</div>';
+        }else{
+            html = html + str + '</div>';
+        }
+        return html;
+    }
+
+    function syndromeRowPrsp(prsps){
+        var html = "";
+        var len =  prsps.length;
+        for(var i = 0 ; i < len; i++){
+            html = '<div class="row textRow textLeft">';
+            html = html + '<span style="font-weight:bold;">方药：</span>';
+            html = html + prsps[i].name;
+            html = html + '  <a href="javascript:void(0)" onclick="copy2clipboard(\'copy' + prsps[i].id + '\')">复制</a>';
+            html = html + '<span id="copy'+ prsps[i].id +'" style="display:none">' + prsps[i].form+'</span>';
+            html += '</div>';
+            html += '<div class="row textRow textLeft"><div class="col-md-12">';
+            html = html + prsps[i].HTMLForm;
+            html = html + '</div></div>';
+        }
+
+
+        return html;
+    }
+
+    //检查，男的时候，选择孕期错误。
+    function gender2married(){
+        if($("#gender").val() == '男' && $("#married").val() == '孕期'){
+            $("#marriedgp").addClass("has-error");
+            $('#married').popover('show');
+            $("#marriedgp").focus();
+        }else{
+            $("#marriedgp").removeClass("has-error");
+            $('#married').popover('hide');
+        }
+    }
+    $("#married").on("change",function(){
+        gender2married();
+    });
+    $("#gender").on("change",function(){
+        gender2married();
+
+    });
+
+    //加载历史
+    function drvnHistory(){
+
+        // drvnHistory syndromeDrvn.action?action=loadRefDeduceRecord
+
+        $.ajax({
+            url : '../tcmPortal/syndromeDrvn.action?action=loadRefDeduceRecord',
+            type : "POST",
+            success : function(data) {
+                if(data && data.rows && data.rows.length > 0){
+                    var html = '';
+                    for(var i = 0; i < data.rows.length; i++){
+                        html = html + '<div class="row textRow"><a href="./syndromeDrvn.action?action=loadDeduceRecord&id=';
+                        html = html + data.rows[i].pkid + '" target="_">' + data.rows[i].pname + '</a></div>';
+                    }
+                    $("#drvnHistory").html(html);
+                }
+
+            }
+        });
+    }
+
+    function loadDesease(code){
+        if(!code ) code = "";
+        //疾病自动完成
+        $.ajax({
+            url : '../tcmPortal/desease.action?action=deseaseList&deptCode=' + code,
+            type : "POST",
+            success : function(data) {
+                $('#deseaseKeyword').autocompleter('destroy');
+                $('#deseaseKeyword').autocompleter({source : data});
+                $('#deseaseKeyword').autocompleter('option', {
+                    customKey:'pinyin',
+                    customValue:'name',
+                    customLabel:'name',
+                    minLength:1,
+                });
+
+            }
+        });
+    }
+    $(function () {
+
+        acitveNav('nav-dss');
+
+        var pgender = $("#pgender").val();
+        if(pgender && pgender.length > 0){
+            $("#gender").val(pgender);
+        }
+        var pmarried = $("#pmarried").val();
+        if(pmarried && pmarried.length > 0){
+            $("#married").val(pmarried);
+        }
+
+        getProvince("area",function(){
+            var parea = $("#parea").val();
+            if(parea && parea.length > 0){
+                $("#area").val(parea);
+            }
+        });
+
+        $('#dept').append("<option value=''>全部</option>");
+        getGenralType("DEPT_CODE","dept");
+        loadDesease();
+        $("#dept").on("change",function(){
+            var d = $("#dept").val();
+            loadDesease(d);
+        });
+        drvnHistory();
 
     });
 

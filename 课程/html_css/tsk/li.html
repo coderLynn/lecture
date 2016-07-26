@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul li{
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+<script src="../future/jquery-1.9.1.min.js"></script>
+<script>
+//    $(function(){
+//        $("#oul>li").css("color","red")
+//    })
+</script>
+<script>
+    window.onload=function(){
+        var oul=document.getElementById("oul");
+        var oucil=oul.children;
+       for (var i=0;i<oucil.length;i++){
+           oucil[i].style.color='red';
+       }
+/*
+
+        for(var i=0;i<oli.length;i++){
+            console.log(oli[0]);
+            oli[i].style.color='red';
+
+        }*/
+
+
+    }
+</script>
+
+<ul id="oul">
+    <li>哈哈
+        <ul>
+            <li>嘿嘿</li>
+        </ul>
+    </li>
+    <li>哈哈
+        <ul>
+            <li>嘿嘿</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>
