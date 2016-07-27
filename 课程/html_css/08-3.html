@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .doc {
+            min-width: 1240px;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 1240px;
+            margin: 0 auto;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        /*顶部*/
+        .nav-top {
+            height: 36px;
+            background: #f5f5f5;
+            font-size: 14px;
+        }
+
+        .left-content {
+            float: left;
+            margin-top: 10px;
+        }
+
+        .right-content {
+            float: right;
+            margin-top: 10px;
+        }
+
+        .left-content a {
+            color: #999999;
+            margin-right: 25px;
+        }
+
+        .right-content a {
+            color: #999;
+            margin-left: 25px;
+        }
+
+        /*头部*/
+        .header {
+            position: relative;
+        }
+
+        .header-block {
+            position: relative;
+            height: 120px;
+        }
+
+        .log {
+            position: absolute;
+            left: 0px;
+            top: 28px;
+        }
+
+        .nav-header {
+            position: absolute;
+            left: 200px;
+            top: 30px;
+            height: 60px;
+            line-height:60px;
+        }
+        .nav-header a{
+            padding:0 10px;
+            font-size:17px;
+        }
+        .search-block{
+            position: absolute;
+            right:0px;
+            top:38px;
+            height: 40px;
+            width:306px;
+            border:2px solid #23ac38;
+        }
+        .input-out{
+            padding:6px;
+            float: left;
+        }
+        .input-out input{
+            border:none;
+            width: 190px;
+            height:28px;
+            outline:none;
+        }
+        .button-search{
+            width:96px;
+            height:40px;
+            border:none;
+            background-color: #23ac38;
+            float: right;
+            font-size:14px;
+            color:#fff;
+        }
+
+
+        /*banner*/
+        .slider{
+            overflow: hidden;
+        }
+        .slider img{
+            width:100%;
+        }
+
+        /*footer*/
+        .footer {
+            padding: 20px 0;
+            text-align: center;
+            color: #999;
+            line-height: 22px;
+        }
+    </style>
+</head>
+<body>
+<div class="doc">
+    <!--顶部-->
+    <div class="nav-top">
+        <div class="container">
+            <div class="left-content">
+                <a href="#">中文</a>
+                <a href="#">Global</a>
+            </div>
+            <div class="right-content">
+                <a href="#">登录</a>
+                <a href="#">注册</a>
+            </div>
+        </div>
+    </div>
+    <!--头部-->
+    <div class="header">
+        <div class="container">
+            <div class="header-block">
+                <div class="log">
+                    <a href="#">
+                        <img src="img/360log.png" title="360" alt="360">
+                    </a>
+                </div>
+                <div class="nav-header">
+                    <a href="#">电脑软件</a>
+                    <a href="#">手机软件</a>
+                    <a href="#">360商城</a>
+                    <a href="#">安全理赔</a>
+                    <a href="#">个人服务</a>
+                    <a href="#">企业服务</a>
+                    <a href="#">游戏</a>
+                    <a href="#">社区</a>
+                </div>
+                <div class="search-block">
+                    <div class="input-out">
+                        <input type="text" >
+                    </div>
+                    <input class="button-search" type="button" value="搜一下">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--banner-->
+    <div class="banner-content">
+        <div class="container">
+            <div class="slider">
+                <img src="img/banner11.jpg" alt="" title="">
+            </div>
+        </div>
+    </div>
+
+    <!--中间-->
+    <div class="box-content">
+
+    </div>
+    <!--底部-->
+    <div class="footer">
+        <p>
+            Copyright©2005-2016 360.com 版权所有 360互联网安全中心
+        </p>
+        <p>京ICP证080047号[京ICP备08010314号-6] 文网文[2009]024号 新出网证（京）字069号 工商营业执照</p>
+        <p>
+            京公网安备 11000002000006号
+        </p>
+    </div>
+</div>
+</body>
+</html>
