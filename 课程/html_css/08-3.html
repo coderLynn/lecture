@@ -107,6 +107,68 @@
         }
 
 
+        /*中间部分*/
+
+        .box-message{
+            display: block;
+            /*达到清除浮动的目的因为父级没有高度，所以重新计算。*/
+            overflow: hidden;
+            margin-top:50px;
+        }
+        .box-list{
+            width:280px;
+            float: left;
+            display: inline;
+        }
+        .box-list-item{
+            margin-left:40px;
+        }
+        .box-hd{
+            position: relative;
+            color: #23ac38;
+            font-size:20px;
+            margin-bottom:15px;
+        }
+        .more{
+            position: absolute;
+            right:0px;
+            top:0px;
+            line-height:40px;
+            font-size:14px;
+            color:#999;
+        }
+        .headline{
+            margin-bottom:10px;
+        }
+        .headline .pic img{
+            vertical-align: middle;
+        }
+        .headline .text{
+            height:40px;
+            line-height:40px;
+            color:#999;
+            text-align:center;
+            font-size:14px;
+            background:#f6f6f6;
+        }
+        .news-list li{
+            display: block;
+            width:280px;
+            padding-left:13px;
+            line-height:36px;
+            font-size:14px;
+            background-image:url('img/dist.png');
+            background-position:left center;
+            background-repeat:no-repeat;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            white-space:nowrap;
+            overflow: hidden;
+        }
+        .news-list li a{
+        color:#333;
+        }
+
         /*banner*/
         .slider{
             overflow: hidden;
@@ -178,7 +240,110 @@
 
     <!--中间-->
     <div class="box-content">
-
+        <div class="container">
+            <div  class="box-message">
+                <div class="box-list">
+                    <div class="box-hd">
+                        <h2 class="title">新闻动态</h2>
+                        <a  href="#" class="more">更多>></a>
+                    </div>
+                    <div class="box-bd">
+                        <div class="headline">
+                            <div class="pic">
+                                <a href="#">
+                                    <img src="img/jjj.jpg.jpg" title="">
+                                </a>
+                            </div>
+                            <div class="text">
+                                <a href="#"> 佟大为“祖孙”助力360巴迪龙新品发布 </a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="news-list">
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划</a> </li>
+                    </ul>
+                </div>
+                <div class="box-list box-list-item">
+                    <div class="box-hd">
+                        <h2 class="title">新闻动态</h2>
+                        <a  href="#" class="more">更多>></a>
+                    </div>
+                    <div class="box-bd">
+                        <div class="headline">
+                            <div class="pic">
+                                <a href="#">
+                                    <img src="img/jjj.jpg.jpg" title="">
+                                </a>
+                            </div>
+                            <div class="text">
+                                <a href="#"> 佟大为“祖孙”助力360巴迪龙新品发布 </a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="news-list">
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划</a> </li>
+                    </ul>
+                </div>
+                <div class="box-list box-list-item">
+                    <div class="box-hd">
+                        <h2 class="title">新闻动态</h2>
+                        <a  href="#" class="more">更多>></a>
+                    </div>
+                    <div class="box-bd">
+                        <div class="headline">
+                            <div class="pic">
+                                <a href="#">
+                                    <img src="img/jjj.jpg.jpg" title="">
+                                </a>
+                            </div>
+                            <div class="text">
+                                <a href="#"> 佟大为“祖孙”助力360巴迪龙新品发布 </a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="news-list">
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划</a> </li>
+                    </ul>
+                </div>
+                <div class="box-list box-list-item">
+                    <div class="box-hd">
+                        <h2 class="title">新闻动态</h2>
+                        <a  href="#" class="more">更多>></a>
+                    </div>
+                    <div class="box-bd">
+                        <div class="headline">
+                            <div class="pic">
+                                <a href="#">
+                                    <img src="img/jjj.jpg.jpg" title="">
+                                </a>
+                            </div>
+                            <div class="text">
+                                <a href="#"> 佟大为“祖孙”助力360巴迪龙新品发布 </a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="news-list">
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划 </a> </li>
+                        <li><a href="#">360助力中国女排 强势开启奥运营销计划</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <!--底部-->
     <div class="footer">
