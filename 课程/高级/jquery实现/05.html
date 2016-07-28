@@ -45,62 +45,105 @@
                     this.length = 1;
                     return this;
                 } else {
-                    elem=context.querySelectorAll(selector);
-                    for(var i=0;i<elem.length;i++){
-                        this[i]=elem[i];
+                    elem = context.querySelectorAll(selector);
+                    for (var i = 0; i < elem.length; i++) {
+                        this[i] = elem[i];
                     }
-                    this.selector=selector;
-                    this.length=elem.length;
-                    this.context=context;
+                    this.selector = selector;
+                    this.length = elem.length;
+                    this.context = context;
                     return this;
                 }
 
             },
-            css:function(attr,val){
-                for(var i=0;i<this.length;i++){
-                    if(arguments.length=1){
-                        return getComputedStyle(this[i],null)[attr];
+            css: function (attr, val) {
+                for (var i = 0; i < this.length; i++) {
+                    if (arguments.length = 1) {
+                        return getComputedStyle(this[i], null)[attr];
                     }
-                    this[i].style[attr]=val;
+                    this[i].style[attr] = val;
                 }
                 return this;
             },
-            hasClass:function(cls){
+            hasClass: function (cls) {
                 /*^开头位置 $结束位置*/
-                var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
-                for(var i=0;i<this.length;i++){
-                    if(this[i].className.match(reg))return true
+                var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+                for (var i = 0; i < this.length; i++) {
+                    if (this[i].className.match(reg))return true
                     return false;
                 }
                 return this;
             },
-            addClass:function(cls){
-                var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
-                for(var i=0;i<this.length;i++){
-                    if(!this[i].className.match(reg)){
-                        this[i].className+=''+cls;
+            addClass: function (cls) {
+                var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+                for (var i = 0; i < this.length; i++) {
+                    if (!this[i].className.match(reg)) {
+                        this[i].className += '' + cls;
                     }
                 }
                 return this;
             },
-            removeClass:function(cls){
-                var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
-                for (var i=0;i<this.length;i++){
-                    if(this[i].className.match(reg)){
+            removeClass: function (cls) {
+                var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+                for (var i = 0; i < this.length; i++) {
+                    if (this[i].className.match(reg)) {
 //                        this[i].className.replace('cls',null);
-                        this[i].className=this[i].className.replace(''+cls+'');
+                        this[i].className = this[i].className.replace('' + cls + '');
                     }
                 }
                 return this;
             },
-            next:function(){
-                return sibling(this[0],'nextSibling');
+            next: function () {
+                return sibling(this[0], 'nextSibling');
             },
-            prev:function(){
-                return sibling(this[0],'previousSibling')
+            prev: function () {
+                return sibling(this[0], 'previousSibling')
+            },
+            parent: function () {
+                var parent = this[0].parentNode();
+                parent && parent.nodeType !== 11 ? parent : null;
+                var a = lts();
+                a[0] = parent;
+                a.selector = parent.tagName.toLocaleLowerCase();
+                a.length = 1;
+                return a;
+            },
+            parents: function () {
+                var a = lts(),
+                        i = 0;
+                while (this[0] = this[0]['parentNode'] && this[0].nodeType != 9) {
+                    if (this[0].nodeType === 1) {
+                        a[i] = this[0];
+                        i++;
+                    }
+                }
+                a.length = i;
+                return a;
+            },
+            find: function (selector) {
+                if (!selector)return;
+                var context = this.selector;
+                return new lts(selector + '' + context);
+            },
+            first:function(){
+                return new  lts(this[0]);
+            },
+            last:function(){
+                var num=this.length-1;
+                return new lts(this[num]);
+            },
+            eq:function(num){
+                var num=num<0?(this.length-1):num;
+                console.log(num);
+                return new lts(this[num]);
+            },
+            get:function(num){
+                var num=num<0?(this.length-1):num;
+                console.log(num);
+                return new this[num];
             }
 
-        }
+        };
         lts.prototype.init.prototype = lts.prototype;
         /*加载处理公用函数*/
         lts.ready = function (fn) {
@@ -108,11 +151,104 @@
                 fn && fn();
             }, false);
             doc.removeEventListener('DOMContentLoaded', fn, true);
-        }
-        function sibling(cur,dir){
-           while (cur=cur[dir]&&cur.nodeType!==1){}
+        };
+        lts.each = function (obj, callback) {
+            var len = obj.length,
+                    constru = obj.constructor,
+                    i = 0;
+            if (constru === window.S) {
+                for (; i < len; i++) {
+                    var val = callback.call(obj[i], i, obj[i]);
+                    if (val === false) break;
+                }
+            } else if (isArray(obj)) {
+                for (; i < len; i++) {
+                    var val = callback.call(obj[i], i, obj[i]);
+                    if (val === false) break;
+                }
+            } else {
+                for (i in obj) {
+                    var val = callback.call(obj[i], i, obj[i]);
+                    if (val === false) break;
+                }
+            }
+        };
+        lts.get=function(url,sucBack,complete){
+            var options={
+                url:url,
+                success:sucBack,
+                complete:complete
+            }
+            ajax(options);
+        };
+        lts.post=function(url,data,sucBack,complete){
+            var options={
+                url:url,
+                type:"POST",
+                data:data,
+                success:sucBack,
+                complete:complete
+            }
+            ajax(options);
+        };
+        function ajax(options){
+            var optionsDefault={
+                url:false,
+                type:'GET',
+                data:false,
+                success:false,
+                complete:false
+            }
+            for(i in optionsDefault){
+                if(options[i]===undefined){
+                    options[i]=optionsDefault;
+                }
+            }
+            var xhr=new XMLHttpRequest();
+            var url=options.url;
+            xhr.open(options.type,url);
+            xhr.onreadystatechange=onStateChange;
+            if(options.type==='POST'){
+                xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            }
+            xhr.send(options.data?options.data:null);
+            function onStateChange(){
+                    if(xhr.readyState==4){
+                        var result,
+                                status=xhr.status;
+                        /*xhr.readyState == 4  是表示后台处理完成了。
+                         xhr.status == 200 是表示处理的结果是OK的。*/
+                        if(status>=200&&status<300||status==304){
+                            result=xhr.responseText;
+                            if(window.JSON){
+                                result=JSON.parse(result);
+                            }else {
+                                result=eval('('+result+')');
+                            }
+                            ajaxSuccess(result,xhr);
+                        }else{
+                            console.log('ERR',xhr.status);
+                        }
+                    }
+            }
+            function ajaxSuccess(data,xhr){
+                var status='success';
+                options.success&&options.success(data,options,status,xhr);
+                ajaxComplete(status);
+            }
+            function ajaxComplete(status){
+                options.complete&&options.complete(status);
+            }
+        };
+        function sibling(cur, dir) {
+            while (cur = cur[dir] && cur.nodeType !== 1) {
+            }
             return cur;
+        };
+        function isArray(obj) {
+            return Array.isArray(obj);
         }
+
         window.S = lts;
     })(window, document)
 </script>
