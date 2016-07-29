@@ -30,13 +30,14 @@
                     this.length = selector.length;
                     return this;
                 } else if (typeof (selector) == 'function') {
-                    lts.ready(selector);
+                    lts.ready(fn);
                     return;
                 }
-                /*高级dom选择器 querySelectorAll ie6-7不支持*/
+
+                /*高级选择器*/
                 var context = context || doc,
                         elem;
-                if (selector.charAt(0) == '#' && !selector.match('\\s')) {
+                if (selector.charAt(0) == "#" && !selector.match('\\s')) {
                     this.selector = selector;
                     selector = selector.substring(1);
                     elem = doc.getElementById(selector);
@@ -54,26 +55,32 @@
                     this.context = context;
                     return this;
                 }
-
             },
             css: function (attr, val) {
                 for (var i = 0; i < this.length; i++) {
-                    if (arguments.length ==1) {
-                        /*getComputedStyle是一个可以获取当前元素所有最终使用的CSS属性值。返回的是一个CSS样式声明对象([object CSSStyleDeclaration])*/
-                        return getComputedStyle(this[i], null)[attr];
+                    if (typeof attr == 'string') {
+                        if (arguments.length == 1) {
+                            return getComputedStyle(this[i], null)[attr];
+                        }
+                        this[i].style[attr] = val;
+                    } else {
+                        var _this = this[i];
+                        lts.each(attr, function (attr, val) {
+                            _this.style.cssText += '' + attr + ':' + val + ';';
+                        });
                     }
-                    this[i].style[attr] = val;
                 }
                 return this;
             },
             hasClass: function (cls) {
-                /*^开头位置 $结束位置*/
                 var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+                var arr = [];
                 for (var i = 0; i < this.length; i++) {
-                    if (this[i].className.match(reg))return true
-                    return false;
+                    if (this[i].className.match(reg)) arr.push(true)
+                    else arr.push(false);
                 }
-                return this;
+                if (arr.indexOf(true) != -1) return true
+                else  return false;
             },
             addClass: function (cls) {
                 var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
@@ -88,8 +95,7 @@
                 var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
                 for (var i = 0; i < this.length; i++) {
                     if (this[i].className.match(reg)) {
-//                        this[i].className.replace('cls',null);
-                        this[i].className = this[i].className.replace('' + cls , '');
+                        this[i].className = this[i].className.replace('' + cls, '');
                     }
                 }
                 return this;
@@ -98,12 +104,12 @@
                 return sibling(this[0], 'nextSibling');
             },
             prev: function () {
-                return sibling(this[0], 'previousSibling')
+                return sibling(this[0], 'previousSibling');
             },
             parent: function () {
-                var parent = this[0].parentNode();
+                var parent = this[0].parentNode;
                 parent && parent.nodeType !== 11 ? parent : null;
-                var a = lts();
+                a = lts();
                 a[0] = parent;
                 a.selector = parent.tagName.toLocaleLowerCase();
                 a.length = 1;
@@ -112,45 +118,74 @@
             parents: function () {
                 var a = lts(),
                         i = 0;
-                while (this[0] = this[0]['parentNode'] && this[0].nodeType != 9) {
+                while ((this[0] = this[0]['parentNode']) && this[0].nodeType !== 9) {
                     if (this[0].nodeType === 1) {
                         a[i] = this[0];
                         i++;
                     }
+                    i++;
                 }
                 a.length = i;
                 return a;
             },
             find: function (selector) {
-                if (!selector)return;
+                if (!selector) return;
                 var context = this.selector;
-                return new lts(selector + '' + context);
+                return new lts(selector + '' + context)
             },
-            first:function(){
-                return new  lts(this[0]);
+            first: function () {
+                return new lts(this[0]);
             },
-            last:function(){
-                var num=this.length-1;
+            last: function () {
+                var num = this.length - 1;
                 return new lts(this[num]);
             },
-            eq:function(num){
-                var num=num<0?(this.length-1):num;
-                console.log(num);
+            eq: function (num) {
+                var num = num < 0 ? (this.length - 1) : num;
                 return new lts(this[num]);
             },
-            get:function(num){
-                var num=num<0?(this.length-1):num;
-                console.log(num);
-                return new this[num];
+            get: function (num) {
+                var num = num < 0 ? (this.length - 1) : num;
+                return this[num];
+            },
+            attr: function (attr, val) {
+                for (var i = 0; i < this.length; i++) {
+                    if (typeof attr == 'string') {
+                        if (arguments.length == 1) {
+                            return this[i].getAttribute(attr);
+                        }
+                        this[i].setAttribute(attr, val);
+                    } else {
+                        var _this = this[i];
+                        S.each(attr, function (attr, val) {
+                            _this.setAttribute(attr, val);
+                        });
+                    }
+                }
+                return this;
+            },
+            data: function (attr, val) {
+                    for(var i=0;i<this.length;i++){
+                        if(typeof attr=='string'){
+                            if(arguments.length==1){
+                               return this[i].getAttribute('data-'+attr);
+                            }
+                            this[i].setAttribute('data-'+attr,val);
+                        }else{
+                            S.each(attr,function(attr,val){
+                                var _this=this[i];
+                                _this.setAttribute('data-'+attr,val);
+                            });
+                        }
+                    }
+                return this;
             }
-
         };
         lts.prototype.init.prototype = lts.prototype;
-        /*加载处理公用函数*/
         lts.ready = function (fn) {
             doc.addEventListener('DOMContentLoaded', function () {
                 fn && fn();
-            }, false);
+            }, false)
             doc.removeEventListener('DOMContentLoaded', fn, true);
         };
         lts.each = function (obj, callback) {
@@ -160,98 +195,100 @@
             if (constru === window.S) {
                 for (; i < len; i++) {
                     var val = callback.call(obj[i], i, obj[i]);
-                    if (val === false) break;
+                    if (val === false)break;
                 }
             } else if (isArray(obj)) {
-                for (; i < len; i++) {
+                for (i; i < len; i++) {
                     var val = callback.call(obj[i], i, obj[i]);
-                    if (val === false) break;
+                    if (val === false)break;
                 }
             } else {
                 for (i in obj) {
                     var val = callback.call(obj[i], i, obj[i]);
-                    if (val === false) break;
+                    if (val === false)break;
                 }
             }
         };
         lts.get=function(url,sucBack,complete){
-            var options={
-                url:url,
-                success:sucBack,
-                complete:complete
-            }
+                var options={
+                    url:url,
+                    success:sucBack,
+                    complete:complete
+                }
             ajax(options);
         };
-        lts.post=function(url,data,sucBack,complete){
+        lts.post=function(url,sucBack,complete){
             var options={
                 url:url,
-                type:"POST",
-                data:data,
                 success:sucBack,
                 complete:complete
             }
             ajax(options);
         };
         function ajax(options){
-            var optionsDefault={
+            var optionsDefaults={
                 url:false,
                 type:'GET',
                 data:false,
                 success:false,
                 complete:false
-            }
-            for(i in optionsDefault){
+            };
+            for(i in optionsDefaults){
                 if(options[i]===undefined){
-                    options[i]=optionsDefault;
+                    options[i]=optionsDefaults[i]
                 }
             }
             var xhr=new XMLHttpRequest();
             var url=options.url;
+            var params=formatParams(options.data);
             xhr.open(options.type,url);
             xhr.onreadystatechange=onStateChange;
             if(options.type==='POST'){
                 xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
             }
-            xhr.send(options.data?options.data:null);
+            xhr.send(params?params:null);
             function onStateChange(){
-                    if(xhr.readyState==4){
-                        var result,
-                                status=xhr.status;
-                        /*xhr.readyState == 4  是表示后台处理完成了。
-                         xhr.status == 200 是表示处理的结果是OK的。*/
-                        if(status>=200&&status<300||status==304){
-                            result=xhr.responseText;
-                            if(window.JSON){
-                                result=JSON.parse(result);
-                            }else {
-                                result=eval('('+result+')');
-                            }
-                            ajaxSuccess(result,xhr);
-                        }else{
-                            console.log('ERR',xhr.status);
-                        }
+                if(xhr.readyState==4){
+                    var result,
+                            status=xhr.status;
+                    if(status>=200&&status<300||status==304){
+                        result=xhr.responseText;
+                        ajaxSuccess(result,xhr);
+                    }else {
+                        console.log('ERR',xhr.status);
                     }
+                }
             }
             function ajaxSuccess(data,xhr){
-                var status='success';
+                    var status='success';
                 options.success&&options.success(data,options,status,xhr);
                 ajaxComplete(status);
             }
             function ajaxComplete(status){
                 options.complete&&options.complete(status);
             }
-        };
+            function formatParams(data) {
+                var arr = [];
+                for (var name in data) {
+                    arr.push(encodeURIComponent(name) + "=" + encodeURIComponent(data[name]));
+                }
+                arr.push(("v=" + Math.random()).replace("."));
+                return arr.join("&");
+            }
+
+        }
         function sibling(cur, dir) {
             while (cur = cur[dir] && cur.nodeType !== 1) {
             }
             return cur;
-        };
+        }
+
         function isArray(obj) {
             return Array.isArray(obj);
         }
 
         window.S = lts;
-    })(window, document)
+    })(window, document);
 </script>
 </body>
 </html>
