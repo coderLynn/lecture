@@ -58,7 +58,8 @@
             },
             css: function (attr, val) {
                 for (var i = 0; i < this.length; i++) {
-                    if (arguments.length = 1) {
+                    if (arguments.length ==1) {
+                        /*getComputedStyle是一个可以获取当前元素所有最终使用的CSS属性值。返回的是一个CSS样式声明对象([object CSSStyleDeclaration])*/
                         return getComputedStyle(this[i], null)[attr];
                     }
                     this[i].style[attr] = val;
