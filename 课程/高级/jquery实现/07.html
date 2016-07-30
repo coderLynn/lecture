@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--http://www.hubwiz.com-->
+<script>
+    (function (window, document) {
+        var w = window,
+                doc = document;
+        var lts = function (selector, context) {
+            return new lts.prototype.init(selector, context);
+        }
+        lts.prototype = {
+            constructor: lts,
+            length: 0,
+            splice: [].splice,
+            selector: '',
+            init: function (selector, context) {
+                if (!selector) {
+                    return this;
+                }
+                if (typeof (selector) == 'object') {
+                    var selector = [selector];
+                    for (var i = 0; i < selector.length; i++) {
+                        this[i] = selector[i];
+                    }
+                    this.length = selector.length;
+                    return this;
+                } else if (typeof (selector) == 'function') {
+                    lts.ready(fn);
+                    return;
+                }
+                /*高级选择器*/
+
+                var context = context || doc,
+                        elem;
+                /*!!双重否定 相反*/
+                if (selector.charAt(0) == '#' && !selector.match('\\s')) {
+                    this.selector=selector;
+                    selector=selector.substring(1);
+                     elem=document.getElementById(selector);
+                    this[0]=elem;
+                    this.context=context;
+                    this.length=1;
+                    return this;
+                }else {
+                    elem=context.querySelectorAll(selector);
+                    for(var i=0;i<elem.length;i++){
+                        this[i]=elem[i];
+                    }
+                    this.selector=selector;
+                    this.length=elem.length;
+                    this.context=context;
+                    return this;
+                }
+            },
+            css:function(attr,val){
+                for(var i=0;i<this.length;i++){
+                    if(typeof attr=='string'){
+                        if(arguments.length==1){
+                            return getComputedStyle(this[i],null)[attr]
+                        }
+                        this[i].style[attr]=val;
+                    }else{
+                        var _this=this[i];
+                        lts.each(attr,function(attr,val){
+                            _this.style.cssText+=''+attr+':'+val+';';
+                        });
+                    }
+                }
+                return this;
+            },
+            html:function(value){
+                if(value===undefined){
+                    return  this[0].innerHTML;
+                }else {
+                            for(var i=0;i<this.length;i++){
+                                this[i].innerHTML=value;
+                            }
+                }
+                return this;
+            },
+            hasClass:function(cls){
+                var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                var arr=[];
+                for(var i=0;i<this.length;i++){
+                    if(this[i].className.match(reg)) arr.push(true)
+                    else arr.push(false);
+                }
+                if(arr.indexOf(true)!=-1)return true
+                else return false;
+            },
+            addClass:function(cls){
+                var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                for(var i=0;i<this.length;i++){
+                    if(!this[i].className.match(reg)){
+                        this[i].className+=''+cls;
+                    }
+                }
+                return this;
+            },
+            removeClass:function(cls){
+               var reg=new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                for(var i=0;i<this.length;i++){
+                    if(this[i].className.match(reg)){
+                        this[i].className=this[i].className.replace(''+cls,'');
+                    }
+                }
+                return this;
+            },
+            next:function(){
+                return sibling(this[0],'nextSibling');
+            }
+        }
+        lts.prototype.init.prototype = lts.prototype;
+        lts.ready = function (fn) {
+            doc.addEventListener('DOMContentLoaded', function () {
+                fn && fn();
+            }, false);
+            doc.removeEventListener('DOMContentLoaded', fn, true);
+        };
+        lts.each=function(obj,callback){
+                
+        };
+        function sibling(cur,dir){
+               while(cur=cur[dir]&&cur.nodeType!==1){}
+            return cur;
+        }
+        window.S = lts;
+    })(window, document)
+</script>
+</body>
+</html>
