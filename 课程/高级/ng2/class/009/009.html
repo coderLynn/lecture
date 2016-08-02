@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../angular2-beta-stack/dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+<lts-app></lts-app>
+<script type="text/typescript">
+    import {Component} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser";
+
+    @Component({
+        selector:"lts-reader",
+        properties:["tj"],
+        template:`
+            <img [src]="banner" *ngIf="tj==true" class="banner">
+            <pre>{{content}}</pre>
+        `
+    })
+    class LtsReader{
+        constructor(){
+            var _this=this;
+            _this.tj=true;
+            _this.banner="../1.png";
+            _this.content=`
+               \<h1> 未来之光qq官方群：424734136</h1>
+                未来之光所有课程免费，课程内容分为初级，中级，高级部分
+            `
+        }
+    }
+    @Component({
+        selector:"lts-app",
+        directives:[LtsReader],
+        template:`
+              <lts-reader [tj]="true"></lts-reader>
+        `
+    })
+    class LtsApp{}
+    bootstrap(LtsApp);
+
+</script>
+</body>
+</html>
