@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../angular2-beta-stack/dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+<lts-app></lts-app>
+<script type="text/typescript">
+    import {Component} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser";
+
+    @Component({
+        selector:"lts-readers",
+        template:`
+        <div>
+            <h1>{{autor}}</h1>
+            <ul>
+                <li *ngFor="#tj of flems">{{tj}}<li>
+            </ul>
+        </div>
+
+        `
+    })
+    class LtsReaders{
+        constructor(){
+            this.autor="未来之光qq官方群：424734136";
+            this.flems=[
+                "cls",
+                "node",
+                "jquery",
+                "angular",
+                "css",
+                "js",
+                "php",
+                "canvas",
+                "html5",
+                "css3"
+            ];
+        }
+    }
+@Component({
+    selector:"lts-app",
+    directives:[LtsReaders],
+    template:`
+        <lts-readers></lts-readers>
+    `
+})
+class LtsApp{}
+bootstrap(LtsApp);
+</script>
+</body>
+</html>
