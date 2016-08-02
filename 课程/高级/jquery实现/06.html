@@ -123,7 +123,6 @@
                         a[i] = this[0];
                         i++;
                     }
-                    i++;
                 }
                 a.length = i;
                 return a;
@@ -165,19 +164,19 @@
                 return this;
             },
             data: function (attr, val) {
-                    for(var i=0;i<this.length;i++){
-                        if(typeof attr=='string'){
-                            if(arguments.length==1){
-                               return this[i].getAttribute('data-'+attr);
-                            }
-                            this[i].setAttribute('data-'+attr,val);
-                        }else{
-                            S.each(attr,function(attr,val){
-                                var _this=this[i];
-                                _this.setAttribute('data-'+attr,val);
-                            });
+                for (var i = 0; i < this.length; i++) {
+                    if (typeof attr == 'string') {
+                        if (arguments.length == 1) {
+                            return this[i].getAttribute('data-' + attr);
                         }
+                        this[i].setAttribute('data-' + attr, val);
+                    } else {
+                        S.each(attr, function (attr, val) {
+                            var _this = this[i];
+                            _this.setAttribute('data-' + attr, val);
+                        });
                     }
+                }
                 return this;
             }
         };
@@ -209,64 +208,67 @@
                 }
             }
         };
-        lts.get=function(url,sucBack,complete){
-                var options={
-                    url:url,
-                    success:sucBack,
-                    complete:complete
-                }
-            ajax(options);
-        };
-        lts.post=function(url,sucBack,complete){
-            var options={
-                url:url,
-                success:sucBack,
-                complete:complete
+        lts.get = function (url, sucBack, complete) {
+            var options = {
+                url: url,
+                success: sucBack,
+                complete: complete
             }
             ajax(options);
         };
-        function ajax(options){
-            var optionsDefaults={
-                url:false,
-                type:'GET',
-                data:false,
-                success:false,
-                complete:false
+        lts.post = function (url, sucBack, complete) {
+            var options = {
+                url: url,
+                success: sucBack,
+                complete: complete
+            }
+            ajax(options);
+        };
+        function ajax(options) {
+            var optionsDefaults = {
+                url: false,
+                type: 'GET',
+                data: false,
+                success: false,
+                complete: false
             };
-            for(i in optionsDefaults){
-                if(options[i]===undefined){
-                    options[i]=optionsDefaults[i]
+            for (i in optionsDefaults) {
+                if (options[i] === undefined) {
+                    options[i] = optionsDefaults[i]
                 }
             }
-            var xhr=new XMLHttpRequest();
-            var url=options.url;
-            var params=formatParams(options.data);
-            xhr.open(options.type,url);
-            xhr.onreadystatechange=onStateChange;
-            if(options.type==='POST'){
-                xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            var xhr = new XMLHttpRequest();
+            var url = options.url;
+            var params = formatParams(options.data);
+            xhr.open(options.type, url);
+            xhr.onreadystatechange = onStateChange;
+            if (options.type === 'POST') {
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             }
-            xhr.send(params?params:null);
-            function onStateChange(){
-                if(xhr.readyState==4){
+            xhr.send(params ? params : null);
+            function onStateChange() {
+                if (xhr.readyState == 4) {
                     var result,
-                            status=xhr.status;
-                    if(status>=200&&status<300||status==304){
-                        result=xhr.responseText;
-                        ajaxSuccess(result,xhr);
-                    }else {
-                        console.log('ERR',xhr.status);
+                            status = xhr.status;
+                    if (status >= 200 && status < 300 || status == 304) {
+                        result = xhr.responseText;
+                        ajaxSuccess(result, xhr);
+                    } else {
+                        console.log('ERR', xhr.status);
                     }
                 }
             }
-            function ajaxSuccess(data,xhr){
-                    var status='success';
-                options.success&&options.success(data,options,status,xhr);
+
+            function ajaxSuccess(data, xhr) {
+                var status = 'success';
+                options.success && options.success(data, options, status, xhr);
                 ajaxComplete(status);
             }
-            function ajaxComplete(status){
-                options.complete&&options.complete(status);
+
+            function ajaxComplete(status) {
+                options.complete && options.complete(status);
             }
+
             function formatParams(data) {
                 var arr = [];
                 for (var name in data) {
@@ -277,6 +279,7 @@
             }
 
         }
+
         function sibling(cur, dir) {
             while (cur = cur[dir] && cur.nodeType !== 1) {
             }
@@ -291,4 +294,5 @@
     })(window, document);
 </script>
 </body>
-</html>
+</html>123456
+123456
