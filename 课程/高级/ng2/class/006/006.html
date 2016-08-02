@@ -3,8 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script type="text/javascript" src="../angular2-beta-stack/dist/angular2.beta.stack.min.js"></script>
 </head>
 <body>
+    <lts-app></lts-app>
 
+<script type="text/typescript">
+    import {Component,View} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser";
+
+    @Component({
+        selector:"lts-app"
+    })
+    @View({
+        template:`
+            <h1 bind-textContent="title"></h1>
+            <h2 #colors>未来之光qq官方群：424734136</h2>
+            <button (click)="colors.textContent='red'">点击改变颜色</button>
+        `
+    })
+    class LtsApp{
+        constructor(){
+            this.title="欢迎学习angular2";
+            this.color="red";
+        }
+    }
+
+    bootstrap(LtsApp);
+</script>
 </body>
 </html>
