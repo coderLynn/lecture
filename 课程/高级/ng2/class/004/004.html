@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../angular2-beta-stack/dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+<set-app></set-app>
+<script type="text/typescript">
+    import {Component} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser";
+
+    @Component({
+        selector:"lts-app",
+        properties:["name","works"],
+        styleUrls:["style/properties.css"],
+        template:`
+            <div class="lts-app">
+                我的名字是<b>{{name}}</b>,
+                我的工作是<b>{{works}}</b>
+            </div>
+        `
+    })
+
+    class LtsApp{
+        constructor(){
+            this.name="未来之光";
+            this.works="前端开发工程师";
+        }
+    }
+
+    @Component({
+        selector:"set-app",
+        directives:[LtsApp],
+        styleUrls:["style/properties.css"],
+        template:`
+            <div class="set-app">
+                <h1>未来之光</h1>
+                <lts-app></lts-app>
+            </div>
+        `
+    })
+
+    class SetApp{}
+
+    bootstrap(SetApp);
+
+</script>
+</body>
+</html>
