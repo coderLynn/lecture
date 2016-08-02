@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../angular2-beta-stack/dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+<lts-app></lts-app>
+<script type="text/typescript">
+    import {Component} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser";
+
+    @Component({
+        selector:'lts-app',
+         template:`
+           <h1 [ngClass]="lts">未来之光qq官方群：424734136</h1>
+           <p>未来之光所有课程免费，课程内容分为初级，中级，高级部分</p>
+        `,
+        styles:[`
+            .tj{
+                color:red;
+            }
+            .future{
+                background:#ccc;
+            }
+            .light{
+                text-shadow:1px 2px 3px #000;
+            }
+        `]
+    })
+    class LtsApp{
+        constructor(){
+            this.lts={
+                tj:true,
+                future:true,
+                light:true
+            }
+        }
+    }
+
+
+    bootstrap(LtsApp);
+
+</script>
+</body>
+</html>
