@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../angular2-beta-stack/dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+<lts-app></lts-app>
+<script type="text/typescript">
+    import {Component} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser";
+
+    @Component({
+        selector:'lts-app',
+        styles:[`
+         h1{font-size:14px;color:red;}
+         `],
+        template:`
+        <h1>这是 angular2 样式定义</h1>
+        <p>
+            这是内部定义样式，如果你需要定义外部的样式用styleUrls:['style.css']
+        </p>
+      `
+    })
+
+    class LtsApp{}
+
+    bootstrap(LtsApp);
+
+</script>
+</body>
+</html>
