@@ -14,6 +14,6 @@ properties - 声明属性
     //LtsApp
     @Component({
         directives : [LtsApp],
-        template : `<ez-card [name]="'雷锋'" [work]="'前端开发'"></ez-card>`
+        template : `<ez-card [name]="'未来之光'" [work]="'前端开发'"></ez-card>`
     })
 提醒：如果要在模板中使用自定义的指令（组件是一种指令），必须在Component注解的directives 属性中提前声明！
