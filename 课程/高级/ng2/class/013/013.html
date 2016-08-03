@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../angular2-beta-stack/dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+
+<lts-app></lts-app>
+
+<script type="text/typescript">
+    import {Component} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser";
+    import {CORE_DIRECTIVES,FORM_DIRECTIVES} from "angular2/common";
+
+    @Component({
+        selector:"lts-app",
+        directives:[CORE_DIRECTIVES,FORM_DIRECTIVES],
+        template:`
+                <form>
+                    <div>
+                        姓名：<input type="text" ngControl="name" [(ngModel)]="data.name" value="请输入姓名">
+                    </div>
+                    <div>
+                        性别：<select ngControl="gender" [(ngModel)]="data.gender">
+                            <option value="man">男</option>
+                            <option value="female">女</option>
+                        </select>
+                    </div>
+                    <div>
+                        地址：<input type="text" ngControl="address" [(ngModel)]="data.address">
+                    </div>
+                    <div>
+                        电话：<input type="text" ngControl="tel" [(ngModel)]="data.tel" >
+                    </div>
+                    <div>
+                        已婚：<input type="checkbox"  ngControl="marriage" [(ngModel)]="data.marriage">
+                    </div>
+                </form>
+                <pre>{{codes(data)}}</pre>
+        `,
+        styles:[`
+            form{
+                background:#e1f5fe;
+
+            }
+             div{
+                    padding:5px 0px;
+                }
+        `]
+    })
+
+    class LtsApp{
+        constructor(){
+            this.data={
+                name:"未来之光"
+            };
+        }
+        codes(val){
+		return JSON.stringify(val,null,"\t");
+	    }
+    }
+    bootstrap(LtsApp);
+</script>
+
+</body>
+</html>
