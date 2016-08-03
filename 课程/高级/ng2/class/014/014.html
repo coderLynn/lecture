@@ -17,11 +17,27 @@
         selector:"lts-app",
         directives:[CORE_DIRECTIVES,FORM_DIRECTIVES],
         template:`
-
+            <form #f="ngForm">
+                <ul ngControlGroup="base">
+                    <li>姓名：<input type="text" ngControl="name"></li>
+                    <li>地址：<input type="text" ngControl="dress"></li>
+                    <li>电话：<input type="text" ngControl="tel"></li>
+                </ul>
+                <ul ngControlGroup="skill">
+                    <li>html：<input type="checkbox" ngControl="html"></li>
+                    <li>css：<input type="checkbox" ngControl="css"></li>
+                    <li>jquery：<input type="checkbox" ngControl="jquery"></li>
+                </ul>
+            </form>
+            <pre>
+                {{decode(f.value)}}
+            </pre>
         `
     })
     class LtsApp{
-
+        decode(val){
+        return JSON.stringify(val,null,'\t');
+        }
     }
     bootstrap(LtsApp);
 </script>
