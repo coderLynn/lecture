@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../angular2-beta-stack/dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+<lts-reader></lts-reader>
+
+<script type="text/typescript">
+    import {Component} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser";
+    import {CORE_DIRECTIVES,FORM_DIRECTIVES} from "angular2/common";
+
+    @Component({
+        selector:"lts-reader",
+        directives:[FORM_DIRECTIVES,CORE_DIRECTIVES],
+        template:`
+            <form #f="ngForm" (submit)="search(f.value)">
+                  <select>
+                        <option value="node">node</option>
+                        <option value="jquery">jquery</option>
+                        <option value="angular">angular</option>
+                        <option value="html5">html5</option>
+                  </select>
+                  <input type="text"  ngControl="kw">
+                  <button  type="submit">search</button>
+            </form>
+            <h1 *ngIf="kw!=''"> 正在搜索...{{kw}}</h1>
+        `
+    })
+
+    class LtsReader{
+        constructor(){
+            this.kw="";
+        }
+        search(val){
+		this.kw = val.kw;
+		//假装在搜索，2秒钟返回
+		setTimeout(()=>this.kw="",2000);
+	}
+    }
+    bootstrap(LtsReader);
+</script>
+</body>
+</html>
