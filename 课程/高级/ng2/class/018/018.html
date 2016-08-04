@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+   <script type="text/javascript" src="../angular2-beta-stack/dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+<lts-app></lts-app>
+
+<script type="text/typescript">
+    import {Component,View,Inject,ElementRef,Directive,Renderer} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser";
+
+    @Directive({
+        selector:"[lts-renderer]",
+        inputs:["bgColor:lts-renderer"],
+        host:{
+            "(click)":"onClick($event)",
+            "(mouseover)":"onMouseOver()"
+        }
+    })
+    class LtsRenderer{
+        constructor(@Inject(ElementRef) er){
+            this.el=er.nativeElement;
+            this.el.style.cursor="pointer";
+            this.flag=true;
+        }
+        ngOnChanges(c){
+            this.el.style.background=this.bgColor;
+        }
+        onClick($event){
+            if(this.flag) this.el.style.background="transparent";
+            else this.el.style.background=this.bgColor;
+            this.flag=!this.flag;
+        }
+        onMouseOver(){
+             if(this.flag) this.el.style.fontWeight="normal";
+             else this.el.style.fontWeight="bold";
+             this.flag=!this.flag;
+        }
+    }
+    @Component({
+        selector:"lts-app"
+
+    })
+    @View({
+        directives:[LtsRenderer],
+        template:`
+           <p>未来之光qq官方群：<b [lts-renderer]="'red'">424734136</b></p>
+        `
+    })
+    class LtsApp{}
+    bootstrap(LtsApp);
+</script>
+
+</body>
+</html>
