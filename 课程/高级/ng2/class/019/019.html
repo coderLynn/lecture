@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../angular2-beta-stack/dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+<lts-app></lts-app>
+
+<script type="text/typescript">
+    import {Component,View,Directive,Renderer,Inject,ElementRef} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser";
+
+    @Directive({
+         selector:"[lts-rend]",
+         inputs:["bgColor:lts-rend"],
+         host:{
+            "(click)":"onClick($event)"
+         }
+    })
+    class LtsRend{
+        constructor(@Inject(ElementRef) er ,@Inject(Renderer) rend){
+                this.rend=rend;
+                this.er=er;
+                rend.setElementStyle(er,"cursor","pointer");
+                this.flag=true;
+        }
+        set bgColor(c){
+            this._bgColor=c;
+            this.rend.setElementStyle(this.er,"background",c);
+        }
+        get bgColor(){
+            return this._bgColor;
+        }
+        onClick($event){
+            if(this.flag) this.rend.setElementStyle(this.er,"background","transparent");
+            else this.rend.setElementStyle(this.er,"background",this.bgColor);
+            this.flag=!this.flag;
+        }
+    }
+
+    @Component({
+        selector:"lts-app",
+        directives:[LtsRend],
+        template:`
+             <p>未来之光qq官方群：<b [lts-rend]="'red'">424734136</b></p>
+        `
+    })
+
+    class LtsApp{}
+    bootstrap(LtsApp);
+</script>
+</body>
+</html>
