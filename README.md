@@ -23,7 +23,7 @@
    3.[课程第二讲](https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)<br />  
    4.[js高级选择器实现第一课](https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)<br />  
    5.[前端面试经典](https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)<br />  
-   6.[美团首页实线]html5+css3(https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)<br />  
+   6.[美团首页实现](https://github.com/tjlightfuture/lecture/blob/master/%E8%AF%BE%E7%A8%8B/html_css/7-27.html)<br />  
    7.[js高级课程部分](https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)<br />  
    8.[js高级选择器实现第二课](https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)<br />  
    9.[js高级选择器实现第三课](https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)<br />  
