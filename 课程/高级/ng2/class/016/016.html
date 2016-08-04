@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../angular2-beta-stack/dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+<lts-app></lts-app>
+<script type="text/typescript">
+ import {Component,View,Directive,ElementRef,Renderer,Inject} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser";
+
+    @Directive({selector:"[lts-hl]"})
+    class LtsReader{
+        constructor(@Inject(ElementRef) tj){
+              var el=tj.nativeElement;
+              el.style.background="red";
+              el.style.color="#fff";
+              el.style.padding="5px";
+        }
+    }
+
+    @Component({
+        selector:"lts-app",
+        directives:[LtsReader],
+        template:`
+            <p>未来之光qq官方群：<b lts-hl>424734136</b></p>
+        `
+
+    })
+    class LtsApp{}
+    bootstrap(LtsApp);
+</script>
+</body>
+</html>

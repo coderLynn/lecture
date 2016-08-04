@@ -4,6 +4,7 @@
 	   2.技术为学生分享<br />  
 	   3.每一项目都会有详细解答。<br />  
 	   4.此博客所有权为未来之光所有，违者必究！
+	   5.官方授课群号码：424734136；
    
    
 二.项目列表
@@ -17,17 +18,17 @@
    5.[html+css第四讲](https://github.com/tjlightfuture/lecture/blob/master/%E8%AF%BE%E7%A8%8B/html_css/7-27.html)<br />  
    B.高级部分
 --------------------------------------------------------   
-   1.jquery详细讲解<br />  
-   2.js正则表达式<br />  
-   3.课程第二讲<br />  
-   4.js高级选择器实现第一课<br />  
-   5.前端面试经典<br />  
-   6.美团首页实线html5+css3<br />  
-   7.js高级课程部分<br />  
-   8.js高级选择器实现第二课<br />  
-   9.js高级选择器实现第三课<br />  
-   10.js高级框架设计第四讲<br />  
-   11.js高级框架设计第五讲
+   1.[jquery详细讲解](https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)<br />  
+   2.[js正则表达式](https://github.com/tjlightfuture/lecture/blob/master/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.doc)<br />  
+   3.[课程第二讲](https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)<br />  
+   4.[js高级选择器实现第一课](https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)<br />  
+   5.[前端面试经典](https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)<br />  
+   6.[美团首页实现](https://github.com/tjlightfuture/lecture/blob/master/%E8%AF%BE%E7%A8%8B/html_css/7-27.html)<br />  
+   7.[js高级课程部分](https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)<br />  
+   8.[js高级选择器实现第二课](https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)<br />  
+   9.[js高级选择器实现第三课](https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)<br />  
+   10.[js高级框架设计第四讲](https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)<br />  
+   11.[js高级框架设计第五讲](https://github.com/tjlightfuture/lecture/tree/master/%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%BA%A7/jquery%E5%AE%9E%E7%8E%B0)
    
    
    
