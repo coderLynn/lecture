@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../angular2-beta-stack/dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+    <lts-app></lts-app>
+
+<script type="text/typescript">
+    import {Component,View,Directive,ElementRef,Renderer,Inject} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser";
+
+    @Directive({
+        selector:"[lts-renderer]",
+        inputs:['bgColor:lts-renderer']
+    })
+    class LtsRenderer{
+        constructor(@Inject(ElementRef) tj){
+                this.tj=tj;
+        }
+        set bgColor(bColor){
+            var el=this.tj.nativeElement;
+            el.style.background=bColor;
+        }
+    }
+    //组件定义
+    @Component({
+        selector:"lts-app",
+        directives:[LtsRenderer],
+        template:`
+            <p>未来之光qq官方群：<b [lts-renderer]="'red'">424734136</b></p>
+        `
+    })
+    class LtsApp{
+        constructor(){}
+    }
+    bootstrap(LtsApp);
+</script>
+</body>
+</html>
