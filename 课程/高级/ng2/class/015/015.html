@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script  type="text/javascript" src="../angular2-beta-stack/dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+<lts-app></lts-app>
+<!--
+        与NgControlName指令不同，NgFormControl将已有的控件/Control对象绑定到DOM元素 上。
+        当需要对输入的值进行初始化时，可以使用NgFormControl指令。
+        与NgControlName指令的另一个区别是，NgFormControl不需要NgForm或NgFormModel的祖先。
+-->
+<script type="text/typescript">
+    import {Component} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser";
+    import {Control,FORM_DIRECTIVES} from "angular2/common";
+
+    @Component({
+          selector:"lts-app",
+          directives:[FORM_DIRECTIVES],
+          template:`
+                <div>
+                    <ul>
+                        <li>name：<input type="text" [ngFormControl]="name"></li>
+                        <li>dress：<input type="text" [ngFormControl]="dress"></li>
+                        <li>tel：<input type="text" [ngFormControl]="tel"></li>
+                    </ul>
+                </div>
+                <pre>{{down()}}</pre>
+          `
+    })
+    class LtsApp{
+         constructor(){
+            this.name=new Control("未来之光");
+            this.dress=new Control("https://www.github.com/tjlightfuture");
+            this.tel=new Control("110");
+         }
+        down(){
+            var val={
+                name:this.name.value,
+                dress:this.dress.value,
+                tel:this.tel.value
+            }
+
+            return JSON.stringify(val,null,"\t");
+        }
+    }
+    bootstrap(LtsApp)
+</script>
+</body>
+</html>
