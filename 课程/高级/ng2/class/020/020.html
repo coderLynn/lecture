@@ -9,7 +9,79 @@
 <lts-app></lts-app>
 
 <script type="text/typescript">
+    import {Inject,Component} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser";
+    //引入路由相关类型定义
+    import {
+        LocationStrategy,Router,
+        ROUTER_DIRECTIVES,ROUTER_PROVIDERS
+    } from "angular2/router";
 
+
+    @Component({
+        selector:"lts-node",
+        template:`
+            <h1>未来之光qq官方群：<b>424734136</b></h1>
+            <p>这是node界面</p>
+        `,
+        styles:[`
+            b{
+                color:red;
+            }
+        `]
+    })
+
+    class LtsNode{}
+
+    @Component({
+        selector:"lts-angular",
+        template:`
+            <h1>未来之光qq官方群：<b>424734136</b></h1>
+            <p>这是angular界面</p>
+        `
+    })
+
+    class LtsAngular{}
+
+    //路由连接
+    @Component({
+        selector:"lts-app",
+        directives:[ROUTER_DIRECTIVES],
+        template:`
+            <nav>
+                <a (click)="go(['node'])">node</a>|
+                <a (click)="go(['angular'])">angular</a>
+            </nav>
+            <main>
+			<!--声明路由出口-->
+			<router-outlet></router-outlet>
+		    </main>
+        `,
+        styles:[`
+            a:hover{
+                color:#FD0404!important;
+            }
+            a{
+                cursor:pointer;
+            }
+
+        `]
+    })
+    class LtsApp{
+        constructor(@Inject(Router) lt,@Inject(LocationStrategy) ls){
+		ls.pushState = function(){};//simple hack for crash bug.
+		this.router=lt;
+		this.router.config([
+		    {path:"/node",component:LtsNode,name:"node"},
+		    {path:"angular",component:LtsAngular,name:"angular"}
+		])
+	}
+	go(path){
+	    this.router.navigate(path);
+	}
+    }
+
+    bootstrap(LtsApp,[ROUTER_PROVIDERS]);
 
 </script>
 </body>
