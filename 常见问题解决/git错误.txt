@@ -28,3 +28,14 @@ git pull
 
 
 3.记住空文件夹是不能上传的。
+
+
+
+4.错误信息：
+bower error status code of git: 128
+fatal: unable to connect to github.com:
+github.com[0: 你的IP]: errno=Operation timed out
+原因：
+需要用https才能读到数据
+解决方法：输入命令
+git config --global url."https://".insteadOf git://
