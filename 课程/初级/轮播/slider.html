@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播广告</title>
+    <style>
+        body, div, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        body {
+            background: #000;
+            text-align: center;
+            font: 12px/20px Arial;
+        }
+
+        #box {
+            position: relative;
+            width: 492px;
+            height: 172px;
+            background: #fff;
+            border-radius: 5px;
+            border: 8px solid #fff;
+            margin: 10px auto;
+        }
+
+        #box .list {
+            position: relative;
+            width: 490px;
+            height: 170px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+
+        #box .list li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 490px;
+            height: 170px;
+            opacity: 0;
+            transition: opacity 0.5s linear
+        }
+
+        #box .list li.current {
+            opacity: 1;
+        }
+
+        #box .count {
+            position: absolute;
+            right: 0;
+            bottom: 5px;
+        }
+
+        #box .count li {
+            color: #fff;
+            float: left;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            margin-right: 5px;
+            overflow: hidden;
+            background: #F90;
+            opacity: 0.7;
+            border-radius: 20px;
+        }
+
+        #box .count li.current {
+            color: #fff;
+            opacity: 0.7;
+            font-weight: 700;
+            background: #f60
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul class="list">
+        <li class="current" style="opacity: 1;"><img src="img/images04/01.jpg" width="490" height="170"></li>
+        <li style="opacity: 0;"><img src="img/images04/02.jpg" width="490" height="170"></li>
+        <li style="opacity: 0;"><img src="img/images04/03.jpg" width="490" height="170"></li>
+        <li style="opacity: 0;"><img src="img/images04/04.jpg" width="490" height="170"></li>
+        <li style="opacity: 0;"><img src="img/images04/05.jpg" width="490" height="170"></li>
+    </ul>
+    <ul class="count">
+        <li class="current">1</li>
+        <li class="">2</li>
+        <li class="">3</li>
+        <li class="">4</li>
+        <li class="">5</li>
+    </ul>
+</div>
+
+
+<script>
+    var _Box=document.getElementById("box");
+    var uls=_Box.getElementsByTagName("ul");
+    var lists=uls[0].getElementsByTagName("li");
+    var counts=uls[1].getElementsByTagName("li");
+    console.log(_Box,uls,lists,counts);
+    var i=index=0;
+    var play=null;
+    function show(a){
+        for(var i=0;i<lists.length;i++){
+            lists[i].style.opacity=0;
+            lists[a].style.opacity=1;
+        }
+        for(var i=0;i<counts.length;i++){
+            counts[i].className="";
+            counts[a].className="current";
+        }
+    }
+
+    for(var i=0;i<counts.length;i++){
+        counts[i].index=i;
+        counts[i].onmouseover=function(){
+            show(this.index);
+            clearInterval(play);
+        }
+    }
+
+    function autoPlay(){
+         play=setInterval(function(){
+            index++;
+            index>lists.length&&(index=0);
+            show(index);
+        },1000)
+    }
+    autoPlay();
+    _Box.onmouseover=function(){
+        clearInterval(play);
+    }
+    _Box.onmouseout=function(){
+        autoPlay();
+    }
+
+
+</script>
+</body>
+</html>
