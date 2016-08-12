@@ -18,12 +18,12 @@ router.get('/reg', function(req, res, next) {
 });
 
 
-router.get('/reg', function(req, res, next) {
-    res.render('user/register', { reg: '注册' });
+router.get('/video', function(req, res, next) {
+    res.render('video', { title: '视频播放列表' });
 });
 
-router.get('/reg', function(req, res, next) {
-    res.render('user/register', { reg: '注册' });
+router.get('/videos', function(req, res, next) {
+    res.render('videos', { title: '视频播放页面' });
 });
 
 

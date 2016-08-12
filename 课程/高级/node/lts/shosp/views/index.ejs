@@ -144,7 +144,7 @@
               type:'GET',
               success:function(data){
                   $(".project-body .col").each(function(i){
-                      $(this).find(".thumbnail-header").text(data[i]['name']);
+                      $(this).find(".thumbnail-header").text(data[i]['name']).removeClass("bg-purple").addClass(data[i]['tbg']);
                       $(this).find(".caption h3").text(data[i]['title']);
                       $(this).find(".caption p").text(data[i]['intrce']);
                   });
