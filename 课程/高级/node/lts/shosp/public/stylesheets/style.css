@@ -219,7 +219,7 @@ h3 {
   background: #0769ad;
   border: 0 none;
   color: #fff;
-  max-width: 400px;
+  min-width: 285px;
   width: 100%;
   border-radius: 4px;
 }
