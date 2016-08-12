@@ -1,0 +1,208 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+li{
+  list-style:none;
+}
+
+/*头部*/
+.wrapper {
+  /*标题公用*/
+  .title {
+    font-size: 100px;
+  }
+  .itd {
+    font-size: 30px;
+    padding: 10px 5px;
+    line-height: 1.25;
+  }
+  @hdt: 60px;
+  header {
+    position: relative;
+    height: @hdt;
+    background: #282c34;
+    line-height: @hdt;
+    padding-left: 10px;
+    .ui-login {
+      color: #fff;
+      position: absolute;
+      right: 20px;
+      top: 0px;
+    }
+    a {
+      padding: 0 10px;
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+/*底部*/
+footer {
+  padding: 30px 0px;
+  margin-top: 70px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 100%;
+}
+
+p {
+  line-height: 25px;
+}
+
+.intruce {
+  color: #fff;
+  background: #020031;
+  background: -webkit-linear-gradient(45deg, #020031 0, #6d3353 100%);
+  text-align: center;
+  padding: 90px 0 110px;
+}
+
+/*技术*/
+.link-fs{
+  text-align:center;
+  padding:15px 0px;
+  background-color:#f5f5f5;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #ddd;
+}
+.list-fs li{
+  line-height:1;
+  display:inline-block;
+}
+
+/*项目主体*/
+.project-header {
+  width: 60%;
+  text-align: center;
+  margin: 60px 0 10px;
+  font-weight: 200;
+  margin-bottom: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-body {
+  .col{
+    width: 25%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .thumbnail-item {
+    padding:4px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+  }
+  .caption{
+    padding:9px;
+    height: 200px;
+    overflow-y: hidden;
+    color: #555;
+    h3{
+      padding:5px 0 10px;
+    }
+    p{
+      padding-bottom:10px;
+    }
+  }
+}
+
+.float-left {
+  float: left;
+}
+h3{
+  font-size: 24px;
+}
+.thumbnail-header{
+  line-height:130px;
+  font-size:24px;
+  text-align:center;
+  width:100%;
+  height: 130px;
+  color:#fff;
+}
+@purple:#6f5499;
+.bg-purple{
+  background: @purple;
+}
+@blue:#0769ad;
+.bg-blue{
+  background:@blue;
+}
+@green:#4caf50;
+.bg-green{
+  background: @green;
+}
+@red:#cf4646;
+.bg-red{
+  background: @red;
+}
+@yellow:#f0db4f;
+.bg-yellow{
+  background:@yellow;
+}
+.clearfix{
+  &:after{
+    display: table;
+    content: " ";
+    display: block;
+    height: 1px;
+    clear: both;
+  }
+  &:before{
+    display: table;
+    content: " ";
+    display: block;
+    height: 1px;
+    clear: both;
+  }
+
+}
+@media (min-width: 768px)
+{
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px)
+{
+  .container {
+    width: 970px;
+  }
+
+}
+@media (min-width: 1200px)
+{
+  .container {
+    width: 1170px;
+  }
+}
