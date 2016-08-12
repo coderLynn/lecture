@@ -249,6 +249,12 @@ h3 {
   .float-left {
     float: none;
   }
+  header {
+    overflow-x: scroll;
+  }
+  header nav {
+    white-space: nowrap;
+  }
 }
 @media (min-width: 768px) {
   .container {
