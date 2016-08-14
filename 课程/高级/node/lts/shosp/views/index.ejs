@@ -136,13 +136,10 @@
      </div>
      <% include comm/footer.ejs %>
  </div>
-  <script src="javascripts/jquery-1.9.1.min.js"></script>
+
   <script>
       ;$(function(){
-          $(".nav-toggle").click(function(){
-              $(this).parent("header").toggleClass("height-auto")
-                $(this).siblings(".nav-toggle-down").slideToggle(1000);
-          });
+
 
           $.ajax({
               url:"/index.json",

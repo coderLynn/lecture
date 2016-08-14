@@ -28,19 +28,21 @@
         </div>
         <div class="project-body clearfix">
                 <div class="content-form">
-                    <div class="login-list">
-                    <div class="form-list-input">
-                        <span class="ui-btn-text">用户名：</span>
-                        <input  class="control-input" name="user" type="text" placeholder="请输入用户名">
-                    </div>
-                    <div class="form-list-input">
-                        <span class="ui-btn-text">密码：</span>
-                        <input class="control-input" name="pass" type="password" placeholder="请输密码">
-                    </div>
-                    <div class="form-list-button">
-                        <button class="ui-btton">登录</button>
-                    </div>
-                </div>
+                    <form action="/loginAction" method="post">
+                        <div class="login-list">
+                            <div class="form-list-input">
+                                <span class="ui-btn-text">用户名：</span>
+                                <input  class="control-input" name="user" type="text" placeholder="请输入用户名">
+                            </div>
+                            <div class="form-list-input">
+                                <span class="ui-btn-text">密码：</span>
+                                <input class="control-input" name="pass" type="password" placeholder="请输密码">
+                            </div>
+                            <div class="form-list-button">
+                                <input class="ui-btton" type="submit" value="登陆">
+                            </div>
+                        </div>
+                    </form>
                 </div>
 
         </div>
