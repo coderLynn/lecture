@@ -39,3 +39,8 @@ github.com[0: 你的IP]: errno=Operation timed out
 需要用https才能读到数据
 解决方法：输入命令
 git config --global url."https://".insteadOf git://
+
+
+
+
+5.git fetch --all 强制更新覆盖本地

@@ -4,7 +4,7 @@ var fs=require('fs');
 var user=require('../database/db').user;
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    var JsonObj=JSON.parse(fs.readFileSync('public/index.json'));
+    var JsonObj=JSON.parse(fs.readFileSync('/index.json'));
     console.log(JsonObj);
     res.render('index', { title: '未来之光', project:JsonObj.a});
 });
@@ -14,7 +14,9 @@ router.get('/login', function(req, res, next) {
 });
 router.post('/loginAction',function(req,res){
     console.log(req.body.user);
+    console.log(user);
     var query_doc = {name: req.body.user, password: req.body.pass};
+    console.log(query_doc);
     (function(){
         user.count(query_doc, function(err, doc){
             if(doc == 1){
@@ -30,6 +32,16 @@ router.post('/loginAction',function(req,res){
 });
 router.get('/reg', function(req, res, next) {
     res.render('user/register', { reg: '注册' });
+}).post('/regAction',function(req,res,next){
+    var reg_qurey={name:req.body.user,password:req.body.pass,repass:req.body.repass};
+    console.log(reg_qurey);
+    (function(){
+        user.find(reg_qurey,function(err,obj){
+            if(obj.length==0){
+
+            }
+        })
+    })(reg_qurey);
 });
 
 

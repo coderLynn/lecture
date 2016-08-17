@@ -29,23 +29,25 @@
         <div class="project-body clearfix">
 
             <div class="content-form">
-                <div class="login-list">
-                    <div class="form-list-input">
-                        <span class="ui-btn-text">用户名：</span>
-                        <input  class="control-input" type="text" name="user" placeholder="请输入用户名">
+                <form action="regAction" method="post">
+                    <div class="login-list">
+                        <div class="form-list-input">
+                            <span class="ui-btn-text">用户名：</span>
+                            <input  class="control-input" type="text" name="user" placeholder="请输入用户名">
+                        </div>
+                        <div class="form-list-input">
+                            <span class="ui-btn-text">密码：</span>
+                            <input class="control-input" type="password" name="pass" placeholder="请输密码">
+                        </div>
+                        <div class="form-list-input">
+                            <span class="ui-btn-text">密码：</span>
+                            <input class="control-input" type="password" name="repass" placeholder="请输密码">
+                        </div>
+                        <div class="form-list-button">
+                            <input class="ui-btton" type="submit" value="注册">
+                        </div>
                     </div>
-                    <div class="form-list-input">
-                        <span class="ui-btn-text">密码：</span>
-                        <input class="control-input" type="password" name="pass" placeholder="请输密码">
-                    </div>
-                    <div class="form-list-input">
-                        <span class="ui-btn-text">密码：</span>
-                        <input class="control-input" type="password" name="repass" placeholder="请输密码">
-                    </div>
-                    <div class="form-list-button">
-                        <button class="ui-btton">注册</button>
-                    </div>
-                </div>
+                </form>
             </div>
 
         </div>
