@@ -26,6 +26,9 @@
   2.node<br>
 四.首页图片展示
 ================
+  pc端截图
  ![未来之光首页展示](ltsindex.png)
+ ipad截图
  ![未来之光pad首页展示](padindex.png)
+ 手机端截图
  ![未来之光手机首页展示](phoneinde.png)
