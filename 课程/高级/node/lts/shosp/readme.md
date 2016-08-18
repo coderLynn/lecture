@@ -11,18 +11,18 @@
  ![未来之光手机首页展示](phoneinde.png)
 二.实现技术:
 ====================
-  1.node
-  2.angular2
-  3.less
-  4.gulp
-  5.mongodb
-  6.jquery
-  7.ajax
-  8.npm
-  9.ejs
-  10.响应式
-  11.html5
-  12.css3
+  1.node<br>
+  2.angular2<br>
+  3.less<br>
+  4.gulp<br>
+  5.mongodb<br>
+  6.jquery<br>
+  7.ajax<br>
+  8.npm<br>
+  9.ejs<br>
+  10.响应式<br>
+  11.html5<br>
+  12.css3<br>
 三.环境
-  1.npm这个是必须环境
-  2.node
+  1.npm这个是必须环境<br>
+  2.node<br>
