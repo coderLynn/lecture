@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    $.ajax({
+
+        type: "get",
+
+        url: "http://www.xxx.com/test.html",
+
+        beforeSend: function(XMLHttpRequest){
+
+            //ShowLoading();这里放加载动画
+
+
+        },
+
+        success: function(data, textStatus){
+
+            //do something
+
+        },
+
+        complete: function(XMLHttpRequest, textStatus){
+
+            //HideLoading();这里隐藏加载的动画或者移除加载动画
+
+        },
+
+        error: function(){
+
+            //请求出错处理
+
+        }
+
+    });
+</script>
+</body>
+</html>
