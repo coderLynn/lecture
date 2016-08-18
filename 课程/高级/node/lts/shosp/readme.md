@@ -9,3 +9,20 @@
  ![未来之光首页展示](ltsindex.png)
  ![未来之光pad首页展示](padindex.png)
  ![未来之光手机首页展示](phoneinde.png)
+二.实现技术:
+====================
+  1.node
+  2.angular2
+  3.less
+  4.gulp
+  5.mongodb
+  6.jquery
+  7.ajax
+  8.npm
+  9.ejs
+  10.响应式
+  11.html5
+  12.css3
+三.环境
+  1.npm这个是必须环境
+  2.node
