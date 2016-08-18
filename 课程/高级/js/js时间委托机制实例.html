@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+             var oul=document.getElementById("oul");
+            /*console.log(oul);//在控制台打印有ul树表明获取成功。
+             var oli=oul.getElementsByTagName("li");
+             console.log(oli);
+             for(var i=0;i<oli.length;i++){
+             oli[i].addEventListener('click',function(e){
+             alert(e.target.innerHTML);
+             });
+             }*/
+            //事件委托机制
+            oul.addEventListener('click',function(e){
+                console.log(oul);
+                if(e.target&&e.target.nodeName.toUpperCase()=="LI"){
+                    alert(e.target.innerHTML);
+                }
+            },false);
+        }
+        //当ul里面的li元素频繁更改的时候我们就要用到事件代理解决这个问题。下面我们用事件委托机制作
+
+
+    </script>
+</head>
+<body>
+<ul id="oul">
+    <li>第一项</li>
+    <li>第二项</li>
+    <li>第三项</li>
+    <li>第四项</li>
+    <li>第五项</li>
+</ul>
+</body>
+</html>
