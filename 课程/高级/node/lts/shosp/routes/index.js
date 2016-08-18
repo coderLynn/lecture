@@ -36,9 +36,29 @@ router.get('/reg', function(req, res, next) {
     var reg_qurey={name:req.body.user,password:req.body.pass,repass:req.body.repass};
     console.log(reg_qurey);
     (function(){
-        user.find(reg_qurey,function(err,obj){
-            if(obj.length==0){
+        user.findOne(reg_qurey,function(err,doc){
+            if(err){
+                res.send(500);
+//                req.session.error='网络异常错误';
+                console.log(err);
+            }else if(doc){
+//                req.session.error = '用户名已存在！';
+                res.send(500);
+            }else{
+                user.create({
+                    name:reg_qurey.name,
+                    password:reg_qurey.password
+                },function(err,doc){
+                    if(err){
+                        res.send(500);
+                        console.log(err);
+                    }else{
+//                        req.session.error="用户创建成功";
+                        res.render('user/login', { title:"用户创建成功！" });
+                        res.send(200);
 
+                    }
+                })
             }
         })
     })(reg_qurey);
