@@ -1,0 +1,2 @@
+一.Socket socket=new Socket("127.0.0.1",4700);新建一个socket
+  1.PrintWriter od=new PrintWriter(Socket.getOutputStream)//用socket对象得到输入流
