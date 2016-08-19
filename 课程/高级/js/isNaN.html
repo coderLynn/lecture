@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+//    var NaN=isNaN;
+//    console.log(typeof NaN);
+
+    var arr = [ '100px', 'abc'-6, [], -98765, 34, -2,0, '300', , function(){alert(1);}, null, document, [], true, '200px'-30,'23.45元', 5, Number('abc'), function(){ alert(3); }, 'xyz'-90 ];
+
+    function nanIndex (){
+        for(i=0;i<arr.length;i++){
+            if(typeof arr[i] == 'string'){
+//                alert("这是string"+i);
+            }else if(typeof arr[i] == 'undefined'){
+//                alert("这是undefined"+i);
+            }else if(typeof arr[i] == 'object'){
+//                alert("这是object"+i);
+            }else if(typeof arr[i] == 'function'){
+//                alert("这是function"+i);
+            }else if(isNaN(arr[i])){
+                alert(i);
+            }
+        }
+    }
+    nanIndex();
+//    var arr=[100,2,"100",'abc'];
+//    for(i=0;i<arr.length;i++){
+//        if(isNaN(arr[i])){
+//            alert(arr[i]);
+//        }
+//    }
+//    console.log();
+</script>
+</body>
+</html>

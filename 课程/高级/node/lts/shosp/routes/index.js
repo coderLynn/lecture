@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var fs=require('fs');
 var user=require('../database/db').user;
+var CryptoJS = require("crypto-js");
 /* GET home page. */
 router.get('/', function(req, res, next) {
     var JsonObj=JSON.parse(fs.readFileSync('/index.json'));
@@ -14,7 +15,6 @@ router.get('/login', function(req, res, next) {
 });
 router.post('/loginAction',function(req,res){
     console.log(req.body.user);
-    console.log(user);
     var query_doc = {name: req.body.user, password: req.body.pass};
     console.log(query_doc);
     (function(){
@@ -34,7 +34,8 @@ router.get('/reg', function(req, res, next) {
     res.render('user/register', { reg: '注册' });
 }).post('/regAction',function(req,res,next){
     var reg_qurey={name:req.body.user,password:req.body.pass,repass:req.body.repass};
-    console.log(reg_qurey);
+    var pass = CryptoJS.MD5(reg_qurey.password).toString();
+    console.log(pass);
     (function(){
         user.findOne(reg_qurey,function(err,doc){
             if(err){
@@ -47,16 +48,17 @@ router.get('/reg', function(req, res, next) {
             }else{
                 user.create({
                     name:reg_qurey.name,
-                    password:reg_qurey.password
+                    password:pass
                 },function(err,doc){
                     if(err){
                         res.send(500);
                         console.log(err);
                     }else{
 //                        req.session.error="用户创建成功";
-                        res.render('user/login', { title:"用户创建成功！" });
-                        res.send(200);
+//                        res.render('user/regAction', { title :"用户创建成功，请先登录！" });
 
+//                        res.send(200);
+                        res.redirect('/login');
                     }
                 })
             }
@@ -64,6 +66,10 @@ router.get('/reg', function(req, res, next) {
     })(reg_qurey);
 });
 
+
+router.get('/upfiles',function(req,res,next){
+    res.render('user/upwrite',{title:'文章上传'});
+})
 
 router.get('/video', function(req, res, next) {
     res.render('video', { title: '视频播放列表' });
