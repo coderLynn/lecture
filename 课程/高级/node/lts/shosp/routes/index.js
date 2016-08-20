@@ -2,9 +2,10 @@ var express = require('express');
 var router = express.Router();
 var fs=require('fs');
 var user=require('../database/db').user;
+var CryptoJS = require("crypto-js");
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    var JsonObj=JSON.parse(fs.readFileSync('public/index.json'));
+    var JsonObj=JSON.parse(fs.readFileSync('/index.json'));
     console.log(JsonObj);
     res.render('index', { title: '未来之光', project:JsonObj.a});
 });
@@ -15,6 +16,7 @@ router.get('/login', function(req, res, next) {
 router.post('/loginAction',function(req,res){
     console.log(req.body.user);
     var query_doc = {name: req.body.user, password: req.body.pass};
+    console.log(query_doc);
     (function(){
         user.count(query_doc, function(err, doc){
             if(doc == 1){
@@ -30,8 +32,44 @@ router.post('/loginAction',function(req,res){
 });
 router.get('/reg', function(req, res, next) {
     res.render('user/register', { reg: '注册' });
+}).post('/regAction',function(req,res,next){
+    var reg_qurey={name:req.body.user,password:req.body.pass,repass:req.body.repass};
+    var pass = CryptoJS.MD5(reg_qurey.password).toString();
+    console.log(pass);
+    (function(){
+        user.findOne(reg_qurey,function(err,doc){
+            if(err){
+                res.send(500);
+//                req.session.error='网络异常错误';
+                console.log(err);
+            }else if(doc){
+//                req.session.error = '用户名已存在！';
+                res.send(500);
+            }else{
+                user.create({
+                    name:reg_qurey.name,
+                    password:pass
+                },function(err,doc){
+                    if(err){
+                        res.send(500);
+                        console.log(err);
+                    }else{
+//                        req.session.error="用户创建成功";
+//                        res.render('user/regAction', { title :"用户创建成功，请先登录！" });
+
+//                        res.send(200);
+                        res.redirect('/login');
+                    }
+                })
+            }
+        })
+    })(reg_qurey);
 });
 
+
+router.get('/upfiles',function(req,res,next){
+    res.render('user/upwrite',{title:'文章上传'});
+})
 
 router.get('/video', function(req, res, next) {
     res.render('video', { title: '视频播放列表' });

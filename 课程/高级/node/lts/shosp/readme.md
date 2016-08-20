@@ -6,6 +6,29 @@
   4.在浏览器输入你的localhost:3000就会看到官网首页。<br>
   5.本网站兼容手机端;<br>
   6.如果遇到任何问题请加群：424734136我们会解答您的问题<br>
- ![未来之光首页展示](ltsindex.png)
- ![未来之光pad首页展示](padindex.png)
- ![未来之光手机首页展示](phoneinde.png)
+二.实现技术:
+====================
+  1.node<br>
+  2.angular2<br>
+  3.less<br>
+  4.gulp<br>
+  5.mongodb<br>
+  6.jquery<br>
+  7.ajax<br>
+  8.npm<br>
+  9.ejs<br>
+  10.响应式<br>
+  11.html5<br>
+  12.css3<br>
+三.环境
+=============================
+  1.npm这个是必须环境<br>
+  2.node<br>
+四.首页图片展示
+================
+  pc端截图<br>
+ ![未来之光首页展示](ltsindex.png)<br>
+ ipad截图<br>
+ ![未来之光pad首页展示](padindex.png)<br>
+ 手机端截图<br>
+ ![未来之光手机首页展示](phoneinde.png)<br>
