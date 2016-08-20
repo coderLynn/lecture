@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+   <% include ../comm/style.ejs %>
+  </head>
+  <body>
+ <div class="wrapper">
+  <% include ../comm/header.ejs %>
+     <div class="intruce">
+         <div class="container">
+             <h1 class="title"><%= title %></h1>
+             <p class="itd">欢迎来到<%= title %>博客，未来之光致力于免费培训，课程有初级到高级，全部课程免费！</p>
+         </div>
+     </div>
+     <div class="container">
+         <div class="project-body clearfix">
+             <div class="content-form">
+                 <form action="/upfiles" method="post">
+                     <div class="login-list">
+                         <div class="form-list-input">
+                             <span class="ui-btn-text">标题：</span>
+                             <input  class="control-input" name="title" type="text" placeholder="请输入标题">
+                         </div>
+                         <div class="form-list-input">
+                             <span class="ui-btn-text">内容：</span>
+                             <textarea class="control-input-textarear" rows="300"  name="uptext" ></textarea>
+                         </div>
+                         <div class="form-list-button">
+                             <input class="ui-btton" type="submit" value="提交">
+                         </div>
+                     </div>
+                 </form>
+             </div>
+
+         </div>
+     </div>
+  <% include ../comm/footer.ejs %>
+  </div>
+  </body>
+  </html>
+  
