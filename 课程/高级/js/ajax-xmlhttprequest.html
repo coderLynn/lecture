@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="data">
+<div id="load"></div>
+<script>
+    var ajax={
+        /*1.创建xmlhttprequest请求*/
+        createXmlHttp:function(){
+            //非ie浏览器
+            if(window.XMLHttpRequest){
+                xmlHttp=new XMLHttpRequest();
+            }
+            //ie浏览器
+            if(window.ActiveXObject){
+                try {
+                    xmlHttp=new ActiveXObject('Microsoft.XMLHTTP');
+                }catch (e){
+                    try {
+                        xmlHttp=new ActiveXObject('msxml2.XMLHTTP');
+                    }catch (e){}
+                }
+            }
+        },
+        testAjax:function(){
+            var data=document.getElementById("data").value;
+            this.createXmlHttp();
+            if(!xmlHttp){
+                alert("创建xml对象异常");
+                return false;
+            }
+            var url="json.json";
+            /*2.打开链接，向服务请求*/
+            xmlHttp.open("POST",url,true);
+            xmlHttp.onreadystatechange=function(){
+                if(xmlHttp.readyState==4){
+                document.getElementById("load").innerHTML="数据正在加载......";
+                    if(xmlHttp.status==200){
+                        document.write(xmlHttp.responseText);
+                    }
+                }
+            }
+            //发送请求
+            xmlHttp.send();
+        }
+    }
+    ajax.testAjax();
+
+
+
+    /*　如上所示，函数首先检查XMLHttpRequest的整体状态并且保证它已经完成（readyStatus=4），即数据已经发送完毕。然后根据服务器的设定询问请求状态，如果一切已经就绪（status=200），那么就执行下面需要的操作。
+     对于XmlHttpRequest的两个方法，open和send，其中open方法指定了：
+     a、向服务器提交数据的类型，即post还是get。
+     b、请求的url地址和传递的参数。
+     c、传输方式，false为同步，true为异步。默认为true。如果是异步通信方式(true)，客户机就不等待服务器的响应；如果是同步方式(false)，客户机就要等到服务器返回消息后才去执行其他操作。我们需要根据实际需要来指定同步方式，在某些页面中，可能会发出多个请求，甚至是有组织有计划有队形大规模的高强度的request，而后一个是会覆盖前一个的，这个时候当然要指定同步方式。
+     Send方法用来发送请求。*/
+</script>
+</body>
+</html>
