@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    <!--apply call bind 在js中都可以改变上下文-->
+
+    function name(){
+
+    }
+    name.prototype={
+        job:"web",
+        can:function () {
+            console.log("他会"+this.job);
+        }
+    }
+    var app=new name();
+    app.can();
+
+    /*如果我们有一个方法是banner={job:"js"}这时我们的apply和call就派上用场了*/
+    banner={
+        job:"js"
+    }
+    app.can.call(banner);
+    app.can.apply(banner);
+
+
+
+    var a=['js','angular2'];
+    var b=['css','html','css3','html5'];
+    Array.prototype.push.apply(a,b);
+    console.log(a);
+
+/*判断是否是数组*/
+   function isArray(obj){
+       return Object.prototype.toString.call(obj)==='[object Array]'
+    }
+    console.log(isArray(b));
+
+
+    var c=function(){
+        console.log(this.color);
+    }
+    var obj={
+        color:"yellow"
+    }
+    c();
+    var sts=c.bind(obj);
+    sts();
+</script>
+</body>
+</html>

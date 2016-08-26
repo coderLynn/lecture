@@ -2536,7 +2536,7 @@ var ts;
         Option_inlineSources_can_only_be_used_when_either_option_inlineSourceMap_or_option_sourceMap_is_provided: { code: 5051, category: ts.DiagnosticCategory.Error, key: "Option 'inlineSources' can only be used when either option '--inlineSourceMap' or option '--sourceMap' is provided." },
         Option_0_cannot_be_specified_without_specifying_option_1: { code: 5052, category: ts.DiagnosticCategory.Error, key: "Option '{0}' cannot be specified without specifying option '{1}'." },
         Option_0_cannot_be_specified_with_option_1: { code: 5053, category: ts.DiagnosticCategory.Error, key: "Option '{0}' cannot be specified with option '{1}'." },
-        A_tsconfig_json_file_is_already_defined_at_Colon_0: { code: 5054, category: ts.DiagnosticCategory.Error, key: "A 'tsconfig.json' file is already defined at: '{0}'." },
+        A_tsconfig_json_file_is_already_defined_at_Colon_0: { code: 5054, category: ts.DiagnosticCategory.Error, key: "A 'json.json' file is already defined at: '{0}'." },
         Concatenate_and_emit_output_to_single_file: { code: 6001, category: ts.DiagnosticCategory.Message, key: "Concatenate and emit output to single file." },
         Generates_corresponding_d_ts_file: { code: 6002, category: ts.DiagnosticCategory.Message, key: "Generates corresponding '.d.ts' file." },
         Specifies_the_location_where_debugger_should_locate_map_files_instead_of_generated_locations: { code: 6003, category: ts.DiagnosticCategory.Message, key: "Specifies the location where debugger should locate map files instead of generated locations." },
@@ -2592,8 +2592,8 @@ var ts;
         Enables_experimental_support_for_emitting_type_metadata_for_decorators: { code: 6066, category: ts.DiagnosticCategory.Message, key: "Enables experimental support for emitting type metadata for decorators." },
         Enables_experimental_support_for_ES7_async_functions: { code: 6068, category: ts.DiagnosticCategory.Message, key: "Enables experimental support for ES7 async functions." },
         Specifies_module_resolution_strategy_Colon_node_Node_js_or_classic_TypeScript_pre_1_6: { code: 6069, category: ts.DiagnosticCategory.Message, key: "Specifies module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6)." },
-        Initializes_a_TypeScript_project_and_creates_a_tsconfig_json_file: { code: 6070, category: ts.DiagnosticCategory.Message, key: "Initializes a TypeScript project and creates a tsconfig.json file." },
-        Successfully_created_a_tsconfig_json_file: { code: 6071, category: ts.DiagnosticCategory.Message, key: "Successfully created a tsconfig.json file." },
+        Initializes_a_TypeScript_project_and_creates_a_tsconfig_json_file: { code: 6070, category: ts.DiagnosticCategory.Message, key: "Initializes a TypeScript project and creates a json.json file." },
+        Successfully_created_a_tsconfig_json_file: { code: 6071, category: ts.DiagnosticCategory.Message, key: "Successfully created a json.json file." },
         Suppress_excess_property_checks_for_object_literals: { code: 6072, category: ts.DiagnosticCategory.Message, key: "Suppress excess property checks for object literals." },
         Variable_0_implicitly_has_an_1_type: { code: 7005, category: ts.DiagnosticCategory.Error, key: "Variable '{0}' implicitly has an '{1}' type." },
         Parameter_0_implicitly_has_an_1_type: { code: 7006, category: ts.DiagnosticCategory.Error, key: "Parameter '{0}' implicitly has an '{1}' type." },
@@ -35990,7 +35990,7 @@ var ts;
     var emptyArray = [];
     ts.version = "1.7.3";
     function findConfigFile(searchPath) {
-        var fileName = "tsconfig.json";
+        var fileName = "json.json";
         while (true) {
             if (ts.sys.fileExists(fileName)) {
                 return fileName;
@@ -37259,7 +37259,7 @@ var ts;
     }
     ts.parseCommandLine = parseCommandLine;
     /**
-      * Read tsconfig.json file
+      * Read json.json file
       * @param fileName The path to the config file
       */
     function readConfigFile(fileName, readFile) {
@@ -37274,7 +37274,7 @@ var ts;
     }
     ts.readConfigFile = readConfigFile;
     /**
-      * Parse the text of the tsconfig.json file
+      * Parse the text of the json.json file
       * @param fileName The path to the config file
       * @param jsonText The text of the config file
       */
@@ -37288,7 +37288,7 @@ var ts;
     }
     ts.parseConfigFileTextToJson = parseConfigFileTextToJson;
     /**
-      * Parse the contents of a config file (tsconfig.json).
+      * Parse the contents of a config file (json.json).
       * @param json The contents of the config file to parse
       * @param basePath A root directory to resolve relative path entries in the config
       *    file to. e.g. outDir
