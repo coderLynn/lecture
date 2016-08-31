@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="ou"></div>
+<script src="../jquery/jquery-demo/jquery-1.9.1.min.js"></script>
+<script>
+   $(function(){
+       var ditydata = [
+           "颜色分类:黄色;尺码:38",
+           "颜色分类:黄色;尺码:38",
+           "颜色分类:浅棕色;尺码:38",
+           "颜色分类:浅棕色;尺码:38",
+           "颜色分类:黄色;尺码:40",
+           "颜色分类:黄色;尺码:40",
+           "颜色分类:黄色;尺码:41",
+           "颜色分类:黄色;尺码:41"
+       ];
+       var ditydata_dict = {};
+       var _html = $("<ul></ul>");
+       $.each(ditydata, function (index, val) {
+           var splits = val.split(";");
+           if (ditydata_dict[val] == undefined){
+               ditydata_dict[val] = 1;
+               _html.append('<li><a href="javascript:void(0);" data-n="' + val + '">' + splits['1'] + '</a></li>');
+           }else{
+               ditydata_dict[val]++;
+               _html.find('a[data-n="' + val + '"]').text(splits['1'] + ' - ' + ditydata_dict[val]);
+           }
+       });
+       $(".ou").html(_html);
+   });
+</script>
+</body>
+</html>
