@@ -1,0 +1,1 @@
+Fengs.add("kdrj/req",function(e,r,n){var t=new n(47,"KD_");return t.compile=function(e,n){if(!e||""===e)return!1;if("string"==typeof e)try{e=r.parseJSON(e).sududa}catch(t){return!1}else e=e.sududa;return"-9"===e.status&&e.tips.indexOf("时间戳已过期")>-1?(n&&n(),!1):!0},t},["common/base-require"]);

@@ -19,6 +19,9 @@ var plugin={
     },
     show:function(){
         console.log("这里是显示div");
+    },
+    downplug:function(){
+        console.log("这里是下来插件");
     }
 
 }

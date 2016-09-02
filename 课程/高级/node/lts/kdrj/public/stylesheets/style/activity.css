@@ -1,0 +1,2037 @@
+body,
+div,
+ul,
+ol,
+dl,
+dt,
+dd,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-family: 'Arial,Simsun,Microsoft Yahei';
+  font-weight: normal;
+}
+i,
+em {
+  font-style: normal;
+}
+ol,
+ul,
+li {
+  list-style: none;
+  display: block;
+}
+img,
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+body {
+  position: relative;
+  width: 100%;
+  min-width: 1200px;
+  background: #5db3fc;
+}
+a {
+  text-decoration: none;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/*第一张图小图标效果 */
+@-webkit-keyframes scale {
+  0% {
+    -webkit-transform: scale(0);
+    -o-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+  25% {
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  50% {
+    -webkit-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+  75% {
+    -webkit-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-o-keyframes scale {
+  0% {
+    -webkit-transform: scale(0);
+    -o-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+  25% {
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  50% {
+    -webkit-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+  75% {
+    -webkit-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-moz-keyframes scale {
+  0% {
+    -webkit-transform: scale(0);
+    -o-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+  25% {
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  50% {
+    -webkit-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+  75% {
+    -webkit-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-ms-keyframes scale {
+  0% {
+    -webkit-transform: scale(0);
+    -o-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+  25% {
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  50% {
+    -webkit-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+  75% {
+    -webkit-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes scale {
+  0% {
+    -webkit-transform: scale(0);
+    -o-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+  25% {
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  50% {
+    -webkit-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+  75% {
+    -webkit-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+/* 所有分类 */
+.suofen {
+  width: 1200px;
+  height: 379px;
+  margin: 0 auto ;
+  background: #fff;
+}
+.suofen .xunxg {
+  width: 1156px;
+  height: 36px;
+  line-height: 36px;
+  margin: 18px 22px 0;
+  float: left;
+}
+.suofen .xunxg a {
+  color: #303030;
+  font-size: 18px;
+  float: left;
+}
+.suofen .xunxg .clr1 {
+  font-family: '微软雅黑';
+}
+.suofen .xunxg .font {
+  font-size: 14px;
+  font-family: Helvetica, Arial, "宋体", "微软雅黑";
+  color: #f40;
+}
+.suofen .xunxg i {
+  width: 5px;
+  height: 36px;
+  float: left;
+  margin: 0 10px;
+}
+.suofen .xunxg .pot1 {
+  background: url('../../images/spfl/xunxg-icon1.png') no-repeat left 14px;
+}
+.suofen .xunxg .pot2 {
+  background: url('../../images/spfl/xunxg-icon1.png') no-repeat right 14px;
+}
+.suofen .flexslider {
+  width: 100%;
+  height: 322px;
+  margin-top: 3px;
+  position: relative;
+  zoom: 1;
+}
+.suofen .flexslider ul {
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+.suofen .flexslider ul li {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: none;
+  -webkit-backface-visibility: hidden;
+}
+.suofen .flexslider ul .slide_1 {
+  background: url('../../images/activity/slide-round6.png') no-repeat;
+}
+.suofen .flexslider ul .slide_1 .wrap-width {
+  height: 100%;
+  position: relative;
+}
+.suofen .flexslider ul .slide_1 .wrap-width .round1 {
+  width: 452px;
+  height: 198px;
+  position: absolute;
+  left: 369px;
+  top: 37px;
+  background: url('../../images/activity/slide-round5.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transform: translate3d(0px,-50px,0);
+  -o-transform: translate3d(0px,-50px,0);
+  -moz-transform: translate3d(0px,-50px,0);
+  -ms-transform: translate3d(0px,-50px,0);
+  transform: translate3d(0px,-50px,0);
+}
+.suofen .flexslider ul .slide_1 .wrap-width .round2 {
+  width: 1111px;
+  height: 253px;
+  position: absolute;
+  left: 77px;
+  top: 0px;
+  background: url('../../images/activity/slide-round7.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transform: translate3d(0px,10px,0);
+  -o-transform: translate3d(0px,10px,0);
+  -moz-transform: translate3d(0px,10px,0);
+  -ms-transform: translate3d(0px,10px,0);
+  transform: translate3d(0px,10px,0);
+}
+.suofen .flexslider ul .slide_1 .wrap-width .round3 {
+  width: 122px;
+  height: 123px;
+  position: absolute;
+  left: -52px;
+  top: 158px;
+  background: url('../../images/activity/slide-round1.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_1 .wrap-width .round4 {
+  width: 138px;
+  height: 151px;
+  position: absolute;
+  left: 186px;
+  top: 84px;
+  background: url('../../images/activity/slide-round2.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_1 .wrap-width .round5 {
+  width: 191px;
+  height: 200px;
+  position: absolute;
+  right: 134px;
+  top: 67px;
+  background: url('../../images/activity/slide-round3.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_1 .wrap-width .round6 {
+  width: 157px;
+  height: 134px;
+  position: absolute;
+  right: -63px;
+  top: 142px;
+  background: url('../../images/activity/slide-round4.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_1.flex-active-slide .round1 {
+  opacity: 1;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate3d(0px,0px,0) rotate(0deg);
+  -o-transform: translate3d(0px,0px,0) rotate(0deg);
+  -moz-transform: translate3d(0px,0px,0) rotate(0deg);
+  -ms-transform: translate3d(0px,0px,0) rotate(0deg);
+  transform: translate3d(0px,0px,0) rotate(0deg);
+}
+.suofen .flexslider ul .slide_1.flex-active-slide .round2 {
+  opacity: 1;
+  -webkit-transition: all 0.5s 0.3s;
+  -o-transition: all 0.5s 0.3s;
+  -moz-transition: all 0.5s 0.3s;
+  -ms-transition: all 0.5s 0.3s;
+  transition: all 0.5s 0.3s;
+  -webkit-transform: translate3d(0px,0px,0);
+  -o-transform: translate3d(0px,0px,0);
+  -moz-transform: translate3d(0px,0px,0);
+  -ms-transform: translate3d(0px,0px,0);
+  transform: translate3d(0px,0px,0);
+}
+.suofen .flexslider ul .slide_1.flex-active-slide .round3,
+.suofen .flexslider ul .slide_1.flex-active-slide .round6 {
+  opacity: 1;
+  -webkit-animation: scale 1s alternate linear;
+  -o-animation: scale 1s alternate linear;
+  -moz-animation: scale 1s alternate linear;
+  -ms-animation: scale 1s alternate linear;
+  animation: scale 1s alternate linear;
+}
+.suofen .flexslider ul .slide_1.flex-active-slide .round4 {
+  opacity: 1;
+  -webkit-animation: scale 1.2s alternate linear;
+  -o-animation: scale 1.2s alternate linear;
+  -moz-animation: scale 1.2s alternate linear;
+  -ms-animation: scale 1.2s alternate linear;
+  animation: scale 1.2s alternate linear;
+}
+.suofen .flexslider ul .slide_1.flex-active-slide .round5 {
+  opacity: 1;
+  -webkit-animation: scale .8s alternate linear;
+  -o-animation: scale .8s alternate linear;
+  -moz-animation: scale .8s alternate linear;
+  -ms-animation: scale .8s alternate linear;
+  animation: scale .8s alternate linear;
+}
+.suofen .flexslider ul .slide_2 {
+  background: #8826ed;
+}
+.suofen .flexslider ul .slide_2 .wrap-width {
+  height: 100%;
+  position: relative;
+}
+.suofen .flexslider ul .slide_2 .wrap-width .round1 {
+  width: 708px;
+  height: 321px;
+  position: absolute;
+  left: 259px;
+  top: 0px;
+  background: url('../../images/activity/slidet-round8.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transform: translate3d(0px,0px,0);
+  -o-transform: translate3d(0px,0px,0);
+  -moz-transform: translate3d(0px,0px,0);
+  -ms-transform: translate3d(0px,0px,0);
+  transform: translate3d(0px,0px,0);
+}
+.suofen .flexslider ul .slide_2 .wrap-width .round2 {
+  width: 446px;
+  height: 145px;
+  position: absolute;
+  left: 394px;
+  top: 68px;
+  background: url('../../images/activity/slidet-round7.png') no-repeat;
+  z-index: 4;
+  opacity: 0;
+  -webkit-transform: translate3d(0px,50px,0);
+  -o-transform: translate3d(0px,50px,0);
+  -moz-transform: translate3d(0px,50px,0);
+  -ms-transform: translate3d(0px,50px,0);
+  transform: translate3d(0px,50px,0);
+}
+.suofen .flexslider ul .slide_2 .wrap-width .round3 {
+  width: 135px;
+  height: 133px;
+  position: absolute;
+  left: -40px;
+  top: 135px;
+  background: url('../../images/activity/slidet-round1.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_2 .wrap-width .round4 {
+  width: 144px;
+  height: 164px;
+  position: absolute;
+  left: 140px;
+  top: 98px;
+  background: url('../../images/activity/slidet-round2.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_2 .wrap-width .round5 {
+  width: 63px;
+  height: 63px;
+  position: absolute;
+  left: 304px;
+  top: 55px;
+  background: url('../../images/activity/slidet-round3.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_2 .wrap-width .round6 {
+  width: 89px;
+  height: 89px;
+  position: absolute;
+  right: 181px;
+  top: 108px;
+  background: url('../../images/activity/slidet-round4.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_2 .wrap-width .round7 {
+  width: 130px;
+  height: 104px;
+  position: absolute;
+  right: 21px;
+  top: 191px;
+  background: url('../../images/activity/slidet-round5.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_2 .wrap-width .round8 {
+  width: 152px;
+  height: 94px;
+  position: absolute;
+  right: -56px;
+  top: 61px;
+  background: url('../../images/activity/slidet-round6.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_2.flex-active-slide .round1 {
+  opacity: 1;
+  -webkit-transition: all 0.5s 0.3s;
+  -o-transition: all 0.5s 0.3s;
+  -moz-transition: all 0.5s 0.3s;
+  -ms-transition: all 0.5s 0.3s;
+  transition: all 0.5s 0.3s;
+  -webkit-transform: translate3d(0px,0px,0);
+  -o-transform: translate3d(0px,0px,0);
+  -moz-transform: translate3d(0px,0px,0);
+  -ms-transform: translate3d(0px,0px,0);
+  transform: translate3d(0px,0px,0);
+}
+.suofen .flexslider ul .slide_2.flex-active-slide .round2 {
+  opacity: 1;
+  -webkit-transition: all .8s;
+  -o-transition: all .8s;
+  -moz-transition: all .8s;
+  -ms-transition: all .8s;
+  transition: all .8s;
+  -webkit-transform: translate3d(0px,0px,0) rotate(0deg);
+  -o-transform: translate3d(0px,0px,0) rotate(0deg);
+  -moz-transform: translate3d(0px,0px,0) rotate(0deg);
+  -ms-transform: translate3d(0px,0px,0) rotate(0deg);
+  transform: translate3d(0px,0px,0) rotate(0deg);
+}
+.suofen .flexslider ul .slide_2.flex-active-slide .round3,
+.suofen .flexslider ul .slide_2.flex-active-slide .round8 {
+  opacity: 1;
+  -webkit-animation: scale 1s alternate linear;
+  -o-animation: scale 1s alternate linear;
+  -moz-animation: scale 1s alternate linear;
+  -ms-animation: scale 1s alternate linear;
+  animation: scale 1s alternate linear;
+}
+.suofen .flexslider ul .slide_2.flex-active-slide .round4,
+.suofen .flexslider ul .slide_2.flex-active-slide .round6 {
+  opacity: 1;
+  -webkit-animation: scale 1.2s alternate linear;
+  -o-animation: scale 1.2s alternate linear;
+  -moz-animation: scale 1.2s alternate linear;
+  -ms-animation: scale 1.2s alternate linear;
+  animation: scale 1.2s alternate linear;
+}
+.suofen .flexslider ul .slide_2.flex-active-slide .round5,
+.suofen .flexslider ul .slide_2.flex-active-slide .round7 {
+  opacity: 1;
+  -webkit-animation: scale .8s alternate linear;
+  -o-animation: scale .8s alternate linear;
+  -moz-animation: scale .8s alternate linear;
+  -ms-animation: scale .8s alternate linear;
+  animation: scale .8s alternate linear;
+}
+.suofen .flexslider ul .slide_3 {
+  background: #ff682d;
+}
+.suofen .flexslider ul .slide_3 .wrap-width {
+  height: 100%;
+  position: relative;
+}
+.suofen .flexslider ul .slide_3 .wrap-width .round1 {
+  width: 534px;
+  height: 154px;
+  position: absolute;
+  left: 326px;
+  top: 53px;
+  background: url('../../images/activity/slides-round7.png') no-repeat;
+  z-index: 4;
+  opacity: 0;
+  -webkit-transform: translate3d(0px,-50px,0);
+  -o-transform: translate3d(0px,-50px,0);
+  -moz-transform: translate3d(0px,-50px,0);
+  -ms-transform: translate3d(0px,-50px,0);
+  transform: translate3d(0px,-50px,0);
+}
+.suofen .flexslider ul .slide_3 .wrap-width .round2 {
+  width: 697px;
+  height: 321px;
+  position: absolute;
+  left: 112px;
+  top: 0px;
+  background: url('../../images/activity/slides-round8.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transform: translate3d(0px,0px,0);
+  -o-transform: translate3d(0px,0px,0);
+  -moz-transform: translate3d(0px,0px,0);
+  -ms-transform: translate3d(0px,0px,0);
+  transform: translate3d(0px,0px,0);
+}
+.suofen .flexslider ul .slide_3 .wrap-width .round3 {
+  width: 123px;
+  height: 103px;
+  position: absolute;
+  left: -31px;
+  top: 67px;
+  background: url('../../images/activity/slides-round1.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_3 .wrap-width .round4 {
+  width: 189px;
+  height: 118px;
+  position: absolute;
+  left: 56px;
+  top: 168px;
+  background: url('../../images/activity/slides-round2.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_3 .wrap-width .round5 {
+  width: 173px;
+  height: 136px;
+  position: absolute;
+  left: 258px;
+  top: 38px;
+  background: url('../../images/activity/slides-round3.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_3 .wrap-width .round6 {
+  width: 92px;
+  height: 180px;
+  position: absolute;
+  right: 234px;
+  top: 87px;
+  background: url('../../images/activity/slides-round4.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_3 .wrap-width .round7 {
+  width: 102px;
+  height: 99px;
+  position: absolute;
+  right: 71px;
+  top: 74px;
+  background: url('../../images/activity/slides-round5.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_3 .wrap-width .round8 {
+  width: 85px;
+  height: 102px;
+  position: absolute;
+  right: -25px;
+  top: 184px;
+  background: url('../../images/activity/slides-round6.png') no-repeat;
+  z-index: 2;
+  opacity: 0;
+}
+.suofen .flexslider ul .slide_3.flex-active-slide .round1 {
+  opacity: 1;
+  -webkit-transition: all .8s;
+  -o-transition: all .8s;
+  -moz-transition: all .8s;
+  -ms-transition: all .8s;
+  transition: all .8s;
+  -webkit-transform: translate3d(0px,0px,0) rotate(0deg);
+  -o-transform: translate3d(0px,0px,0) rotate(0deg);
+  -moz-transform: translate3d(0px,0px,0) rotate(0deg);
+  -ms-transform: translate3d(0px,0px,0) rotate(0deg);
+  transform: translate3d(0px,0px,0) rotate(0deg);
+}
+.suofen .flexslider ul .slide_3.flex-active-slide .round2 {
+  opacity: 1;
+  -webkit-transition: all 0.5s 0.3s;
+  -o-transition: all 0.5s 0.3s;
+  -moz-transition: all 0.5s 0.3s;
+  -ms-transition: all 0.5s 0.3s;
+  transition: all 0.5s 0.3s;
+  -webkit-transform: translate3d(0px,0px,0);
+  -o-transform: translate3d(0px,0px,0);
+  -moz-transform: translate3d(0px,0px,0);
+  -ms-transform: translate3d(0px,0px,0);
+  transform: translate3d(0px,0px,0);
+}
+.suofen .flexslider ul .slide_3.flex-active-slide .round3,
+.suofen .flexslider ul .slide_3.flex-active-slide .round8 {
+  opacity: 1;
+  -webkit-animation: scale 1s alternate linear;
+  -o-animation: scale 1s alternate linear;
+  -moz-animation: scale 1s alternate linear;
+  -ms-animation: scale 1s alternate linear;
+  animation: scale 1s alternate linear;
+}
+.suofen .flexslider ul .slide_3.flex-active-slide .round4,
+.suofen .flexslider ul .slide_3.flex-active-slide .round6 {
+  opacity: 1;
+  -webkit-animation: scale 1.2s alternate linear;
+  -o-animation: scale 1.2s alternate linear;
+  -moz-animation: scale 1.2s alternate linear;
+  -ms-animation: scale 1.2s alternate linear;
+  animation: scale 1.2s alternate linear;
+}
+.suofen .flexslider ul .slide_3.flex-active-slide .round5,
+.suofen .flexslider ul .slide_3.flex-active-slide .round7 {
+  opacity: 1;
+  -webkit-animation: scale .8s alternate linear;
+  -o-animation: scale .8s alternate linear;
+  -moz-animation: scale .8s alternate linear;
+  -ms-animation: scale .8s alternate linear;
+  animation: scale .8s alternate linear;
+}
+.suofen .flexslider .fsr-a1,
+.suofen .flexslider .fsr-a2,
+.suofen .flexslider .fsr-a3 {
+  width: 100px;
+  height: 24px;
+  position: absolute;
+  bottom: 10px;
+  z-index: 11;
+}
+.suofen .flexslider .fsr-a1 i,
+.suofen .flexslider .fsr-a2 i,
+.suofen .flexslider .fsr-a3 i {
+  width: 100px;
+  height: 24px;
+  display: block;
+  background: url('../../images/activity/slidet-a7.png') no-repeat center 3px;
+}
+.suofen .flexslider .fsr-a1 {
+  left: 327px;
+  background: url('../../images/activity/slidet-a1.png') no-repeat;
+}
+.suofen .flexslider .fsr-a2 {
+  right: 471px;
+  background: url('../../images/activity/slidet-a3.png') no-repeat;
+}
+.suofen .flexslider .fsr-a3 {
+  right: 168px;
+  background: url('../../images/activity/slidet-a5.png') no-repeat;
+}
+.suofen .flexslider .fsr-a1:hover,
+.suofen .flexslider .fsr-a2:hover,
+.suofen .flexslider .fsr-a3:hover {
+  transition: all .2s;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+}
+.suofen .flexslider .fsr-a1:hover {
+  background: url('../../images/activity/slidet-a2.png') no-repeat;
+}
+.suofen .flexslider .fsr-a2:hover {
+  background: url('../../images/activity/slidet-a4.png') no-repeat;
+}
+.suofen .flexslider .fsr-a3:hover {
+  background: url('../../images/activity/slidet-a6.png') no-repeat;
+}
+.suofen .flexslider .flex-control-nav {
+  width: 909px;
+  height: 94px;
+  position: absolute;
+  bottom: 0;
+  left: 149px;
+  z-index: 10;
+  background: url('../../images/activity/slidet-ol.png') no-repeat left 0;
+}
+.suofen .flexslider .flex-control-nav li {
+  width: 302px;
+  height: 94px;
+  margin-right: 1px;
+  display: block;
+  float: left;
+}
+.suofen .flexslider .flex-control-nav li a {
+  width: 302px;
+  height: 94px;
+  cursor: pointer;
+  float: left;
+  text-indent: -9999px;
+}
+.suofen .flexslider .flex-control-nav .hvr {
+  transition: all .2s;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+}
+.suofen .flexslider .flex-control-nav .hvr {
+  background: url('../../images/activity/slidet-ol2.png') no-repeat left 0;
+}
+.suofen .flexslider .flex-control-nav .hvr2 {
+  background: url('../../images/activity/slidet-ol2.png') no-repeat -303px 0;
+}
+.suofen .flexslider .flex-control-nav .hvr3 {
+  background: url('../../images/activity/slidet-ol2.png') no-repeat -606px 0;
+}
+.suofen .flexslider .flex-direction-nav {
+  display: none;
+}
+/* 0000000000 */
+.mod_search_select {
+  height: 58px;
+  background: #fff;
+  font-family: "Microsoft Yahei";
+}
+.mod_search_select .sort_b,
+.mod_search_select .sort_b a,
+.mod_search_select .between,
+.mod_search_select .between boxtop input,
+.mod_search_select .delivery_b,
+.mod_search_select .dealers_b,
+.mod_search_select .more_b,
+.mod_search_select .dealers_b a.txt,
+.mod_search_select .dealers_b a.txt .ico,
+.mod_search_select .more_b a.tag,
+.mod_search_select .thumb_b li .ico,
+.mod_search_select .thumb_b li .btn {
+  height: 58px;
+  float: left;
+}
+.mod_search_select .sort_b i {
+  font-size: 26px;
+  font-weight: bold;
+  color: #f40;
+  float: left;
+}
+.mod_search_select .sort_b span {
+  font-size: 22px;
+  font-family: '微软雅黑';
+  position: relative;
+  height: 58px;
+  line-height: 58px;
+  color: #303030;
+}
+.mod_search_select .sort_b a,
+.mod_search_select .sort_b a .ico {
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+  color: #6d6d6d;
+}
+.mod_search_select .sort_b span {
+  float: left;
+  margin-left: 24px;
+}
+.mod_search_select .sort_b a .iconSearch {
+  width: 18px;
+  height: 58px;
+  color: #ccc;
+  float: left;
+  margin-left: 1px;
+  background: url('../../images/spfl/jiantou.png') no-repeat -85px center;
+}
+.mod_search_select .sort_b a:hover {
+  color: #ff4400;
+}
+.mod_search_select .sort_b a:hover i {
+  background: url('../../images/spfl/jiantou.png') no-repeat 5px center;
+}
+.iconSearch {
+  font-family: "iconSearch" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.mod_search_select .between {
+  padding: 18px 12px;
+  position: relative;
+  border-right: 1px solid #e1e1e1;
+  z-index: 23;
+  width: 116px;
+}
+.ie8 .mod_search_select .between {
+  width: 118px;
+}
+.ie8 .mod_search_select .between .boxTop input.ip1 {
+  margin-left: 1px;
+}
+.mod_search_select .between .boxTop span {
+  height: 22px;
+  line-height: 22px;
+  margin: 0 4px;
+  width: 8px;
+  float: left;
+}
+.mod_search_select .between .boxTop input {
+  width: 42px;
+  height: 12px;
+  padding: 4px 3px;
+  border: 1px solid #e1e1e1;
+  background: #fff;
+  outline: none;
+  color: #6d6d6d;
+  font: 12px Arial, Helvetica, sans-serif;
+  float: left;
+}
+.mod_search_select .sort_b a.cur {
+  color: #ff4400;
+  background-color: #fff;
+  line-height: 58px;
+}
+.clearfix:after {
+  display: block;
+  content: ".";
+  height: 0;
+  visibility: hidden;
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+}
+.ie8 .mod_search_select .between .boxCon {
+  width: 114px;
+}
+.mod_search_select .between .boxCon {
+  display: none;
+  position: absolute;
+  top: 58px;
+  left: -1px;
+  background: #fff;
+  width: 112px;
+  border: 1px solid #e1e1e1;
+  z-index: 24;
+  border-top: none;
+  padding: 0 14px;
+}
+.mod_search_select .between .boxCon .first {
+  overflow: hidden;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 3px 0;
+}
+.mod_search_select .between .boxCon li {
+  color: #999;
+  margin-bottom: 12px;
+}
+.mod_search_select .between .boxCon .first a.btn1 {
+  margin: 0 9px;
+}
+.mod_search_select .between .boxCon .first a {
+  float: left;
+  width: 41px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  color: #6d6d6d;
+}
+.mod_search_select .between .boxCon .first a.btn2 {
+  background-color: #ff4400;
+  color: #fff;
+}
+.mod_search_select .search_select_page {
+  display: block;
+  float: right;
+}
+.mod_search_select .search_select_page a {
+  width: 60px;
+  height: 58px;
+  border-left: 1px solid #e5e5e5;
+  float: left;
+}
+.mod_search_select .search_select_page .pg1 {
+  background: #ffffff url('../../images/spfl/xunxg-icon6.png') no-repeat center;
+}
+.mod_search_select .search_select_page .pg2 {
+  background: #fafafa url('../../images/spfl/xunxg-icon4.png') no-repeat center;
+}
+/* 全选 */
+.slt .select i {
+  background: #ffffff url('../../images/spfl/dagou.png') no-repeat !important;
+}
+.slt {
+  width: 1200px;
+  height: 75px;
+  border-top: 1px solid #e5e5e5;
+  float: left;
+  background: #f9f9f9;
+}
+.slt .slt-i {
+  width: 42px;
+  height: 75px;
+}
+.slt .slt-i i {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #cccccc;
+  display: inline;
+  cursor: pointer;
+  display: block;
+  margin: 30px auto;
+  background-color: #fff;
+}
+.slt .slt-inp {
+  width: 115px;
+  height: 30px;
+  margin: 23px 0 22px;
+  background: #ff4400;
+  cursor: pointer;
+}
+.slt .slt-inp input {
+  width: 115px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  font-family: Helvetica, Arial, "宋体", "微软雅黑";
+  color: #fff;
+  background: #ff4400;
+  border: none;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  cursor: pointer;
+}
+.slt .slt-text {
+  height: 75px;
+  line-height: 75px;
+}
+.slt .slt-text span {
+  font-size: 14px;
+  color: #474747;
+  margin-left: 12px;
+}
+.slt .slt-text span i {
+  font-family: Helvetica, Arial, "宋体", "微软雅黑";
+  font-size: 16px;
+  font-weight: 600;
+  color: #ff6100;
+}
+.slt .slt-paging {
+  width: 193px;
+  margin-top: 27px;
+}
+.slt .slt-paging .slt-span {
+  font-size: 14px;
+  color: #474747;
+  margin-top: 3px;
+  margin-right: 5px;
+  float: left;
+}
+.slt .slt-paging .slt-span i {
+  font-family: Helvetica, Arial, "宋体", "微软雅黑";
+}
+.slt .slt-paging .pags {
+  width: 18px;
+  height: 18px;
+  margin: 2px 3px;
+  background: url('../../images/spfl/slt-paging.png') no-repeat;
+  float: left;
+}
+.slt .slt-paging .pag1 {
+  background-position: 6px center;
+}
+.slt .slt-paging .pag2 {
+  background-position: -16px center;
+}
+.slt .slt-paging .select-box {
+  width: 52px;
+  height: 22px;
+  margin-left: 3px;
+}
+.slt .slt-paging .select-box .select-icon {
+  width: 24px;
+  height: 20px;
+  float: right;
+}
+.slt .slt-paging .select-box .select-btn {
+  width: 52px;
+  height: 22px;
+  font-size: 14px;
+  color: #474747;
+  z-index: 0;
+  box-sizing: content-box;
+  vertical-align: middle;
+  position: relative;
+}
+.slt .slt-paging .select-box .more-select dt {
+  width: 50px;
+  height: 20px;
+  border: 1px solid #cacaca;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  z-index: 99;
+  color: #474747;
+  text-indent: 1px;
+  background: #fff;
+}
+.slt .slt-paging .select-box .more-select dt .select-i {
+  background: url('../../images/spfl/slt-paging2.png') no-repeat 5px 8px;
+  -webkit-transition: 0.4s;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  -moz-transition: -moz-transform 0.4s ease-out;
+}
+.slt .slt-paging .select-box .more-select .cur i {
+  transform: rotateZ(180deg);
+  -webkit-transform: rotateZ(180deg);
+  -moz-transform: rotateZ(180deg);
+  background: url('../../images/spfl/slt-paging2.png') no-repeat 8px 7px;
+}
+.slt .slt-paging .select-box .more-select dt span {
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  padding: 0 7px;
+  font-family: Helvetica, Arial, "宋体", "微软雅黑";
+  border: none !important;
+  float: left;
+}
+.slt .slt-paging .select-box .more-select dd {
+  position: absolute;
+  left: 0px;
+  top: -121px;
+  border: 1px solid #cacaca;
+  border-bottom: 0;
+  display: none;
+}
+.slt .slt-paging .select-box .more-select dd ul {
+  width: 50px;
+  height: 120px;
+  overflow: auto;
+  background-color: #ffffff;
+}
+.slt .slt-paging .select-box .more-select dd ul li a {
+  height: 24px;
+  line-height: 24px;
+  padding: 0 8px;
+  display: block;
+  color: #474747;
+  font-size: 14px;
+  font-family: Helvetica, Arial, "宋体", "微软雅黑";
+  cursor: default;
+}
+.slt .slt-paging .select-box .more-select dd ul li a:hover {
+  background-color: #f4ffec;
+  color: #f40;
+}
+.ie8 .more-select .cur i,
+.ie9 .more-select .cur i {
+  background: url('../../images/spfl/select-jiantou.png') no-repeat 6px 8px !important;
+}
+.ie8 .slt-paging .more-select .cur i,
+.ie9 .slt-paging .more-select .cur i {
+  background: url('../../images/spfl/slt-paging2.png') no-repeat 5px 8px !important;
+}
+.today .today-cont .today-hvr.hvr .today-btn .sel i {
+  border: 1px solid #f40 !important;
+}
+.today .today-cont .today-hvr .select {
+  background: url('../../images/spfl/dagou.png') no-repeat right bottom !important;
+}
+.today .today-cont .today-hvr .select .sel i {
+  border: 1px solid #e5e5e5 !important;
+}
+/* 今日热卖 */
+.today,
+.newest {
+  width: 1200px;
+  height: 1224px;
+  margin: 16px auto 47px;
+  background: #fff;
+}
+.today .today-title,
+.newest .today-title,
+.today .newest-title,
+.newest .newest-title {
+  width: 1200px;
+  height: 58px;
+  border-bottom: 1px solid #e5e5e5;
+  float: left;
+}
+.today .today-cont,
+.newest .today-cont,
+.today .newest-cont,
+.newest .newest-cont {
+  padding: 10px 10px 17px 0;
+}
+.today .today-cont .today-hvr:hover,
+.newest .today-cont .today-hvr:hover,
+.today .newest-cont .today-hvr:hover,
+.newest .newest-cont .today-hvr:hover,
+.today .today-cont .newest-hvr:hover,
+.newest .today-cont .newest-hvr:hover,
+.today .newest-cont .newest-hvr:hover,
+.newest .newest-cont .newest-hvr:hover {
+  border-color: #f40;
+}
+.today .today-cont .today-hvr,
+.newest .today-cont .today-hvr,
+.today .newest-cont .today-hvr,
+.newest .newest-cont .today-hvr,
+.today .today-cont .newest-hvr,
+.newest .today-cont .newest-hvr,
+.today .newest-cont .newest-hvr,
+.newest .newest-cont .newest-hvr {
+  width: 226px;
+  height: 339px;
+  border: 1px solid #e5e5e5;
+  margin: 0 0 13px 10px;
+  position: relative;
+  overflow: hidden;
+  float: left;
+}
+.today .today-cont .today-hvr .today-pin,
+.newest .today-cont .today-hvr .today-pin,
+.today .newest-cont .today-hvr .today-pin,
+.newest .newest-cont .today-hvr .today-pin,
+.today .today-cont .newest-hvr .today-pin,
+.newest .today-cont .newest-hvr .today-pin,
+.today .newest-cont .newest-hvr .today-pin,
+.newest .newest-cont .newest-hvr .today-pin,
+.today .today-cont .today-hvr .newest-pin,
+.newest .today-cont .today-hvr .newest-pin,
+.today .newest-cont .today-hvr .newest-pin,
+.newest .newest-cont .today-hvr .newest-pin,
+.today .today-cont .newest-hvr .newest-pin,
+.newest .today-cont .newest-hvr .newest-pin,
+.today .newest-cont .newest-hvr .newest-pin,
+.newest .newest-cont .newest-hvr .newest-pin {
+  width: 43px;
+  height: 43px;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  background: url('../../images/index/today-pin.png') no-repeat center;
+  z-index: 20;
+}
+.today .today-cont .today-hvr .newest-pin,
+.newest .today-cont .today-hvr .newest-pin,
+.today .newest-cont .today-hvr .newest-pin,
+.newest .newest-cont .today-hvr .newest-pin,
+.today .today-cont .newest-hvr .newest-pin,
+.newest .today-cont .newest-hvr .newest-pin,
+.today .newest-cont .newest-hvr .newest-pin,
+.newest .newest-cont .newest-hvr .newest-pin {
+  background: url('../../images/index/newest-pin.png') no-repeat center;
+}
+.today .today-cont .today-hvr .today-leptn,
+.newest .today-cont .today-hvr .today-leptn,
+.today .newest-cont .today-hvr .today-leptn,
+.newest .newest-cont .today-hvr .today-leptn,
+.today .today-cont .newest-hvr .today-leptn,
+.newest .today-cont .newest-hvr .today-leptn,
+.today .newest-cont .newest-hvr .today-leptn,
+.newest .newest-cont .newest-hvr .today-leptn,
+.today .today-cont .today-hvr .newest-leptn,
+.newest .today-cont .today-hvr .newest-leptn,
+.today .newest-cont .today-hvr .newest-leptn,
+.newest .newest-cont .today-hvr .newest-leptn,
+.today .today-cont .newest-hvr .newest-leptn,
+.newest .today-cont .newest-hvr .newest-leptn,
+.today .newest-cont .newest-hvr .newest-leptn,
+.newest .newest-cont .newest-hvr .newest-leptn {
+  width: 226px;
+  display: none;
+  z-index: 10;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  transition: all .2s;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+}
+.today .today-cont .today-hvr .today-leptn .today-lt,
+.newest .today-cont .today-hvr .today-leptn .today-lt,
+.today .newest-cont .today-hvr .today-leptn .today-lt,
+.newest .newest-cont .today-hvr .today-leptn .today-lt,
+.today .today-cont .newest-hvr .today-leptn .today-lt,
+.newest .today-cont .newest-hvr .today-leptn .today-lt,
+.today .newest-cont .newest-hvr .today-leptn .today-lt,
+.newest .newest-cont .newest-hvr .today-leptn .today-lt,
+.today .today-cont .today-hvr .newest-leptn .today-lt,
+.newest .today-cont .today-hvr .newest-leptn .today-lt,
+.today .newest-cont .today-hvr .newest-leptn .today-lt,
+.newest .newest-cont .today-hvr .newest-leptn .today-lt,
+.today .today-cont .newest-hvr .newest-leptn .today-lt,
+.newest .today-cont .newest-hvr .newest-leptn .today-lt,
+.today .newest-cont .newest-hvr .newest-leptn .today-lt,
+.newest .newest-cont .newest-hvr .newest-leptn .today-lt,
+.today .today-cont .today-hvr .today-leptn .newest-lt,
+.newest .today-cont .today-hvr .today-leptn .newest-lt,
+.today .newest-cont .today-hvr .today-leptn .newest-lt,
+.newest .newest-cont .today-hvr .today-leptn .newest-lt,
+.today .today-cont .newest-hvr .today-leptn .newest-lt,
+.newest .today-cont .newest-hvr .today-leptn .newest-lt,
+.today .newest-cont .newest-hvr .today-leptn .newest-lt,
+.newest .newest-cont .newest-hvr .today-leptn .newest-lt,
+.today .today-cont .today-hvr .newest-leptn .newest-lt,
+.newest .today-cont .today-hvr .newest-leptn .newest-lt,
+.today .newest-cont .today-hvr .newest-leptn .newest-lt,
+.newest .newest-cont .today-hvr .newest-leptn .newest-lt,
+.today .today-cont .newest-hvr .newest-leptn .newest-lt,
+.newest .today-cont .newest-hvr .newest-leptn .newest-lt,
+.today .newest-cont .newest-hvr .newest-leptn .newest-lt,
+.newest .newest-cont .newest-hvr .newest-leptn .newest-lt {
+  width: 226px;
+  height: 228px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .2s;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  background: #000000;
+  opacity: .3;
+  z-index: -5;
+}
+.today .today-cont .today-hvr .today-leptn .heading,
+.newest .today-cont .today-hvr .today-leptn .heading,
+.today .newest-cont .today-hvr .today-leptn .heading,
+.newest .newest-cont .today-hvr .today-leptn .heading,
+.today .today-cont .newest-hvr .today-leptn .heading,
+.newest .today-cont .newest-hvr .today-leptn .heading,
+.today .newest-cont .newest-hvr .today-leptn .heading,
+.newest .newest-cont .newest-hvr .today-leptn .heading,
+.today .today-cont .today-hvr .newest-leptn .heading,
+.newest .today-cont .today-hvr .newest-leptn .heading,
+.today .newest-cont .today-hvr .newest-leptn .heading,
+.newest .newest-cont .today-hvr .newest-leptn .heading,
+.today .today-cont .newest-hvr .newest-leptn .heading,
+.newest .today-cont .newest-hvr .newest-leptn .heading,
+.today .newest-cont .newest-hvr .newest-leptn .heading,
+.newest .newest-cont .newest-hvr .newest-leptn .heading,
+.today .today-cont .today-hvr .today-leptn .caption,
+.newest .today-cont .today-hvr .today-leptn .caption,
+.today .newest-cont .today-hvr .today-leptn .caption,
+.newest .newest-cont .today-hvr .today-leptn .caption,
+.today .today-cont .newest-hvr .today-leptn .caption,
+.newest .today-cont .newest-hvr .today-leptn .caption,
+.today .newest-cont .newest-hvr .today-leptn .caption,
+.newest .newest-cont .newest-hvr .today-leptn .caption,
+.today .today-cont .today-hvr .newest-leptn .caption,
+.newest .today-cont .today-hvr .newest-leptn .caption,
+.today .newest-cont .today-hvr .newest-leptn .caption,
+.newest .newest-cont .today-hvr .newest-leptn .caption,
+.today .today-cont .newest-hvr .newest-leptn .caption,
+.newest .today-cont .newest-hvr .newest-leptn .caption,
+.today .newest-cont .newest-hvr .newest-leptn .caption,
+.newest .newest-cont .newest-hvr .newest-leptn .caption {
+  width: 226px;
+  overflow: hidden;
+}
+.today .today-cont .today-hvr .today-leptn .heading,
+.newest .today-cont .today-hvr .today-leptn .heading,
+.today .newest-cont .today-hvr .today-leptn .heading,
+.newest .newest-cont .today-hvr .today-leptn .heading,
+.today .today-cont .newest-hvr .today-leptn .heading,
+.newest .today-cont .newest-hvr .today-leptn .heading,
+.today .newest-cont .newest-hvr .today-leptn .heading,
+.newest .newest-cont .newest-hvr .today-leptn .heading,
+.today .today-cont .today-hvr .newest-leptn .heading,
+.newest .today-cont .today-hvr .newest-leptn .heading,
+.today .newest-cont .today-hvr .newest-leptn .heading,
+.newest .newest-cont .today-hvr .newest-leptn .heading,
+.today .today-cont .newest-hvr .newest-leptn .heading,
+.newest .today-cont .newest-hvr .newest-leptn .heading,
+.today .newest-cont .newest-hvr .newest-leptn .heading,
+.newest .newest-cont .newest-hvr .newest-leptn .heading {
+  height: 160px;
+  color: #fff;
+}
+.today .today-cont .today-hvr .today-leptn .heading .heading-cont,
+.newest .today-cont .today-hvr .today-leptn .heading .heading-cont,
+.today .newest-cont .today-hvr .today-leptn .heading .heading-cont,
+.newest .newest-cont .today-hvr .today-leptn .heading .heading-cont,
+.today .today-cont .newest-hvr .today-leptn .heading .heading-cont,
+.newest .today-cont .newest-hvr .today-leptn .heading .heading-cont,
+.today .newest-cont .newest-hvr .today-leptn .heading .heading-cont,
+.newest .newest-cont .newest-hvr .today-leptn .heading .heading-cont,
+.today .today-cont .today-hvr .newest-leptn .heading .heading-cont,
+.newest .today-cont .today-hvr .newest-leptn .heading .heading-cont,
+.today .newest-cont .today-hvr .newest-leptn .heading .heading-cont,
+.newest .newest-cont .today-hvr .newest-leptn .heading .heading-cont,
+.today .today-cont .newest-hvr .newest-leptn .heading .heading-cont,
+.newest .today-cont .newest-hvr .newest-leptn .heading .heading-cont,
+.today .newest-cont .newest-hvr .newest-leptn .heading .heading-cont,
+.newest .newest-cont .newest-hvr .newest-leptn .heading .heading-cont {
+  margin-top: 62px;
+}
+.today .today-cont .today-hvr .today-leptn .heading .heading-cont p,
+.newest .today-cont .today-hvr .today-leptn .heading .heading-cont p,
+.today .newest-cont .today-hvr .today-leptn .heading .heading-cont p,
+.newest .newest-cont .today-hvr .today-leptn .heading .heading-cont p,
+.today .today-cont .newest-hvr .today-leptn .heading .heading-cont p,
+.newest .today-cont .newest-hvr .today-leptn .heading .heading-cont p,
+.today .newest-cont .newest-hvr .today-leptn .heading .heading-cont p,
+.newest .newest-cont .newest-hvr .today-leptn .heading .heading-cont p,
+.today .today-cont .today-hvr .newest-leptn .heading .heading-cont p,
+.newest .today-cont .today-hvr .newest-leptn .heading .heading-cont p,
+.today .newest-cont .today-hvr .newest-leptn .heading .heading-cont p,
+.newest .newest-cont .today-hvr .newest-leptn .heading .heading-cont p,
+.today .today-cont .newest-hvr .newest-leptn .heading .heading-cont p,
+.newest .today-cont .newest-hvr .newest-leptn .heading .heading-cont p,
+.today .newest-cont .newest-hvr .newest-leptn .heading .heading-cont p,
+.newest .newest-cont .newest-hvr .newest-leptn .heading .heading-cont p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-left: 56px;
+  font-family: '微软雅黑';
+  cursor: default;
+}
+.today .today-cont .today-hvr .today-leptn .heading .heading-cont p .num,
+.newest .today-cont .today-hvr .today-leptn .heading .heading-cont p .num,
+.today .newest-cont .today-hvr .today-leptn .heading .heading-cont p .num,
+.newest .newest-cont .today-hvr .today-leptn .heading .heading-cont p .num,
+.today .today-cont .newest-hvr .today-leptn .heading .heading-cont p .num,
+.newest .today-cont .newest-hvr .today-leptn .heading .heading-cont p .num,
+.today .newest-cont .newest-hvr .today-leptn .heading .heading-cont p .num,
+.newest .newest-cont .newest-hvr .today-leptn .heading .heading-cont p .num,
+.today .today-cont .today-hvr .newest-leptn .heading .heading-cont p .num,
+.newest .today-cont .today-hvr .newest-leptn .heading .heading-cont p .num,
+.today .newest-cont .today-hvr .newest-leptn .heading .heading-cont p .num,
+.newest .newest-cont .today-hvr .newest-leptn .heading .heading-cont p .num,
+.today .today-cont .newest-hvr .newest-leptn .heading .heading-cont p .num,
+.newest .today-cont .newest-hvr .newest-leptn .heading .heading-cont p .num,
+.today .newest-cont .newest-hvr .newest-leptn .heading .heading-cont p .num,
+.newest .newest-cont .newest-hvr .newest-leptn .heading .heading-cont p .num {
+  font-size: 20px;
+}
+.today .today-cont .today-hvr .today-leptn .heading .heading-cont .heading-c1,
+.newest .today-cont .today-hvr .today-leptn .heading .heading-cont .heading-c1,
+.today .newest-cont .today-hvr .today-leptn .heading .heading-cont .heading-c1,
+.newest .newest-cont .today-hvr .today-leptn .heading .heading-cont .heading-c1,
+.today .today-cont .newest-hvr .today-leptn .heading .heading-cont .heading-c1,
+.newest .today-cont .newest-hvr .today-leptn .heading .heading-cont .heading-c1,
+.today .newest-cont .newest-hvr .today-leptn .heading .heading-cont .heading-c1,
+.newest .newest-cont .newest-hvr .today-leptn .heading .heading-cont .heading-c1,
+.today .today-cont .today-hvr .newest-leptn .heading .heading-cont .heading-c1,
+.newest .today-cont .today-hvr .newest-leptn .heading .heading-cont .heading-c1,
+.today .newest-cont .today-hvr .newest-leptn .heading .heading-cont .heading-c1,
+.newest .newest-cont .today-hvr .newest-leptn .heading .heading-cont .heading-c1,
+.today .today-cont .newest-hvr .newest-leptn .heading .heading-cont .heading-c1,
+.newest .today-cont .newest-hvr .newest-leptn .heading .heading-cont .heading-c1,
+.today .newest-cont .newest-hvr .newest-leptn .heading .heading-cont .heading-c1,
+.newest .newest-cont .newest-hvr .newest-leptn .heading .heading-cont .heading-c1 {
+  color: #FFE600;
+}
+.today .today-cont .today-hvr .today-leptn .caption,
+.newest .today-cont .today-hvr .today-leptn .caption,
+.today .newest-cont .today-hvr .today-leptn .caption,
+.newest .newest-cont .today-hvr .today-leptn .caption,
+.today .today-cont .newest-hvr .today-leptn .caption,
+.newest .today-cont .newest-hvr .today-leptn .caption,
+.today .newest-cont .newest-hvr .today-leptn .caption,
+.newest .newest-cont .newest-hvr .today-leptn .caption,
+.today .today-cont .today-hvr .newest-leptn .caption,
+.newest .today-cont .today-hvr .newest-leptn .caption,
+.today .newest-cont .today-hvr .newest-leptn .caption,
+.newest .newest-cont .today-hvr .newest-leptn .caption,
+.today .today-cont .newest-hvr .newest-leptn .caption,
+.newest .today-cont .newest-hvr .newest-leptn .caption,
+.today .newest-cont .newest-hvr .newest-leptn .caption,
+.newest .newest-cont .newest-hvr .newest-leptn .caption {
+  height: 68px;
+}
+.today .today-cont .today-hvr .today-leptn .caption .caption-mar,
+.newest .today-cont .today-hvr .today-leptn .caption .caption-mar,
+.today .newest-cont .today-hvr .today-leptn .caption .caption-mar,
+.newest .newest-cont .today-hvr .today-leptn .caption .caption-mar,
+.today .today-cont .newest-hvr .today-leptn .caption .caption-mar,
+.newest .today-cont .newest-hvr .today-leptn .caption .caption-mar,
+.today .newest-cont .newest-hvr .today-leptn .caption .caption-mar,
+.newest .newest-cont .newest-hvr .today-leptn .caption .caption-mar,
+.today .today-cont .today-hvr .newest-leptn .caption .caption-mar,
+.newest .today-cont .today-hvr .newest-leptn .caption .caption-mar,
+.today .newest-cont .today-hvr .newest-leptn .caption .caption-mar,
+.newest .newest-cont .today-hvr .newest-leptn .caption .caption-mar,
+.today .today-cont .newest-hvr .newest-leptn .caption .caption-mar,
+.newest .today-cont .newest-hvr .newest-leptn .caption .caption-mar,
+.today .newest-cont .newest-hvr .newest-leptn .caption .caption-mar,
+.newest .newest-cont .newest-hvr .newest-leptn .caption .caption-mar {
+  width: 174px;
+  height: 30px;
+  line-height: 30px;
+  margin: 19px auto;
+}
+.today .today-cont .today-hvr .today-leptn .caption .caption-mar a,
+.newest .today-cont .today-hvr .today-leptn .caption .caption-mar a,
+.today .newest-cont .today-hvr .today-leptn .caption .caption-mar a,
+.newest .newest-cont .today-hvr .today-leptn .caption .caption-mar a,
+.today .today-cont .newest-hvr .today-leptn .caption .caption-mar a,
+.newest .today-cont .newest-hvr .today-leptn .caption .caption-mar a,
+.today .newest-cont .newest-hvr .today-leptn .caption .caption-mar a,
+.newest .newest-cont .newest-hvr .today-leptn .caption .caption-mar a,
+.today .today-cont .today-hvr .newest-leptn .caption .caption-mar a,
+.newest .today-cont .today-hvr .newest-leptn .caption .caption-mar a,
+.today .newest-cont .today-hvr .newest-leptn .caption .caption-mar a,
+.newest .newest-cont .today-hvr .newest-leptn .caption .caption-mar a,
+.today .today-cont .newest-hvr .newest-leptn .caption .caption-mar a,
+.newest .today-cont .newest-hvr .newest-leptn .caption .caption-mar a,
+.today .newest-cont .newest-hvr .newest-leptn .caption .caption-mar a,
+.newest .newest-cont .newest-hvr .newest-leptn .caption .caption-mar a {
+  height: 30px;
+  color: #fff;
+}
+.today .today-cont .today-hvr .today-leptn .caption .caption-mar .caption-l,
+.newest .today-cont .today-hvr .today-leptn .caption .caption-mar .caption-l,
+.today .newest-cont .today-hvr .today-leptn .caption .caption-mar .caption-l,
+.newest .newest-cont .today-hvr .today-leptn .caption .caption-mar .caption-l,
+.today .today-cont .newest-hvr .today-leptn .caption .caption-mar .caption-l,
+.newest .today-cont .newest-hvr .today-leptn .caption .caption-mar .caption-l,
+.today .newest-cont .newest-hvr .today-leptn .caption .caption-mar .caption-l,
+.newest .newest-cont .newest-hvr .today-leptn .caption .caption-mar .caption-l,
+.today .today-cont .today-hvr .newest-leptn .caption .caption-mar .caption-l,
+.newest .today-cont .today-hvr .newest-leptn .caption .caption-mar .caption-l,
+.today .newest-cont .today-hvr .newest-leptn .caption .caption-mar .caption-l,
+.newest .newest-cont .today-hvr .newest-leptn .caption .caption-mar .caption-l,
+.today .today-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-l,
+.newest .today-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-l,
+.today .newest-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-l,
+.newest .newest-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-l {
+  width: 95px;
+  background: #f40;
+}
+.today .today-cont .today-hvr .today-leptn .caption .caption-mar .caption-l i,
+.newest .today-cont .today-hvr .today-leptn .caption .caption-mar .caption-l i,
+.today .newest-cont .today-hvr .today-leptn .caption .caption-mar .caption-l i,
+.newest .newest-cont .today-hvr .today-leptn .caption .caption-mar .caption-l i,
+.today .today-cont .newest-hvr .today-leptn .caption .caption-mar .caption-l i,
+.newest .today-cont .newest-hvr .today-leptn .caption .caption-mar .caption-l i,
+.today .newest-cont .newest-hvr .today-leptn .caption .caption-mar .caption-l i,
+.newest .newest-cont .newest-hvr .today-leptn .caption .caption-mar .caption-l i,
+.today .today-cont .today-hvr .newest-leptn .caption .caption-mar .caption-l i,
+.newest .today-cont .today-hvr .newest-leptn .caption .caption-mar .caption-l i,
+.today .newest-cont .today-hvr .newest-leptn .caption .caption-mar .caption-l i,
+.newest .newest-cont .today-hvr .newest-leptn .caption .caption-mar .caption-l i,
+.today .today-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-l i,
+.newest .today-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-l i,
+.today .newest-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-l i,
+.newest .newest-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-l i {
+  width: 26px;
+  height: 30px;
+  margin-left: 1px;
+  background: url('../../images/index/caption-icon1.png') no-repeat 7px center;
+}
+.today .today-cont .today-hvr .today-leptn .caption .caption-mar .caption-l:hover,
+.newest .today-cont .today-hvr .today-leptn .caption .caption-mar .caption-l:hover,
+.today .newest-cont .today-hvr .today-leptn .caption .caption-mar .caption-l:hover,
+.newest .newest-cont .today-hvr .today-leptn .caption .caption-mar .caption-l:hover,
+.today .today-cont .newest-hvr .today-leptn .caption .caption-mar .caption-l:hover,
+.newest .today-cont .newest-hvr .today-leptn .caption .caption-mar .caption-l:hover,
+.today .newest-cont .newest-hvr .today-leptn .caption .caption-mar .caption-l:hover,
+.newest .newest-cont .newest-hvr .today-leptn .caption .caption-mar .caption-l:hover,
+.today .today-cont .today-hvr .newest-leptn .caption .caption-mar .caption-l:hover,
+.newest .today-cont .today-hvr .newest-leptn .caption .caption-mar .caption-l:hover,
+.today .newest-cont .today-hvr .newest-leptn .caption .caption-mar .caption-l:hover,
+.newest .newest-cont .today-hvr .newest-leptn .caption .caption-mar .caption-l:hover,
+.today .today-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-l:hover,
+.newest .today-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-l:hover,
+.today .newest-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-l:hover,
+.newest .newest-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-l:hover {
+  background: #ff6f00;
+  transition: all .2s;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+}
+.today .today-cont .today-hvr .today-leptn .caption .caption-mar .caption-r,
+.newest .today-cont .today-hvr .today-leptn .caption .caption-mar .caption-r,
+.today .newest-cont .today-hvr .today-leptn .caption .caption-mar .caption-r,
+.newest .newest-cont .today-hvr .today-leptn .caption .caption-mar .caption-r,
+.today .today-cont .newest-hvr .today-leptn .caption .caption-mar .caption-r,
+.newest .today-cont .newest-hvr .today-leptn .caption .caption-mar .caption-r,
+.today .newest-cont .newest-hvr .today-leptn .caption .caption-mar .caption-r,
+.newest .newest-cont .newest-hvr .today-leptn .caption .caption-mar .caption-r,
+.today .today-cont .today-hvr .newest-leptn .caption .caption-mar .caption-r,
+.newest .today-cont .today-hvr .newest-leptn .caption .caption-mar .caption-r,
+.today .newest-cont .today-hvr .newest-leptn .caption .caption-mar .caption-r,
+.newest .newest-cont .today-hvr .newest-leptn .caption .caption-mar .caption-r,
+.today .today-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-r,
+.newest .today-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-r,
+.today .newest-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-r,
+.newest .newest-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-r {
+  width: 70px;
+  background: #33a6ff;
+  text-align: center;
+}
+.today .today-cont .today-hvr .today-leptn .caption .caption-mar .caption-r:hover,
+.newest .today-cont .today-hvr .today-leptn .caption .caption-mar .caption-r:hover,
+.today .newest-cont .today-hvr .today-leptn .caption .caption-mar .caption-r:hover,
+.newest .newest-cont .today-hvr .today-leptn .caption .caption-mar .caption-r:hover,
+.today .today-cont .newest-hvr .today-leptn .caption .caption-mar .caption-r:hover,
+.newest .today-cont .newest-hvr .today-leptn .caption .caption-mar .caption-r:hover,
+.today .newest-cont .newest-hvr .today-leptn .caption .caption-mar .caption-r:hover,
+.newest .newest-cont .newest-hvr .today-leptn .caption .caption-mar .caption-r:hover,
+.today .today-cont .today-hvr .newest-leptn .caption .caption-mar .caption-r:hover,
+.newest .today-cont .today-hvr .newest-leptn .caption .caption-mar .caption-r:hover,
+.today .newest-cont .today-hvr .newest-leptn .caption .caption-mar .caption-r:hover,
+.newest .newest-cont .today-hvr .newest-leptn .caption .caption-mar .caption-r:hover,
+.today .today-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-r:hover,
+.newest .today-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-r:hover,
+.today .newest-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-r:hover,
+.newest .newest-cont .newest-hvr .newest-leptn .caption .caption-mar .caption-r:hover {
+  background: #27bbff;
+  transition: all .2s;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+}
+.today .today-cont .today-hvr .today-top,
+.newest .today-cont .today-hvr .today-top,
+.today .newest-cont .today-hvr .today-top,
+.newest .newest-cont .today-hvr .today-top,
+.today .today-cont .newest-hvr .today-top,
+.newest .today-cont .newest-hvr .today-top,
+.today .newest-cont .newest-hvr .today-top,
+.newest .newest-cont .newest-hvr .today-top,
+.today .today-cont .today-hvr .newest-top,
+.newest .today-cont .today-hvr .newest-top,
+.today .newest-cont .today-hvr .newest-top,
+.newest .newest-cont .today-hvr .newest-top,
+.today .today-cont .newest-hvr .newest-top,
+.newest .today-cont .newest-hvr .newest-top,
+.today .newest-cont .newest-hvr .newest-top,
+.newest .newest-cont .newest-hvr .newest-top {
+  height: 228px;
+  overflow: hidden;
+}
+.today .today-cont .today-hvr .today-top .today-img,
+.newest .today-cont .today-hvr .today-top .today-img,
+.today .newest-cont .today-hvr .today-top .today-img,
+.newest .newest-cont .today-hvr .today-top .today-img,
+.today .today-cont .newest-hvr .today-top .today-img,
+.newest .today-cont .newest-hvr .today-top .today-img,
+.today .newest-cont .newest-hvr .today-top .today-img,
+.newest .newest-cont .newest-hvr .today-top .today-img,
+.today .today-cont .today-hvr .newest-top .today-img,
+.newest .today-cont .today-hvr .newest-top .today-img,
+.today .newest-cont .today-hvr .newest-top .today-img,
+.newest .newest-cont .today-hvr .newest-top .today-img,
+.today .today-cont .newest-hvr .newest-top .today-img,
+.newest .today-cont .newest-hvr .newest-top .today-img,
+.today .newest-cont .newest-hvr .newest-top .today-img,
+.newest .newest-cont .newest-hvr .newest-top .today-img,
+.today .today-cont .today-hvr .today-top .newest-img,
+.newest .today-cont .today-hvr .today-top .newest-img,
+.today .newest-cont .today-hvr .today-top .newest-img,
+.newest .newest-cont .today-hvr .today-top .newest-img,
+.today .today-cont .newest-hvr .today-top .newest-img,
+.newest .today-cont .newest-hvr .today-top .newest-img,
+.today .newest-cont .newest-hvr .today-top .newest-img,
+.newest .newest-cont .newest-hvr .today-top .newest-img,
+.today .today-cont .today-hvr .newest-top .newest-img,
+.newest .today-cont .today-hvr .newest-top .newest-img,
+.today .newest-cont .today-hvr .newest-top .newest-img,
+.newest .newest-cont .today-hvr .newest-top .newest-img,
+.today .today-cont .newest-hvr .newest-top .newest-img,
+.newest .today-cont .newest-hvr .newest-top .newest-img,
+.today .newest-cont .newest-hvr .newest-top .newest-img,
+.newest .newest-cont .newest-hvr .newest-top .newest-img {
+  width: 100%;
+  height: 228px;
+  display: block;
+  overflow: hidden;
+}
+.today .today-cont .today-hvr .today-btn,
+.newest .today-cont .today-hvr .today-btn,
+.today .newest-cont .today-hvr .today-btn,
+.newest .newest-cont .today-hvr .today-btn,
+.today .today-cont .newest-hvr .today-btn,
+.newest .today-cont .newest-hvr .today-btn,
+.today .newest-cont .newest-hvr .today-btn,
+.newest .newest-cont .newest-hvr .today-btn,
+.today .today-cont .today-hvr .newest-btn,
+.newest .today-cont .today-hvr .newest-btn,
+.today .newest-cont .today-hvr .newest-btn,
+.newest .newest-cont .today-hvr .newest-btn,
+.today .today-cont .newest-hvr .newest-btn,
+.newest .today-cont .newest-hvr .newest-btn,
+.today .newest-cont .newest-hvr .newest-btn,
+.newest .newest-cont .newest-hvr .newest-btn {
+  height: 111px;
+  background: #fff;
+  position: absolute;
+}
+.today .today-cont .today-hvr .today-btn .sel,
+.newest .today-cont .today-hvr .today-btn .sel,
+.today .newest-cont .today-hvr .today-btn .sel,
+.newest .newest-cont .today-hvr .today-btn .sel,
+.today .today-cont .newest-hvr .today-btn .sel,
+.newest .today-cont .newest-hvr .today-btn .sel,
+.today .newest-cont .newest-hvr .today-btn .sel,
+.newest .newest-cont .newest-hvr .today-btn .sel,
+.today .today-cont .today-hvr .newest-btn .sel,
+.newest .today-cont .today-hvr .newest-btn .sel,
+.today .newest-cont .today-hvr .newest-btn .sel,
+.newest .newest-cont .today-hvr .newest-btn .sel,
+.today .today-cont .newest-hvr .newest-btn .sel,
+.newest .today-cont .newest-hvr .newest-btn .sel,
+.today .newest-cont .newest-hvr .newest-btn .sel,
+.newest .newest-cont .newest-hvr .newest-btn .sel {
+  width: 226px;
+  height: 23px;
+  float: left;
+}
+.today .today-cont .today-hvr .today-btn .sel .sect,
+.newest .today-cont .today-hvr .today-btn .sel .sect,
+.today .newest-cont .today-hvr .today-btn .sel .sect,
+.newest .newest-cont .today-hvr .today-btn .sel .sect,
+.today .today-cont .newest-hvr .today-btn .sel .sect,
+.newest .today-cont .newest-hvr .today-btn .sel .sect,
+.today .newest-cont .newest-hvr .today-btn .sel .sect,
+.newest .newest-cont .newest-hvr .today-btn .sel .sect,
+.today .today-cont .today-hvr .newest-btn .sel .sect,
+.newest .today-cont .today-hvr .newest-btn .sel .sect,
+.today .newest-cont .today-hvr .newest-btn .sel .sect,
+.newest .newest-cont .today-hvr .newest-btn .sel .sect,
+.today .today-cont .newest-hvr .newest-btn .sel .sect,
+.newest .today-cont .newest-hvr .newest-btn .sel .sect,
+.today .newest-cont .newest-hvr .newest-btn .sel .sect,
+.newest .newest-cont .newest-hvr .newest-btn .sel .sect {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #e5e5e5;
+  border-top: #fff;
+  border-left: #fff;
+  display: inline;
+  cursor: pointer;
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  z-index: 50;
+}
+.today .today-cont .today-hvr .today-btn .xiqin,
+.newest .today-cont .today-hvr .today-btn .xiqin,
+.today .newest-cont .today-hvr .today-btn .xiqin,
+.newest .newest-cont .today-hvr .today-btn .xiqin,
+.today .today-cont .newest-hvr .today-btn .xiqin,
+.newest .today-cont .newest-hvr .today-btn .xiqin,
+.today .newest-cont .newest-hvr .today-btn .xiqin,
+.newest .newest-cont .newest-hvr .today-btn .xiqin,
+.today .today-cont .today-hvr .newest-btn .xiqin,
+.newest .today-cont .today-hvr .newest-btn .xiqin,
+.today .newest-cont .today-hvr .newest-btn .xiqin,
+.newest .newest-cont .today-hvr .newest-btn .xiqin,
+.today .today-cont .newest-hvr .newest-btn .xiqin,
+.newest .today-cont .newest-hvr .newest-btn .xiqin,
+.today .newest-cont .newest-hvr .newest-btn .xiqin,
+.newest .newest-cont .newest-hvr .newest-btn .xiqin {
+  width: 197px;
+  height: 103px;
+  padding: 8px 20px 0 9px;
+  color: #474747;
+  float: left;
+}
+.today .today-cont .today-hvr .today-btn .xiqin p,
+.newest .today-cont .today-hvr .today-btn .xiqin p,
+.today .newest-cont .today-hvr .today-btn .xiqin p,
+.newest .newest-cont .today-hvr .today-btn .xiqin p,
+.today .today-cont .newest-hvr .today-btn .xiqin p,
+.newest .today-cont .newest-hvr .today-btn .xiqin p,
+.today .newest-cont .newest-hvr .today-btn .xiqin p,
+.newest .newest-cont .newest-hvr .today-btn .xiqin p,
+.today .today-cont .today-hvr .newest-btn .xiqin p,
+.newest .today-cont .today-hvr .newest-btn .xiqin p,
+.today .newest-cont .today-hvr .newest-btn .xiqin p,
+.newest .newest-cont .today-hvr .newest-btn .xiqin p,
+.today .today-cont .newest-hvr .newest-btn .xiqin p,
+.newest .today-cont .newest-hvr .newest-btn .xiqin p,
+.today .newest-cont .newest-hvr .newest-btn .xiqin p,
+.newest .newest-cont .newest-hvr .newest-btn .xiqin p {
+  width: 197px;
+  font-family: '微软雅黑';
+  float: left;
+}
+.today .today-cont .today-hvr .today-btn .xiqin p span,
+.newest .today-cont .today-hvr .today-btn .xiqin p span,
+.today .newest-cont .today-hvr .today-btn .xiqin p span,
+.newest .newest-cont .today-hvr .today-btn .xiqin p span,
+.today .today-cont .newest-hvr .today-btn .xiqin p span,
+.newest .today-cont .newest-hvr .today-btn .xiqin p span,
+.today .newest-cont .newest-hvr .today-btn .xiqin p span,
+.newest .newest-cont .newest-hvr .today-btn .xiqin p span,
+.today .today-cont .today-hvr .newest-btn .xiqin p span,
+.newest .today-cont .today-hvr .newest-btn .xiqin p span,
+.today .newest-cont .today-hvr .newest-btn .xiqin p span,
+.newest .newest-cont .today-hvr .newest-btn .xiqin p span,
+.today .today-cont .newest-hvr .newest-btn .xiqin p span,
+.newest .today-cont .newest-hvr .newest-btn .xiqin p span,
+.today .newest-cont .newest-hvr .newest-btn .xiqin p span,
+.newest .newest-cont .newest-hvr .newest-btn .xiqin p span {
+  margin-top: 1px;
+}
+.today .today-cont .today-hvr .today-btn .xiqin p i,
+.newest .today-cont .today-hvr .today-btn .xiqin p i,
+.today .newest-cont .today-hvr .today-btn .xiqin p i,
+.newest .newest-cont .today-hvr .today-btn .xiqin p i,
+.today .today-cont .newest-hvr .today-btn .xiqin p i,
+.newest .today-cont .newest-hvr .today-btn .xiqin p i,
+.today .newest-cont .newest-hvr .today-btn .xiqin p i,
+.newest .newest-cont .newest-hvr .today-btn .xiqin p i,
+.today .today-cont .today-hvr .newest-btn .xiqin p i,
+.newest .today-cont .today-hvr .newest-btn .xiqin p i,
+.today .newest-cont .today-hvr .newest-btn .xiqin p i,
+.newest .newest-cont .today-hvr .newest-btn .xiqin p i,
+.today .today-cont .newest-hvr .newest-btn .xiqin p i,
+.newest .today-cont .newest-hvr .newest-btn .xiqin p i,
+.today .newest-cont .newest-hvr .newest-btn .xiqin p i,
+.newest .newest-cont .newest-hvr .newest-btn .xiqin p i {
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+}
+.today .today-cont .today-hvr .today-btn .xiqin p .ic1,
+.newest .today-cont .today-hvr .today-btn .xiqin p .ic1,
+.today .newest-cont .today-hvr .today-btn .xiqin p .ic1,
+.newest .newest-cont .today-hvr .today-btn .xiqin p .ic1,
+.today .today-cont .newest-hvr .today-btn .xiqin p .ic1,
+.newest .today-cont .newest-hvr .today-btn .xiqin p .ic1,
+.today .newest-cont .newest-hvr .today-btn .xiqin p .ic1,
+.newest .newest-cont .newest-hvr .today-btn .xiqin p .ic1,
+.today .today-cont .today-hvr .newest-btn .xiqin p .ic1,
+.newest .today-cont .today-hvr .newest-btn .xiqin p .ic1,
+.today .newest-cont .today-hvr .newest-btn .xiqin p .ic1,
+.newest .newest-cont .today-hvr .newest-btn .xiqin p .ic1,
+.today .today-cont .newest-hvr .newest-btn .xiqin p .ic1,
+.newest .today-cont .newest-hvr .newest-btn .xiqin p .ic1,
+.today .newest-cont .newest-hvr .newest-btn .xiqin p .ic1,
+.newest .newest-cont .newest-hvr .newest-btn .xiqin p .ic1 {
+  margin-left: 6px;
+  background: url('../../images/index/xiqin-ic1.png') no-repeat;
+  background-position: left 0;
+}
+.today .today-cont .today-hvr .today-btn .xiqin p .ic2,
+.newest .today-cont .today-hvr .today-btn .xiqin p .ic2,
+.today .newest-cont .today-hvr .today-btn .xiqin p .ic2,
+.newest .newest-cont .today-hvr .today-btn .xiqin p .ic2,
+.today .today-cont .newest-hvr .today-btn .xiqin p .ic2,
+.newest .today-cont .newest-hvr .today-btn .xiqin p .ic2,
+.today .newest-cont .newest-hvr .today-btn .xiqin p .ic2,
+.newest .newest-cont .newest-hvr .today-btn .xiqin p .ic2,
+.today .today-cont .today-hvr .newest-btn .xiqin p .ic2,
+.newest .today-cont .today-hvr .newest-btn .xiqin p .ic2,
+.today .newest-cont .today-hvr .newest-btn .xiqin p .ic2,
+.newest .newest-cont .today-hvr .newest-btn .xiqin p .ic2,
+.today .today-cont .newest-hvr .newest-btn .xiqin p .ic2,
+.newest .today-cont .newest-hvr .newest-btn .xiqin p .ic2,
+.today .newest-cont .newest-hvr .newest-btn .xiqin p .ic2,
+.newest .newest-cont .newest-hvr .newest-btn .xiqin p .ic2 {
+  background: url('../../images/index/xiqin-ic1.png') no-repeat;
+  background-position: -20px 0;
+}
+.today .today-cont .today-hvr .today-btn .xiqin p .ic3,
+.newest .today-cont .today-hvr .today-btn .xiqin p .ic3,
+.today .newest-cont .today-hvr .today-btn .xiqin p .ic3,
+.newest .newest-cont .today-hvr .today-btn .xiqin p .ic3,
+.today .today-cont .newest-hvr .today-btn .xiqin p .ic3,
+.newest .today-cont .newest-hvr .today-btn .xiqin p .ic3,
+.today .newest-cont .newest-hvr .today-btn .xiqin p .ic3,
+.newest .newest-cont .newest-hvr .today-btn .xiqin p .ic3,
+.today .today-cont .today-hvr .newest-btn .xiqin p .ic3,
+.newest .today-cont .today-hvr .newest-btn .xiqin p .ic3,
+.today .newest-cont .today-hvr .newest-btn .xiqin p .ic3,
+.newest .newest-cont .today-hvr .newest-btn .xiqin p .ic3,
+.today .today-cont .newest-hvr .newest-btn .xiqin p .ic3,
+.newest .today-cont .newest-hvr .newest-btn .xiqin p .ic3,
+.today .newest-cont .newest-hvr .newest-btn .xiqin p .ic3,
+.newest .newest-cont .newest-hvr .newest-btn .xiqin p .ic3 {
+  background: url('../../images/index/xiqin-ic1.png') no-repeat;
+  background-position: -40px 0;
+}
+.today .today-cont .today-hvr .today-btn .xiqin p .ic4,
+.newest .today-cont .today-hvr .today-btn .xiqin p .ic4,
+.today .newest-cont .today-hvr .today-btn .xiqin p .ic4,
+.newest .newest-cont .today-hvr .today-btn .xiqin p .ic4,
+.today .today-cont .newest-hvr .today-btn .xiqin p .ic4,
+.newest .today-cont .newest-hvr .today-btn .xiqin p .ic4,
+.today .newest-cont .newest-hvr .today-btn .xiqin p .ic4,
+.newest .newest-cont .newest-hvr .today-btn .xiqin p .ic4,
+.today .today-cont .today-hvr .newest-btn .xiqin p .ic4,
+.newest .today-cont .today-hvr .newest-btn .xiqin p .ic4,
+.today .newest-cont .today-hvr .newest-btn .xiqin p .ic4,
+.newest .newest-cont .today-hvr .newest-btn .xiqin p .ic4,
+.today .today-cont .newest-hvr .newest-btn .xiqin p .ic4,
+.newest .today-cont .newest-hvr .newest-btn .xiqin p .ic4,
+.today .newest-cont .newest-hvr .newest-btn .xiqin p .ic4,
+.newest .newest-cont .newest-hvr .newest-btn .xiqin p .ic4 {
+  width: 28px;
+  background: url('../../images/index/xiqin-ic2.png') no-repeat;
+  background-position: center;
+}
+.today .today-cont .today-hvr .today-btn .xiqin .xiqin-two,
+.newest .today-cont .today-hvr .today-btn .xiqin .xiqin-two,
+.today .newest-cont .today-hvr .today-btn .xiqin .xiqin-two,
+.newest .newest-cont .today-hvr .today-btn .xiqin .xiqin-two,
+.today .today-cont .newest-hvr .today-btn .xiqin .xiqin-two,
+.newest .today-cont .newest-hvr .today-btn .xiqin .xiqin-two,
+.today .newest-cont .newest-hvr .today-btn .xiqin .xiqin-two,
+.newest .newest-cont .newest-hvr .today-btn .xiqin .xiqin-two,
+.today .today-cont .today-hvr .newest-btn .xiqin .xiqin-two,
+.newest .today-cont .today-hvr .newest-btn .xiqin .xiqin-two,
+.today .newest-cont .today-hvr .newest-btn .xiqin .xiqin-two,
+.newest .newest-cont .today-hvr .newest-btn .xiqin .xiqin-two,
+.today .today-cont .newest-hvr .newest-btn .xiqin .xiqin-two,
+.newest .today-cont .newest-hvr .newest-btn .xiqin .xiqin-two,
+.today .newest-cont .newest-hvr .newest-btn .xiqin .xiqin-two,
+.newest .newest-cont .newest-hvr .newest-btn .xiqin .xiqin-two {
+  margin-top: 5px;
+  overflow: hidden;
+}
+.today .today-cont .today-hvr .today-btn .xiqin .xiqin-two a,
+.newest .today-cont .today-hvr .today-btn .xiqin .xiqin-two a,
+.today .newest-cont .today-hvr .today-btn .xiqin .xiqin-two a,
+.newest .newest-cont .today-hvr .today-btn .xiqin .xiqin-two a,
+.today .today-cont .newest-hvr .today-btn .xiqin .xiqin-two a,
+.newest .today-cont .newest-hvr .today-btn .xiqin .xiqin-two a,
+.today .newest-cont .newest-hvr .today-btn .xiqin .xiqin-two a,
+.newest .newest-cont .newest-hvr .today-btn .xiqin .xiqin-two a,
+.today .today-cont .today-hvr .newest-btn .xiqin .xiqin-two a,
+.newest .today-cont .today-hvr .newest-btn .xiqin .xiqin-two a,
+.today .newest-cont .today-hvr .newest-btn .xiqin .xiqin-two a,
+.newest .newest-cont .today-hvr .newest-btn .xiqin .xiqin-two a,
+.today .today-cont .newest-hvr .newest-btn .xiqin .xiqin-two a,
+.newest .today-cont .newest-hvr .newest-btn .xiqin .xiqin-two a,
+.today .newest-cont .newest-hvr .newest-btn .xiqin .xiqin-two a,
+.newest .newest-cont .newest-hvr .newest-btn .xiqin .xiqin-two a {
+  width: 197px;
+  color: #474747;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  float: left;
+}
+.today .today-cont .today-hvr .today-btn .xiqin .xiqin-two a:hover,
+.newest .today-cont .today-hvr .today-btn .xiqin .xiqin-two a:hover,
+.today .newest-cont .today-hvr .today-btn .xiqin .xiqin-two a:hover,
+.newest .newest-cont .today-hvr .today-btn .xiqin .xiqin-two a:hover,
+.today .today-cont .newest-hvr .today-btn .xiqin .xiqin-two a:hover,
+.newest .today-cont .newest-hvr .today-btn .xiqin .xiqin-two a:hover,
+.today .newest-cont .newest-hvr .today-btn .xiqin .xiqin-two a:hover,
+.newest .newest-cont .newest-hvr .today-btn .xiqin .xiqin-two a:hover,
+.today .today-cont .today-hvr .newest-btn .xiqin .xiqin-two a:hover,
+.newest .today-cont .today-hvr .newest-btn .xiqin .xiqin-two a:hover,
+.today .newest-cont .today-hvr .newest-btn .xiqin .xiqin-two a:hover,
+.newest .newest-cont .today-hvr .newest-btn .xiqin .xiqin-two a:hover,
+.today .today-cont .newest-hvr .newest-btn .xiqin .xiqin-two a:hover,
+.newest .today-cont .newest-hvr .newest-btn .xiqin .xiqin-two a:hover,
+.today .newest-cont .newest-hvr .newest-btn .xiqin .xiqin-two a:hover,
+.newest .newest-cont .newest-hvr .newest-btn .xiqin .xiqin-two a:hover {
+  color: #f40;
+}
+.today .today-cont .today-hvr .today-btn .xiqin .xiqin-three,
+.newest .today-cont .today-hvr .today-btn .xiqin .xiqin-three,
+.today .newest-cont .today-hvr .today-btn .xiqin .xiqin-three,
+.newest .newest-cont .today-hvr .today-btn .xiqin .xiqin-three,
+.today .today-cont .newest-hvr .today-btn .xiqin .xiqin-three,
+.newest .today-cont .newest-hvr .today-btn .xiqin .xiqin-three,
+.today .newest-cont .newest-hvr .today-btn .xiqin .xiqin-three,
+.newest .newest-cont .newest-hvr .today-btn .xiqin .xiqin-three,
+.today .today-cont .today-hvr .newest-btn .xiqin .xiqin-three,
+.newest .today-cont .today-hvr .newest-btn .xiqin .xiqin-three,
+.today .newest-cont .today-hvr .newest-btn .xiqin .xiqin-three,
+.newest .newest-cont .today-hvr .newest-btn .xiqin .xiqin-three,
+.today .today-cont .newest-hvr .newest-btn .xiqin .xiqin-three,
+.newest .today-cont .newest-hvr .newest-btn .xiqin .xiqin-three,
+.today .newest-cont .newest-hvr .newest-btn .xiqin .xiqin-three,
+.newest .newest-cont .newest-hvr .newest-btn .xiqin .xiqin-three {
+  color: #ff5400;
+  margin-top: 2px;
+}
+.today .today-cont .today-hvr .today-btn .xiqin .xiqin-three .j1,
+.newest .today-cont .today-hvr .today-btn .xiqin .xiqin-three .j1,
+.today .newest-cont .today-hvr .today-btn .xiqin .xiqin-three .j1,
+.newest .newest-cont .today-hvr .today-btn .xiqin .xiqin-three .j1,
+.today .today-cont .newest-hvr .today-btn .xiqin .xiqin-three .j1,
+.newest .today-cont .newest-hvr .today-btn .xiqin .xiqin-three .j1,
+.today .newest-cont .newest-hvr .today-btn .xiqin .xiqin-three .j1,
+.newest .newest-cont .newest-hvr .today-btn .xiqin .xiqin-three .j1,
+.today .today-cont .today-hvr .newest-btn .xiqin .xiqin-three .j1,
+.newest .today-cont .today-hvr .newest-btn .xiqin .xiqin-three .j1,
+.today .newest-cont .today-hvr .newest-btn .xiqin .xiqin-three .j1,
+.newest .newest-cont .today-hvr .newest-btn .xiqin .xiqin-three .j1,
+.today .today-cont .newest-hvr .newest-btn .xiqin .xiqin-three .j1,
+.newest .today-cont .newest-hvr .newest-btn .xiqin .xiqin-three .j1,
+.today .newest-cont .newest-hvr .newest-btn .xiqin .xiqin-three .j1,
+.newest .newest-cont .newest-hvr .newest-btn .xiqin .xiqin-three .j1 {
+  font-size: 16px;
+}
+.today .today-cont .today-hvr .today-btn .xiqin .xiqin-three .j2,
+.newest .today-cont .today-hvr .today-btn .xiqin .xiqin-three .j2,
+.today .newest-cont .today-hvr .today-btn .xiqin .xiqin-three .j2,
+.newest .newest-cont .today-hvr .today-btn .xiqin .xiqin-three .j2,
+.today .today-cont .newest-hvr .today-btn .xiqin .xiqin-three .j2,
+.newest .today-cont .newest-hvr .today-btn .xiqin .xiqin-three .j2,
+.today .newest-cont .newest-hvr .today-btn .xiqin .xiqin-three .j2,
+.newest .newest-cont .newest-hvr .today-btn .xiqin .xiqin-three .j2,
+.today .today-cont .today-hvr .newest-btn .xiqin .xiqin-three .j2,
+.newest .today-cont .today-hvr .newest-btn .xiqin .xiqin-three .j2,
+.today .newest-cont .today-hvr .newest-btn .xiqin .xiqin-three .j2,
+.newest .newest-cont .today-hvr .newest-btn .xiqin .xiqin-three .j2,
+.today .today-cont .newest-hvr .newest-btn .xiqin .xiqin-three .j2,
+.newest .today-cont .newest-hvr .newest-btn .xiqin .xiqin-three .j2,
+.today .newest-cont .newest-hvr .newest-btn .xiqin .xiqin-three .j2,
+.newest .newest-cont .newest-hvr .newest-btn .xiqin .xiqin-three .j2 {
+  font-size: 24px;
+}
+.today .today-cont .today-hvr .today-btn .xiqin .xiqin-four,
+.newest .today-cont .today-hvr .today-btn .xiqin .xiqin-four,
+.today .newest-cont .today-hvr .today-btn .xiqin .xiqin-four,
+.newest .newest-cont .today-hvr .today-btn .xiqin .xiqin-four,
+.today .today-cont .newest-hvr .today-btn .xiqin .xiqin-four,
+.newest .today-cont .newest-hvr .today-btn .xiqin .xiqin-four,
+.today .newest-cont .newest-hvr .today-btn .xiqin .xiqin-four,
+.newest .newest-cont .newest-hvr .today-btn .xiqin .xiqin-four,
+.today .today-cont .today-hvr .newest-btn .xiqin .xiqin-four,
+.newest .today-cont .today-hvr .newest-btn .xiqin .xiqin-four,
+.today .newest-cont .today-hvr .newest-btn .xiqin .xiqin-four,
+.newest .newest-cont .today-hvr .newest-btn .xiqin .xiqin-four,
+.today .today-cont .newest-hvr .newest-btn .xiqin .xiqin-four,
+.newest .today-cont .newest-hvr .newest-btn .xiqin .xiqin-four,
+.today .newest-cont .newest-hvr .newest-btn .xiqin .xiqin-four,
+.newest .newest-cont .newest-hvr .newest-btn .xiqin .xiqin-four {
+  color: #666;
+  text-indent: 7px;
+  margin-top: 3px;
+  text-decoration: line-through;
+}
+.today .today-cont .on .today-img,
+.newest .today-cont .on .today-img,
+.today .newest-cont .on .newest-img,
+.newest .newest-cont .on .newest-img {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}

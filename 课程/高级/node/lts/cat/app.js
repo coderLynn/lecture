@@ -10,20 +10,36 @@ var users = require('./routes/users');
 
 var app = express();
 
+/*引入http模块*/
+var http=require('http');
+var server=http.createServer();
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
+/*解决favicon.ico请求失败*/
+server.on('request',function(req,res){
+    if(req.url!='/favicon.ico'){
+        console.log(req.url);
+        res.end();
+    }
+});
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+/*讲路由功能存入index页面*/
+routes(app);
+//app.use('/', routes);
+//app.use('/users', users);
 
-app.use('/', routes);
-app.use('/users', users);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -56,5 +72,5 @@ app.use(function(err, req, res, next) {
   });
 });
 
-
+/*app传给index*/
 module.exports = app;

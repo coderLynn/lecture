@@ -1,0 +1,1 @@
+Fengs.add("940/utils/info",function(){var n=function(){var n={aa:function(){alert(22222)},bb:function(){this.aa()}};return n};return n});
