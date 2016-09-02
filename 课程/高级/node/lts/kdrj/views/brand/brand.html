@@ -1,0 +1,128 @@
+<%@page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<!--[if lt IE 6]><html class="ie ie6"><![endif]-->
+<!--[if IE 7]><html class="ie ie7"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html>
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="D-Width-Response" content="class=g-wrap">
+    <title>客户达分销平台</title>
+
+    <link rel="stylesheet" type="text/css" href="/style/brand.css?160824">
+    <link rel="stylesheet" type="text/css" href="/style/shengs.css">
+</head>
+<body>
+
+<jsp:include page="/inc/header.jsp"/>
+
+<!-- 所有分类 -->
+<!-- <div class="suofen-layout">
+</div> -->
+
+<!-- 今日热卖 -->
+<div class="today-layout">
+    <div class="today">
+        <!-- 标题 -->
+        <div class="today-title">
+            <div class="mod_search_select clearfix" id="rankOpDiv" data-tpa="SEARCH_MIAN_RANK">
+                <div class="sort_b">
+                    <a class="zh cur" data-sort="" href="javascript:void(0);">默认排序
+                    </a>
+                    <a data-sort="timedesc" href="javascript:void(0);">
+                        <span>按时间</span>
+                        <i class="iconSearch"></i>
+                    </a>
+                    <a data-sort="costdesc" href="javascript:void(0);">
+                        <span>按价格</span>
+                        <i class="iconSearch icons"></i>
+                    </a>
+                </div>
+                <div class="between">
+                    <div class="boxTop">
+                        <input class="ip1" type="text" placeholder="¥" id="searchPriceRangeMin" value="¥" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" onblur="this.value=this.value.replace(/\D/g,'')">
+                        <span>−</span>
+                        <input class="ip2" type="text" placeholder="¥" id="searchPriceRangeMax" value="¥" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" onblur="this.value=this.value.replace(/\D/g,'')"></div>
+                    <ul class="boxCon" style="display: none;">
+                        <li class="first">
+                            <a href="javascript:void(0);" class="btn1">清除</a>
+                            <a class="btn2" href="javascript:void(0);" url="javascript:void(0);">确定</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 标题 -->
+                <div class="sear-xinxi fl">商品信息</div>
+                <div class="sear-caigou fl">采购价（元）</div>
+                <div class="sear-shicg fl">市场价（元）</div>
+
+                <div class="search_select_page">
+                    <a class="pg1" href="javascript:void(0);"></a>
+                    <a class="pg2" href="javascript:void(0);"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 商品 -->
+        <div class="today-shangp fl">
+        </div>
+
+        <!-- 全选 -->
+        <div class="slt">
+            <div class="slt-i fl">
+                <i></i>
+            </div>
+            <div class="slt-inp fl">
+                <input class="area_but" type="submit" style="display:block" value="批量铺货">
+            </div>
+            <div class="slt-text fl">
+                <span>系统共有 <i>5654250</i> 件商品，符合条件 <i>308</i> 件商品</span>
+            </div>
+            <div class="slt-paging fr">
+                <span class="slt-span">共 <i>84</i> 页</span>
+                <a class="pag1 pags" href="javascript:void(0);"></a>
+                <a class="pag2 pags" href="javascript:void(0);"></a>
+                <div class="select-box fl">
+
+                    <dl class="more-select more-dl select-btn fl" style="z-index: 1;">
+                        <dt>
+                            <i class="select-icon select-i fl"></i>
+                            <span style="border: 1px solid rgb(202, 202, 202);">1</span>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li><a>1</a></li>
+                                <li><a>2</a></li>
+                                <li><a>3</a></li>
+                                <li><a>4</a></li>
+                                <li><a>5</a></li>
+                                <li><a>6</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<jsp:include page="/inc/footer.jsp"/>
+
+<jsp:include page="/inc/sidebar.jsp"/>
+
+
+    <script type="text/javascript" src='../script/jquery-1.8.3.min.js'></script>
+    <script type="text/javascript" src='../script/fengs.2.1.js'></script>
+    <script type="text/javascript" src='../script/config.js?20160801'></script>
+    <script type="text/javascript" src="../script/jquery.SuperSlide.2.1.1.js?20160808"></script>
+    <script type="text/javascript" src="../static/kdrj/shengs.js"></script>
+    <script type="text/javascript">Fengs.use('kdrj/brand/brand');</script>
+
+
+</body>
+</html>
