@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-   <% include comm/style.ejs %>
-  </head>
-  <body>
- <div class="wrapper">
-  <% include comm/header.ejs %>
-  <% include comm/footer.ejs %>
-  </div>
-  </body>
-  </html>
-  
+<% include header %>
+
+<div class="warrper">
+    <form enctype="multipart/form-data">
+        <div class="ui-input">
+            <input type="text" placeholder="请输入标题">
+            <div class="post-content">
+                <textarea></textarea>
+            </div>
+        </div>
+    </form>
+</div>
+
+<%include footer %>

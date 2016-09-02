@@ -6,8 +6,23 @@
 .container{
   margin:0 auto;
   padding:0 15px;
+  &:after{
+    content:'';
+    display: table;
+    clear: both;
+  }
+  &:before{
+    display: table;
+    content: "";
+    clear: both;
+  }
 }
-
+.warrper{
+  text-align:center;
+    padding:20px 10px;
+    min-height:100px;
+   max-height:500px;
+}
 
 /*博客list*/
 .ui-list{
@@ -39,6 +54,26 @@
 
 
 
+/*右侧博客列表*/
+.ui-right-item{
+   ul{
+     li{
+       border-bottom:1px dashed #ccc;
+       padding:10px 5px;
+       list-style:square;
+       a{
+         text-decoration: none;
+         color: #000000;
+         line-height:20px;
+       }
+     }
+   }
+    margin-left:45px;
+   margin-top:50px;
+}
+
+
+
 
 /*screen匹配*/
 @media screen {
@@ -57,9 +92,11 @@
         width:80%;
       }
       .col-9{
+        float:left;
         width:75%;
       }
       .col-3{
+        float:left;
         width:25%;
       }
     }
