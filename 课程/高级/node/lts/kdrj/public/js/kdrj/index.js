@@ -127,7 +127,7 @@ Fengs.add('kdrj/index', function(S, $,Req, cookie, md5, popBox) {
                                     <dl>'
                                     for (var k = 0; k < clsifyData[j].list.length; k++) {
                                         fenleis+= '<dd class="xq-dd">\
-                                            <a href="/spfl/cdity.jsp?id='+clsifyData[j].list[k].i+'&sorts=&is=' + clsifyData[j].id + '&js='+k+'" target="_blank">' + clsifyData[j].list[k].name + '</a>\
+                                            <a href="/cdity?id='+clsifyData[j].list[k].i+'&sorts=&is=' + clsifyData[j].id + '" target="_blank">' + clsifyData[j].list[k].name + '</a>\
                                             </dd>';
                                     }'</dl>\
                                     </div>\
@@ -154,7 +154,7 @@ Fengs.add('kdrj/index', function(S, $,Req, cookie, md5, popBox) {
                                     <dl>'
                                     for (var k = 0; k < cifyData[j].list.l.length; k++) {
                                         fenlei+= '<dd class="xq-dd">\
-                                            <a href="/spfl/cdity.jsp?id='+cifyData[j].list.l[k].i+'&sorts=&is=' + cifyData[j].id + '&js='+k+'" target="_blank">' + cifyData[j].list.l[k].n + '</a>\
+                                            <a href="cdity?id='+cifyData[j].list.l[k].i+'&sorts=&is=' + cifyData[j].id + '&js='+k+'&js='+k+'" target="_blank">' + cifyData[j].list.l[k].n + '</a>\
                                             </dd>';
                                     }'</dl>\
                                     <div class="tp-with tp-xiewa">'
@@ -396,6 +396,7 @@ Fengs.add('kdrj/index', function(S, $,Req, cookie, md5, popBox) {
                                         </div>\
                                         </div>\
                                         </div>\
+                                        <div class="today-line"></div>\
                                         <div class="today-top">\
                                         <img class="today-img" src="'+hotData[i].m+'" height="228" width="228">\
                                         </div>\
@@ -424,13 +425,21 @@ Fengs.add('kdrj/index', function(S, $,Req, cookie, md5, popBox) {
                             // js加载问题
                             $(".today-cont").slide({
                                 type:"menu",
-                                titCell:".today-hvr",
+                                titCell:".today-hr",
                                 targetCell:".today-leptn",
                                 delayTime:0,
                                 triggerTime:10,
                                 defaultPlay:false,
                                 returnDefault:true
                             });
+                            // hvr
+                            $(".today-hvr").hover(function() {
+                               $(this).addClass('hvr');
+                            },
+                            function() {
+                                $(this).removeClass('hvr');
+                            });
+
                         }
 
                     }
@@ -487,6 +496,7 @@ Fengs.add('kdrj/index', function(S, $,Req, cookie, md5, popBox) {
                                         </div>\
                                         </div>\
                                         </div>\
+                                        <div class="newest-line"></div>\
                                         <div class="newest-top">\
                                         <img class="newest-img" src="'+newData[i].m+'" height="228" width="228">\
                                         </div>\
@@ -522,6 +532,13 @@ Fengs.add('kdrj/index', function(S, $,Req, cookie, md5, popBox) {
                                 defaultPlay:false,
                                 returnDefault:true
                             });
+                            $(".newest-hvr").hover(function() {
+                               $(this).addClass('hvr');
+                            },
+                            function() {
+                                $(this).removeClass('hvr');
+                            });
+
                         }
 
                     }

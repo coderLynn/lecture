@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 6]><html class="ie ie6"><![endif]-->
+<!--[if IE 7]><html class="ie ie7"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html>
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="D-Width-Response" content="class=g-wrap">
+    <title>客户达分销平台</title>
+
+    <link rel="stylesheet" type="text/css" href="/style/shopmgt.css?160824">
+    <link rel="stylesheet" type="text/css" href="/style/shengs.css">
+</head>
+<body>
+
+<% include ../inc/header.ejs %>
+
+<!-- 所有分类 -->
+<div class="suofen-layout">
+    <div class="suofen-cont">
+        <!-- a链接 -->
+        <div class="suofen-tltle fl">
+            <ul class="tltle-ul">
+                <li>
+                    <a href="javascript:void(0);">店铺体检</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="hover">宝贝管理</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">待发货订单</a>
+                </li>
+            </ul>
+        </div>
+        <!-- 当前店铺 -->
+        <div class="crtshop fr">
+            <div class="crtshop-cont fr">
+                <!-- 登录前状态 -->
+                <div class="crtshop-lg"></div>
+                <div class="crtshop-text">
+                    当前店铺：<a href="javascript:void(0);">请登录</a>
+                </div>
+
+                <!-- 登录后状态 -->
+<!--                 <div class="crtshop-mg"></div>
+                <div class="crtshop-text crtshop-mag">
+                    当前店铺：<a href="javascript:void(0);">lijunsheng333</a>
+                </div>
+                <div class="crtshop-switch">
+                    <a href="javascript:void(0);">
+                        <span>切换</span>
+                        <i></i>
+                    </a>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 今日热卖 -->
+<div class="today-layout">
+    <div class="today">
+        <!-- 标题 -->
+        <div class="today-title">
+            <div class="mod_search_select clearfix" id="rankOpDiv" data-tpa="SEARCH_MIAN_RANK">
+                <div class="sort_b">
+                    <a class="zh cur" data-sort="" href="javascript:void(0);">默认排序
+                    </a>
+                    <a data-sort="timedesc" href="javascript:void(0);">
+                        <span>按时间</span>
+                        <i class="iconSearch"></i>
+                    </a>
+                    <a data-sort="costdesc" href="javascript:void(0);">
+                        <span>按价格</span>
+                        <i class="iconSearch"></i>
+                    </a>
+                    <a href="javascript:void(0);">
+                        <span>按状态</span>
+                        <i class="iconSearch icons"></i>
+                    </a>
+                </div>
+
+                <!-- 标题 -->
+                <div class="sear-spxi fl">商品信息</div>
+                <div class="sear-xinxi fl">单价（元）</div>
+                <div class="today-commod3 fl">
+                    <div class="select-box fx-99">
+                        <dl class="more-select more-dl select-btn fl">
+                            <dt>
+                                <span>全部宝贝</span>
+                                <i class="select-icon select-i fl"></i>
+                            </dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="javascript:void(0);">全部宝贝</a></li>
+                                    <li><a href="javascript:void(0);">出售中的宝贝</a></li>
+                                    <li><a href="javascript:void(0);">仓库中的宝贝</a></li>
+                                    <li><a href="javascript:void(0);">客户达发布的宝贝</a></li>
+                                    <li><a href="javascript:void(0);">已失效的宝贝</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="sear-shicg fl">操作</div>
+                <div class="sear-caigou fl">推广</div>
+            </div>
+        </div>
+
+        <!-- 商品 -->
+        <div class="today-shangp fl">
+        </div>
+
+        <!-- 全选 -->
+        <div class="slt">
+            <div class="slt-i fl">
+                <i></i>
+            </div>
+            <div class="slt-inp fl">
+                <input class="area_but" type="submit" style="display:block" value="批量下架">
+            </div>
+            <div class="slt-but fl">
+                <input class="area_but" type="submit" style="display:block" value="批量上架">
+            </div>
+            <div class="slt-text fl">
+                <span>您的店铺共有 <i>50</i> 件商品，客户达提供的商品 <i>38</i> 件</span>
+            </div>
+            <div class="slt-paging fr">
+                <span class="slt-span">共 <i>84</i> 页</span>
+                <a class="pag1 pags" href="javascript:void(0);"></a>
+                <a class="pag2 pags" href="javascript:void(0);"></a>
+                <div class="select-box fl">
+
+                    <dl class="more-select more-dl select-btn fl" style="z-index: 1;">
+                        <dt>
+                            <i class="select-icon select-i fl"></i>
+                            <span style="border: 1px solid rgb(202, 202, 202);">1</span>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li><a>1</a></li>
+                                <li><a>2</a></li>
+                                <li><a>3</a></li>
+                                <li><a>4</a></li>
+                                <li><a>5</a></li>
+                                <li><a>6</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../inc/footer.ejs %>
+
+<% include ../inc/sidebar.ejs %>
+
+
+    <script type="text/javascript" src='../script/jquery-1.8.3.min.js'></script>
+    <script type="text/javascript" src='../script/fengs.2.1.js'></script>
+    <script type="text/javascript" src='../script/config.js?20160801'></script>
+    <script type="text/javascript" src="../script/jquery.SuperSlide.2.1.1.js?20160808"></script>
+    <script type="text/javascript" src="../static/kdrj/shengs.js"></script>
+    <script type="text/javascript">Fengs.use('kdrj/shop/shopmgt');</script>
+
+
+</body>
+</html>

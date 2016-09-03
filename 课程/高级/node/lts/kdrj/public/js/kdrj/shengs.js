@@ -53,7 +53,7 @@ $(function() {
     $("#taobaos").click(function() {
         $(".changes").remove();
         localStorage.changecss = 1;
-        $("#changeCss").attr('href', "stylesheets/style/index.css");
+        $("#changeCss").attr('href', "../../style/index.css");
         if (localStorage.changecss == 1) {
             $("#logochange i").addClass("icon1").removeClass("icon2");
             $("#logochange span").html("淘宝货源");
@@ -70,7 +70,7 @@ $(function() {
             class: "changes",
             rel: "stylesheet",
             type: "text/css",
-            href: "stylesheets/style/weishang.css"
+            href: "../../style/weishang.css"
         });
 
         if (localStorage.changecss == 0) {

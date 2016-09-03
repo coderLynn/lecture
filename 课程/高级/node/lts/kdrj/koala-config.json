@@ -8,18 +8,24 @@
 		},
 		{
 		 	"src": "public/debug/style",
-		 	"dest": "public/stylesheets/style"
+		 	"dest": "public/style"
 		}
 	],
 
 	// Add the ignore rules that Koala will not search them.
 	// e.g. ["*.json", "*.txt", "test", "path/libs"]
 	"ignores": [
-		"public/javascripts",
+		"/bin",
+		"/node_modules",
 		"/routes",
-		"/static",
 		"/views",
-		"/node_modules"
+		"/app.js",
+		"/public/debug/common",
+		"/public/debug/jquery",
+		"/public/style",
+		"/public/style/layer.css",
+		"/public/static",
+		"/public/script"
 	],
 
 	// Options of Compilers.

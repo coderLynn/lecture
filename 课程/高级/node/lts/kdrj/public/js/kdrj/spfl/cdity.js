@@ -12,6 +12,8 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
             var lines = 20;
             var is = (paramss.is) - 1;
             var js = paramss.js;
+            var count=paramss.count;
+            var all=paramss.all;
             var page = page?$("#pages").find("ul li a").text():1;
             // 所有分类
             _this._datalist(is, js);
@@ -21,6 +23,7 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
             _this._sorts(lines);
             // 下拉菜单点击多少页
             _this._actionPage(sorts, id, lines, page);
+            _this.pageclick();
         },
 
         // 所有分类
@@ -95,7 +98,7 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
                             $.each(hotData[is].list.l, function(i, val) {
                                 // hover(a)
                                 $(".tltle-ul").append('<li>' +
-                                    '<a href="/spfl/cdity.jsp?id=' + hotData[is].list.l[i].i + '&sorts=&is=' + hotData[is].id + '&js=' + i + '">' + val.n + '</a>' +
+                                    '<a href="cdity?id=' + hotData[is].list.l[i].i + '&sorts=&is=' + hotData[is].id + '&js=' + i + '">' + val.n + '</a>' +
                                     '</li>');
                             });
 
@@ -113,21 +116,25 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
                                 var kuais = '<li><a href="javascript:void(0);" target="_blank">' + hotData[0].list.l[0].tags.tag[0].list.l[i].tn + '</a></li>';
                                 $(".kuais ul").append(kuais);
                             }*/
-
+//                                console.log( hotData[is].list.l[0].i);
                             try {
                                 $.each(hotData[is].list.l[js].tags.tag[0].list.l, function(i, val) {
-                                    console.log(val);
+//                                    console.log(val);
                                     $(".kuais ul").append('<li>' +
-                                        '<a href="javascript:void(0);" target="_blank">' + val.tn + '</a>' +
+                                        '<a href="cdity?id=' + hotData[is].list.l[i].i + '&sorts=&is=' + hotData[is].id + '&js=' + i + '" target="_blank">' + val.tn + '</a>' +
                                         '</li>');
                                 });
                             } catch (e) {
-                                $.each(hotData[is].list.l[js].tags.tag.list.l, function(i, val) {
-                                    console.log(val);
-                                    $(".kuais ul").append('<li>' +
-                                        '<a href="javascript:void(0);" target="_blank">' + val.tn + '</a>' +
-                                        '</li>');
-                                });
+                                try{
+                                    $.each(hotData[is].list.l[js].tags.tag.list.l, function(i, val) {
+//                                    console.log(val);
+                                        $(".kuais ul").append('<li>' +
+                                            '<a href="cdity?id=' + hotData[is].list.l[i].i + '&sorts=&is=' + hotData[is].id + '&js=' + i + '" target="_blank">' + val.tn + '</a>' +
+                                            '</li>');
+                                    });
+                                }catch(e){
+                                    console.log(e);
+                                }
                             }
 
                             // 材质
@@ -139,7 +146,7 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
                             try {
                                 $.each(hotData[is].list.l[js].tags.tag[1].list.l, function(i, val) {
                                     $(".caiz ul").append('<li>' +
-                                        '<a href="javascript:void(0);" target="_blank">' + val.tn + '</a>' +
+                                        '<a href="cdity?id=' + hotData[is].list.l[i].i + '&sorts=&is=' + hotData[is].id + '&js=' + i + '" target="_blank">' + val.tn + '</a>' +
                                         '</li>');
                                 });
                             } catch (e) {
@@ -155,7 +162,7 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
                             try {
                                 $.each(hotData[is].list.l[js].tags.tag[2].list.l, function(i, val) {
                                     $(".fenge ul").append('<li>' +
-                                        '<a href="javascript:void(0);" target="_blank">' + val.tn + '</a>' +
+                                        '<a href="cdity?id=' + hotData[is].list.l[i].i + '&sorts=&is=' + hotData[is].id + '&js=' + i + '" target="_blank">' + val.tn + '</a>' +
                                         '</li>');
                                 });
                             } catch (e) {
@@ -173,6 +180,7 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
                     console.log(data);
                 }
             });
+            return false;
         },
 
 
@@ -359,7 +367,7 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
                                 $(this).removeAttr("style");
                             });
                         };
-
+                        dt.unbind("click");
                         dt.click(function(e) {
                             e.stopPropagation();
                             // 0
@@ -378,7 +386,6 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
                         	   _hide();
                            }
                         });
-
                         dd.find("a").click(function() {
                             dt.children("span").html($(this).html());
                             _hide();
@@ -393,7 +400,6 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
                     console.log(data);
                 }
             });
-
         },
 
         // a标签点击跳转
@@ -427,7 +433,7 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
         },
 
         _page: function(count, all, lines) {
-            var a = parseInt(parseInt(count) / lines);
+            var a = parseInt(parseInt(all) / 10);
             if (a == 0) {
                 page = a;
             } else {
@@ -435,8 +441,8 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
             }
             // 下拉菜单点击多少页（点击）
             $("#pages .more-select dd ul").html("");
-            if(page>80){
-            	var k=80;
+            if(page>a){
+            	var k=a+2;
             }else{
             	var k=page
             }
@@ -444,24 +450,60 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
                 $("#pages .more-select dd ul").append('<li><a>' + i + '</a></li>');
             }
             $("#pages .more-select dt").css({"width":"60px"});
-            console.log(lines);
+//            console.log(lines);
             $(".slt-paging span i").first().text(page);
             $(".slt-text span i").first().text(count);
             $(".slt-text span i").last().text(all);
-            
-            
+            this.pageclick();
+
+        },
+
+        _actionPage: function(sorts, id, lines, page) {
+            var _this = this;
+            var page = page;
+            $(".pag1").unbind("click");
+            $(".pag1").click(function(e) {
+                e.stopPropagation();
+                if (page > 1) {
+                    page--
+                } else {
+                    page = 1
+                }
+                _this._cdity(sorts, id, lines, page);
+                $("#pages .more-select dt span").text(page);
+                $(".slt-paging .fansir").text(page);
+                return false;
+            });
+            $(".pag2").unbind("click");
+            $(".pag2").click(function(e) {
+                var pa=($(".slt-text span i").last().text())/10;
+                console.log(pa);
+                e.stopPropagation();
+                if(page>pa) {
+                    page;
+                }else{
+                    page++;
+                }
+                _this._cdity(sorts, id, lines, page);
+                $("#pages .more-select dt span").text(page);
+                return false;
+            });
+           
+        },
+        pageclick:function(){
             var paramss = _this.GetRequest("id");
             var id = paramss.id;
             var sorts = paramss.sorts;
             var lines = 20;
             var is = (paramss.is) - 1;
             var js = paramss.js;
+            $("#pages").find("ul li a").unbind("click");
             $("#pages").find("ul li a").click(function(e){
-            	e.stopPropagation()
-            	var page=$(this).text();
-            	_this._cdity(sorts, id, lines, page);
-	            _this._actionPage(sorts, id, lines, page);	
-	            //下拉菜单
+                e.stopPropagation()
+                var page=$(this).text();
+                _this._cdity(sorts, id, lines, page);
+                _this._actionPage(sorts, id, lines, page);
+                //下拉菜单
                 $(".more-select").each(function() {
                     var y = $(this).find("dt span");
                     var s = $(this);
@@ -481,13 +523,13 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
                         s.css("z-index", z);
                         y.css("border", "1px solid #fff");
                     }; //关闭效果
-/*                        dt.click(function() {
-                        dd.is(":hidden") ? _show() : _hide();
-                    });
-                    dd.find("a").click(function() {
-                        dt.html($(this).html());
-                        _hide();
-                    }); //选择效果（如需要传值，可自定义参数，在此处返回对应的“value”值 ）*/
+                    /*                        dt.click(function() {
+                     dd.is(":hidden") ? _show() : _hide();
+                     });
+                     dd.find("a").click(function() {
+                     dt.html($(this).html());
+                     _hide();
+                     }); //选择效果（如需要传值，可自定义参数，在此处返回对应的“value”值 ）*/
 
                     var allhide = function() {
                         $(".more-select").each(function() {
@@ -498,7 +540,6 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
                             $(this).removeAttr("style");
                         });
                     };
-
                     dt.click(function(e) {
                         e.stopPropagation();
                         // 0
@@ -511,13 +552,12 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
 
                     $("html,body").click(function(e) {
                         e.stopPropagation();
-                       if(dd.is(":hidden")){
-                    	   return;
-                       }else{
-                    	   _hide();
-                       }
+                        if(dd.is(":hidden")){
+                            return;
+                        }else{
+                            _hide();
+                        }
                     });
-
                     dd.find("a").click(function() {
                         dt.children("span").html($(this).html());
                         _hide();
@@ -525,28 +565,7 @@ Fengs.add('kdrj/spfl/cdity', function(S, $, Req, cookie, md5, popBox) {
 
 
                 });
-            });	
-        },
-
-        _actionPage: function(sorts, id, lines, page) {
-            var _this = this;
-            var page = page;
-            $(".pag1").click(function() {
-                if (page > 1) {
-                    page--
-                } else {
-                    page = 1
-                }
-                _this._cdity(sorts, id, lines, page);
-                $("#pages .more-select dt span").text(page);
-                $(".slt-paging .fansir").text(page);
             });
-            $(".pag2").click(function() {
-                page++;
-                _this._cdity(sorts, id, lines, page);
-                $("#pages .more-select dt span").text(page);
-            });
-           
         }
 
     };

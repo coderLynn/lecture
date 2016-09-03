@@ -6,4 +6,4 @@ var setting=require('../settings'),
     Connection=require('mongodb').Connection;
     Server=require('mongodb').Server;
 /*创建数据库连接*/
-module.exports=new Db(setting.db,new Server(setting.host,Connection.DEFAULT_PORT),{safe:true});
+module.exports=new Db(setting.db,new Server(setting.host,27017),{safe:true});

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--[if lt IE 6]><html class="ie ie6"><![endif]-->
+<!--[if IE 7]><html class="ie ie7"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html>
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="D-Width-Response" content="class=g-wrap">
+    <title>客户达分销平台</title>
+    <link rel="stylesheet" type="text/css" href="/style/login.css?160809">
+</head>
+<body>
+
+
+
+
+<!-- 页头 -->
+<div class="header" id="header">
+    <div class="header-cont">
+        <div class="head1">
+            <div class="fl header-fl">
+                <a href="/" class="header-logo">
+                    <img src="/images/index/header-logo.png">
+                </a>
+            </div>
+            <div class="fr header-fr">
+                <div class="header-main">
+                    <div class="head-f fl">
+                        <span class="title">您好，欢迎光临客户达！</span>
+                        <span>[<a href="login" class="clr1">请登录</a>]</span>
+                        <span> 或 </span>
+                        <span>[<a href="regist" class="clr2">注册</a>]</span>
+                    </div>
+                    <a href="/" class="head-r fl">
+                        <i></i>
+                        返回首页
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 登录 -->
+<div class="log">
+    <div class="log-cont">
+        <div class="log-left fl">
+        </div>
+        <div class="log-right fl">
+            <div class="log-f fl"></div>
+            <div class="log-main fl">
+                <div class="log-t">
+                    <i></i>
+                </div>
+                <!-- login -->
+                <div class="login_l">
+                    <div action="" method="get" id="loginForm" name="loginForm">
+                        <input type="text" class="l_text1 mb3" id="l_username" placeholder="客户达账号">
+                        <input type="password" class="l_text2 mb8" id="l_pass" placeholder="登录密码">
+                        <div class="forget_p">
+                            <span class="sel_login sel" id="sel_login"> <i></i>
+                                自动登录
+                            </span>
+                            <a href="javascript:void(0);" class="forget_a">忘记密码？</a>
+                        </div>
+                        <input type="submit" value="" class="btn_sub mt18 mb8">
+                    </div>
+                    <!--错误提示-->
+                    <div class="error_text" id="error_login" style="display: none;">
+                        <span></span> <i id="error_login_msg">13662299854不存在！</i>
+                    </div>
+                    <div>
+                        <a href="regist" class="a_login"></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="log-r fr"></div>
+        </div>
+    </div>
+</div>
+
+<!-- footer脚部 -->
+<div class="footer" id="footer">
+    <div class="footer-cont">
+        <div class="footer-jianju">
+            <div class="links fl">
+                <a target="_blank" href="javascript:void(0);">关于我们</a>
+                <i>|</i>
+                <a target="_blank" href="javascript:void(0);">联系我们</a>
+                <i>|</i>
+                <a target="_blank" href="javascript:void(0);">企业资质</a>
+                <i>|</i>
+                <a target="_blank" href="javascript:void(0);">了解更多</a>
+                <i>|</i>
+                <a target="_blank" href="javascript:void(0);">
+                    <span>友情链接</span>
+                    <!-- <i class="jt"></i> -->
+                </a>
+            </div>
+            <div class="bz fr">
+                <span>深圳市客户达科技有限公司&nbsp;©&nbsp;粤ICP备14062068号</span>
+                <i></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script type="text/javascript" src='../script/jquery-1.8.3.min.js'></script>
+    <script type="text/javascript" src='../script/fengs.2.1.js'></script>
+    <script type="text/javascript" src='../script/config.js?20160801'></script>
+    <script type="text/javascript">Fengs.use('kdrj/user/login');</script>
+
+
+<script type="text/javascript">
+$(function(){
+    $(".sel_login").click(function(){
+        $(this).toggleClass("sel");
+    });
+});
+</script>
+
+
+
+
+</body>
+</html>

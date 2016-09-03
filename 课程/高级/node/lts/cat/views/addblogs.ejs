@@ -1,28 +1,31 @@
 <% include header %>
 
 <div class="warrper">
-    <form enctype="multipart/form-data" id="blogsform">
         <div class="ui-input">
-            <input type="text" name="titles" placeholder="请输入标题">
-            <div class="post-content">
-                <textarea></textarea>
-            </div>
-            <input type="submit" name="blogc" value="提交">
+            <form enctype="multipart/form-data" id="blogsform" action="/addBlog" method="post">
+                <input type="text" name="titles"  placeholder="请输入标题">
+                <div class="post-content">
+                    <textarea  name="contents" id="contents"></textarea>
+                </div>
+            <input type="submit"  value="提交">
+            </form>
         </div>
-    </form>
 </div>
 
-
+<!--
 <script>
     $(function(){
             $("input[type='submit']").click(function(){
-                var param = {};
-                param=$("#blogsform").serialize();
+               /* var param = {};
+                param.title=$('input[name=titles]').val();
+                param.content=$('input[name=contents]').val();
+                param.pic=$('input[name=pic]').val();*/
+                var param=$("#blogsform").serialize();
                 $.post('/addBlog',param,function(data){
                         console.log(data);
                    console.log(document.cookie);
                 });
             });
     })
-</script>
+</script>-->
 <%include footer %>
