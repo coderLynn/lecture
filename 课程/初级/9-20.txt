@@ -1,0 +1,44 @@
+                      9-20的目标   
+
+html
+一.导航
+	1.<div>,<a>标签，ul标签，li标签
+
+二.banner图片
+  <div>,<img src="">
+
+
+三.列表（包括图片和文字）
+	1.<span>,<img src="">
+
+
+四.课程项目（包括图片文字）
+   <div>,<img>,<p>
+
+   
+   
+css样式
+五.样式：
+  1.margin(元素外边距) 
+  2.padding（元素内边距）
+  3.color（字体的颜色）
+  4.font-size（字体大小）
+  5.float（浮动：左浮动，有浮动）
+  6.border（边框：颜色属性，大小，边框风格）
+  8.left（向左多少像素）
+  9.right（向右多少像素）
+  10.list-style（li标签的风格，去掉list-style：none）
+  11.a标签的下滑杠（text-decoration：none去掉文本的下划线）
+  12.vertical—align:middle(上下居中的属性：属性设置元素的垂直对齐方式。)
+  
+  
+  
+  
+  
+  
+  7.position(定位：相对定位relative，绝对定位absolute)
+  
+  
+  
+  
+   
