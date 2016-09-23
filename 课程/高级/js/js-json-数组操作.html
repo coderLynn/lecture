@@ -34,7 +34,30 @@ console.log("第三种方法"+a2);
     a3.splice(1,1);
     console.log(a3);//["a", "c", "d", "c", "e", "f"]
 
+    var arr = [
+        ["颜色分类:黄色", "尺码:38"],
+        ["颜色分类:黄色", "尺码:38"],
+        ["颜色分类:浅棕色", "尺码:38"],
+        ["颜色分类:浅棕色", "尺码:38"],
+        ["颜色分类:黄色", "尺码:40"],
+        ["颜色分类:黄色", "尺码:40"],
+        ["颜色分类:黄色", "尺码:41"],
+        ["颜色分类:黄色", "尺码:41"]
+    ];
 
+    //获取不重复的颜色
+    var color, result = {};
+    for( var i = 0; i < arr.length; i++ ){
+        color = arr[i][0].split(':')[1];
+        result[color] = result[color] || true;
+    }
+
+    //转换成数组
+    var resultArr = [];
+    for( var color in result){
+        resultArr.push(color);
+    }
+    console.log(resultArr);
 </script>
 </body>
 </html>

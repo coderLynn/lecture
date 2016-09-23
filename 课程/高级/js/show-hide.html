@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="../jquery/jquery-demo/jquery-1.9.1.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+<div id="panel">
+    <h5>什么是心锚？</h5>
+    <div>
+        在我们生活的周围，有许多东西当我们一看见，便会油然兴起各种不同的心情。像这种能刺激产生特别感觉的东西，不管它是好是坏，我们称之为心锚。就是在心中所放的书签一样，可以在需要的时候，取用心锚设置时的心理状态，举个例来说，如果一个人在小时候有气球爆在他脸上的经验，以后再碰到气球的时候可能就会跑的远远的，这就是一种自然设置的心锚。
+    </div>
+</div>
+<script type="text/javascript">
+    /*第一种方法*/
+   /* $("#panel h5").click(
+            function () {
+                $(this).next("div").toggle();
+            }
+    );*/
+   /*第二种方法*/
+   /* $("#panel h5").unbind().bind('click',
+            function () {
+                if($(this).next("div").is(":hidden")){
+                    $(this).next("div").show();
+                }else{
+                    $(this).next("div").hide();
+                }
+            }
+    );*/
+/*第三种方法*/
+    $("#panel h5").toggle('click',
+            function () {
+                    $(this).next("div").show();
+            },function(){
+                $(this).next("div").hide();
+            }
+    );
+</script>
+</body>
+</html>

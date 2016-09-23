@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+        }
+        li{list-style:none;}
+        a{text-decoration: none;}
+        .header{
+            height: 85px;
+            width:100%;
+        }
+        .container{
+            width:1185px;
+            margin:0 auto;
+        }
+        .container .logo,.header-nav{
+            float: left;
+        }
+        .container .logo{
+            margin-top:20px;
+        }
+        .header-nav{
+            margin-left:75px;
+            margin-top:40px;
+        }
+        .header-nav li{
+            float: left;
+            list-style:none;
+        }
+        .header-nav li a{
+            padding:0 20px;
+            display: bloc;
+            text-decoration:none;
+            color:#666666;
+            font-size:20px;
+        }
+        .banners{
+            text-align:center;
+        }
+
+        /*课程特色*/
+        .class-spashe{
+            margin-right: -20px;
+            overflow: hidden;
+            margin-top:35px;
+            border-bottom: 1px solid #DEDEDE;
+            padding-bottom: 40px;
+        }
+        .class-spashe li{
+            margin-right: 20px;
+            width:280px;
+            float: left;
+        }
+        .class-spashe li img,.class-spashe li span{vertical-align:middle;}
+
+        /*最新课程*/
+        .course-header{
+            height:30px;
+            margin:20px 0 30px 0;
+        }
+        .course-header a{
+            width:90px;
+            color: #666666;
+            display: inline-block;
+            text-align: center;
+            font-size:14px;
+        }
+        .course-list{
+            margin-right:-20px;
+        }
+        .course-list:after{
+            content:'';
+            display: block;
+            clear: both;
+            zoom:1;
+            height:0;
+            line-height: 0;
+        }
+        .course-list:before{
+            content:'';
+            display: block;
+            clear: both;
+            zoom:1;
+            height:0;
+            line-height: 0;
+        }
+        .course-list li{
+            float: left;
+            position: relative;
+            height: auto;
+            width: 280px;
+            margin-right:20px;
+            margin-bottom:30px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            -weblit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            background-color: #FFFFFF;
+        }
+        .item-content{
+           margin: 20px;
+            line-height: 28px;
+        }
+        .item-content p{position: relative;font-size:14px;}
+        .item-content p:first-child{
+            color:#303332;
+            white-space: nowrap;
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+        }
+        .item-content p .money{position: absolute;right:0px;color:#FC583D;}
+        .item-content p .live{
+            color: #FC583D;
+        }
+        .item-content p .enroll{
+            color: #666666;
+            position: absolute;
+            right: 0;
+        }
+        body{
+            background: #f2f2f2;
+        }
+        .copy-footer{
+            overflow: hidden;
+            padding-top:30px;
+            padding-bottom:30px;
+            background: #2b2c2c;
+        }
+        .copy-footer p{
+            line-height: 22px;
+            color:#646464;
+            }
+        .copy-footer .footer-right{
+            float: right;
+        }
+        .copy-footer .footer-left{
+            float: left;
+         }
+        /*搜索*/
+        .ui-search{float: right;width:200px;height:30px;border:1px solid #ddd;margin-top:30px;}
+        .ui-search input{
+            outline:none;
+            width:100%;
+            height:100%;
+        }
+
+        /*登录注册*/
+        .panel .panel-header{
+            position: relative;
+            padding: 0 20px;
+            height: 60px;
+            border-bottom: 1px solid #f2f2f2;
+        }
+        .panel .panel-header h3{
+            height: 60px;
+            line-height: 60px;
+            font-size: 16px;
+            color: #303332;
+        }
+        .page-login .panel-body { padding: 60px 0 72px; }
+
+        .page-login form { overflow: hidden; margin: 0 auto; width: 360px; }
+
+        .page-login .input-wrapper { margin-bottom: 20px; }
+
+        .page-login .input-wrapper input { padding: 10px; width: 100%; font-size: 14px; line-height: 18px; border: 1px solid #DEDEDE; color: #333; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+        .page-login .validation-code input { width: 120px; margin-right: 10px; vertical-align: middle; }
+
+        .page-login .validation-code img { vertical-align: middle; }
+
+        .page-login .validation-code .validationPic { margin-right: 10px; max-width: 180px; height: 40px; }
+
+        .page-login .btn-submit { margin-bottom: 20px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; height: 40px; line-height: 40px; font-size: 16px; color: #fff; text-align: center; background-color: #FC583D; width: 100%; }
+
+        .page-login .btn-submit:hover { background-color: #ff725b; }
+
+        .page-login .btn-submit:active { background-color: #f0462a; }
+
+        .page-login .auto-login { color: #666; font-size: 12px; line-height: 14px; }
+
+        .page-login .auto-login input { vertical-align: middle; margin-right: 10px; }
+
+        .page-login .other-operation { margin-right: -1px; float: right; font-size: 12px; line-height: 14px; color: #DEDEDE; }
+
+        .page-login .other-operation a { margin: 0 10px; color: #28b28b; vertical-align: middle; }
+
+        .page-login .other-account { margin-top: 20px; *zoom: 1; }
+
+        .page-login .other-account:before, .page-login .other-account:after { content: ""; display: table; }
+
+        .page-login .other-account:after { clear: both; }
+
+        .page-login .other-account a { text-indent: -9999em; }
+
+        .page-login .other-account .account-qq { float: left; overflow: hidden; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; background-image: url("../common/images/sprite-social.png"); background-repeat: no-repeat; background-position: 0px -24px; width: 120px; height: 24px; }
+
+        .page-login .other-account .account-weibo { float: right; overflow: hidden; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; background-image: url("../common/images/sprite-social.png"); background-repeat: no-repeat; background-position: 0px 0px; width: 126px; height: 24px; }
+
+        .page-login .other-account .account-text { font-size: 14px; color: #999999; }
+
+        .page-login .other-account .other-weixin, .page-login .other-account .other-qq, .page-login .other-account .other-weibo { margin-left: 33px; background-image: url(../images/icon-login.png); display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; }
+
+        .page-login .other-account .login-weixin, .page-login .other-account .login-qq, .page-login .other-account .login-weibo { margin-left: 59px; }
+
+        .page-login .other-account .other-weixin { width: 24px; height: 20px; background-position: 0 0; }
+
+        .page-login .other-account .other-weixin:hover { background-position: 0 -32px; }
+
+        .page-login .other-account .other-qq { width: 19px; height: 20px; background-position: -61px 0; }
+
+        .page-login .other-account .other-qq:hover { background-position: -61px -32px; }
+
+        .page-login .other-account .other-weibo { width: 24px; height: 19px; background-position: -116px 0; }
+
+        .page-login .other-account .other-weibo:hover { background-position: -116px -32px; }
+
+        #popLogin { position: fixed; width: 360px; top: 50%; left: 0; right: 0; z-index: 11; margin: 0 auto; margin-top: -250px; }
+
+        #popLogin .panel-body { padding: 40px; }
+
+        #popLogin form { width: 280px; }
+
+        #popLogin .validation-code .validationPic { max-width: 110px; height: 38px; }
+
+    </style>
+</head>
+<body ng-controller="indexCtrl">
+<!--导航-->
+<div class="header">
+    <div class="container">
+        <a href="#" class="logo"><img src="img/gogoup-logo.png"></a>
+        <ul class="header-nav">
+            <li><a href="#/">首页</a></li>
+            <li><a href="#/allClass">全部课程</a></li>
+            <li><a href="#/myClass">我的课程</a></li>
+            <li><a href="#/appDown">APP下载</a></li>
+            <li><a href="#/files">文档专栏</a></li>
+            <li><a href="#/login">登录</a></li>
+        </ul>
+        <div class="ui-search"><input type="text" placeholder="请输入搜索内容" ng-model="ser"></div>
+    </div>
+</div>
+<div class="wrapper" ng-view="">
+
+</div>
+
+<script type="text/ng-template" id="index.html">
+    <!--banner-->
+    <div class="banners">
+        <img src="img/1472715691641.jpg" alt="banner图片">
+    </div>
+    <!--课程特色-->
+    <div class="container">
+        <ul class="class-spashe">
+            <li>
+                <img src="img/index_01.png">
+                <span>专注艺术领域培训</span>
+            </li>
+            <li>
+                <img src="img/index_02.png">
+                <span>汇聚大牛优质课程</span>
+            </li>
+            <li>
+                <img src="img/index_03.png">
+                <span>提供直播同步学习 </span>
+            </li>
+            <li>
+                <img src="img/index_04.png">
+                <span>引入社区交流互动</span>
+            </li>
+        </ul>
+    </div>
+    <!--最新课程-->
+    <div class="container">
+        <div class="news-course">
+
+            <div class="course-header"><h3>最新课程</h3></div>
+            <ul class="course-list">
+                <li ng-repeat="news in name|filter:ser as results">
+                    <a href="#">
+                        <div class="item-header">
+                            <a href="#"><img src="img/1474165795294.jpg"></a>
+                        </div>
+                        <div class="item-content">
+                            <p>{{news.title}}</p>
+                            <p><span class="name">{{news.newName}}</span><span class="money">{{news.newMoney}}</span></p>
+                            <p><span class="live">{{news.newLive}}</span><span class="enroll">{{news.newEnroll}}</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li ng-if="results.length===0">没有数据</li>
+            </ul>
+        </div>
+    </div>
+    <!--<show-hot-course></show-hot-course>-->
+</script>
+<script type="text/ng-template" id="allClass.html">
+    <div class="container">
+        <div class="news-course">
+            <div class="course-header"><a href="#javascript:;">综合</a></div>
+            <ul class="course-list">
+                <li>
+                    <a href="#">
+                        <div class="item-header">
+                            <a href="#"><img src="img/1474165795294.jpg"></a>
+                        </div>
+                        <div class="item-content">
+                            <p>水彩人像课</p>
+                            <p><span class="name">MarinaRen</span><span class="money">￥68.5</span></p>
+                            <p><span class="live">正在预售中…</span><span class="enroll">52人在学</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="item-header">
+                            <a href="#"><img src="img/1474165795294.jpg"></a>
+                        </div>
+                        <div class="item-content">
+                            <p>水彩人像课</p>
+                            <p><span class="name">MarinaRen</span><span class="money">￥68.5</span></p>
+                            <p><span class="live">正在预售中…</span><span class="enroll">52人在学</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="item-header">
+                            <a href="#"><img src="img/1474165795294.jpg"></a>
+                        </div>
+                        <div class="item-content">
+                            <p>水彩人像课</p>
+                            <p><span class="name">MarinaRen</span><span class="money">￥68.5</span></p>
+                            <p><span class="live">正在预售中…</span><span class="enroll">52人在学</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="item-header">
+                            <a href="#"><img src="img/1474165795294.jpg"></a>
+                        </div>
+                        <div class="item-content">
+                            <p>水彩人像课</p>
+                            <p><span class="name">MarinaRen</span><span class="money">￥68.5</span></p>
+                            <p><span class="live">正在预售中…</span><span class="enroll">52人在学</span></p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="myClass.html">
+    <div class="container">
+        <div class="news-course">
+            <div class="course-header">
+                <a href="#javascript:;">全部</a>
+                <a href="#javascript:;">学习中</a>
+                <a href="#javascript:;">未开始</a>
+                <a href="#javascript:;">已学完</a>
+                <a href="#javascript:;">我的收藏</a>
+            </div>
+            <ul class="course-list">
+                <li>
+                    <a href="#">
+                        <div class="item-header">
+                            <a href="#"><img src="img/1474165795294.jpg"></a>
+                        </div>
+                        <div class="item-content">
+                            <p>水彩人像课</p>
+                            <p><span class="name">MarinaRen</span><span class="money">￥68.5</span></p>
+                            <p><span class="live">正在预售中…</span><span class="enroll">52人在学</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="item-header">
+                            <a href="#"><img src="img/1474165795294.jpg"></a>
+                        </div>
+                        <div class="item-content">
+                            <p>水彩人像课</p>
+                            <p><span class="name">MarinaRen</span><span class="money">￥68.5</span></p>
+                            <p><span class="live">正在预售中…</span><span class="enroll">52人在学</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="item-header">
+                            <a href="#"><img src="img/1474165795294.jpg"></a>
+                        </div>
+                        <div class="item-content">
+                            <p>水彩人像课</p>
+                            <p><span class="name">MarinaRen</span><span class="money">￥68.5</span></p>
+                            <p><span class="live">正在预售中…</span><span class="enroll">52人在学</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="item-header">
+                            <a href="#"><img src="img/1474165795294.jpg"></a>
+                        </div>
+                        <div class="item-content">
+                            <p>水彩人像课</p>
+                            <p><span class="name">MarinaRen</span><span class="money">￥68.5</span></p>
+                            <p><span class="live">正在预售中…</span><span class="enroll">52人在学</span></p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            </div>
+    </div>
+</script>
+<script type="text/ng-template" id="files.html">
+    <div class="container">{{name}}</div>
+</script>
+<script type="text/ng-template" id="appDown.html">
+    <div class="container">{{name}}</div>
+</script>
+<script type="text/ng-template" id="login.html">
+    <div class="container page-login" style="background: #fff;">
+        <div class="panel">
+
+            <div class="panel-header"><h3>登录</h3></div>
+            <div class="panel-body">
+                <form action="" name="loginForm">
+                    <p class="input-wrapper">
+                        <input type="text" name="userName" ng-minlength=3 ng-maxlength=20 ng-model="username.userName" id="username" placeholder="用户名/邮箱/手机号" required>
+                    </p>
+                    <p class="input-wrapper">
+                        <input type="password" name="password" id="password" placeholder="密码" required>
+                    </p>
+                    <p class="input-wrapper validation-code hide" id="vimage">
+                        <input type="text" name="randomCode" id="randomCode" placeholder="验证码" required>
+                        <img src="" id="randomCodeImg" height="38" class="validationPic">
+                        <span id="randomCodeIcon"></span>
+                    </p>
+                    <input ng-disabled="loginForm.$invalid" type="button" class="btn-submit btn-gogoup-login" value="登  录">
+                    <label class="auto-login"><input type="checkbox" name="autolog" id="autolog">下次自动登录</label>
+                    <div class="other-operation"><a class="forgot-password" href="#">忘记密码</a>|<a class="register" href="#">注册账户</a></div>
+                    <div class="error" ng-messages="loginForm.userName.$error">
+                        <div ng-message="required">必填项</div>
+                        <div ng-message="minlength">字符太短小于3</div>
+                        <div ng-message="maxlength">字符太长大于20</div>
+                    </div>
+                    <!--<div class="erro" ng-show="loginForm.userName.$error.required">请输入用户名</div>
+                    <div class="erro" ng-show="loginForm.password.$error.required">请输入密码</div>-->
+                </form>
+            </div>
+        </div>
+    </div>
+</script>
+<div class="copy-footer">
+<div class="container">
+       <div class="footer-left">
+           <p>站酷旗下品牌，Copyright © 2006-2015 站酷高高手（ZCOOL GOGOUP）版权所有京<a href="#">京ICP备15003345号-1</a></p>
+           <p>品牌、课程和网页设计版权由 北京站酷教育科技有限公司 持有，未经本公司允许，请勿建立镜像和其他违法用途。</p>
+       </div>
+       <div class="footer-right">
+            <img src="img/zcool-logo.png">
+       </div>
+   </div>
+</div>
+
+
+<script type="text/javascript" src="../angular-1.4.5.js"></script>
+<script type="text/javascript" src="../angular-route.js"></script>
+<script type="text/javascript" src="ngl/angular-messages.min.js"></script>
+<script type="text/javascript" src="ngl/ctrl.js"></script>
+<script type="text/javascript" src="ngl/direct.js"></script>
+<script type="text/javascript" src="ngl/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input class="keyup" value="请输入你想输入的内容" name="keyup">
+<script>
+
+
+
+    window.onload=function(){
+        /*创建正则表达式*/
+        /*var reg=new RegExp();*//*RegExp是一个对象*//*
+        var reg=new RegExp("a");//讲匹配字母a
+        var reg=new RegExp("a","i");//匹配时不区分大小写
+
+        var reg=new RegExp("a","gi");//匹配素有的a或A*/
+
+
+        /*一.用正则删除空格 \s表示空白符*/
+        var regs={
+            trim:function(str){
+                return str.replace(/^\s+|\s+/g,'')
+            }
+        }
+    }
+
+
+
+</script>
+</body>
+</html>
