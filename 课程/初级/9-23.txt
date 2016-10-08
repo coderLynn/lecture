@@ -1,0 +1,62 @@
+                                 9-23（html+css基础部分）
+	一.导航（头部）							 
+		1.标签：
+		   a.<div></div>
+		   b.<img src="">
+		   c.a标签
+		   d.ul+li标签（跳转链接部分）
+		   e.input标签（输入框：可以输入文字的）
+		   
+		2.样式及其属性：
+		   a.background:#FFAE00(这个是定义的标签的背景颜色)
+		   b.float:left(左浮动)
+		   c.float:right(有浮动)
+		   d.width：1100px（宽度，px是宽度的单位）
+		   e.color：#000;（字体颜色）
+		   f.font-size：18px（字体大小）
+		   g.margin：上，右，下，左；margin：1px 2px 3px 4px（元素外边距）
+		   h.maring-top:上(元素标签上边的距离)
+		   
+	
+	二.banner部分（图片切换部分）
+		<div>,<img src="">
+		2.样式：
+		   a.text-align:center;(内联元素居中)
+	
+	三.公告部分
+	   1.标签：
+	      a.<img src="">
+		  b.<p>
+		2.样式：
+		   a.padding-left：20px；（padding元素内部距离，left左边。元素内部左边的距离）
+		   b.vertical-align：middle；（整个一行的文本对齐：上居中）
+	
+	
+	四.图片列表（图片）
+	1.标签：
+	  a.<div>,<img>
+	
+	2.样式：
+	   a.padding：上，右，下，左（元素内部边距）
+	   b.border:1px solid #000(border:宽度 边框样式,实线 边框颜色。 danshed：虚线)
+	
+	
+	五.推广的广告
+	  1.标签：
+	      a.div，
+		  b.img
+	
+	
+	
+
+六.快捷键：
+	1.ctrl+c（复制）
+	2.ctrl+v(粘贴)
+	3.ctrl+x(裁剪：复制一份过去，然后把原来的删掉。)
+	4.ctrl+d(复制整行：westorm软件里面才生效的。)
+
+	
+	
+	
+								 
+								 
